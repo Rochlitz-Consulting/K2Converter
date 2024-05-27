@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory;
 public class K2Converter extends RouteBuilder {
 
     private static final Logger LOG = LoggerFactory.getLogger(K2Converter.class);
-    public static String CRLF = "\r\n";
+    public static final String CRLF = "\r\n";
     private String tableName;
 
     @Override
@@ -59,6 +59,9 @@ public class K2Converter extends RouteBuilder {
         feldRecord.setId(genericRecord.getFieldValue(1));
         feldRecord.setFieldName(genericRecord.getFieldValue(2));
         feldRecord.convertAndSetPrimaryKey(genericRecord.getFieldValue(3));
+        feldRecord.convertAndSetNullable(genericRecord.getFieldValue(4));
+        feldRecord.convertAndSetLength(genericRecord.getFieldValue(5),genericRecord.getFieldValue(6));
+        feldRecord.convertAndSetDataType(genericRecord.getFieldValue(7));
 
         exchange.getIn().setBody(feldRecord);
     }
