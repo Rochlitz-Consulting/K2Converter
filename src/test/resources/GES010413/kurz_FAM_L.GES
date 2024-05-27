@@ -1,0 +1,253 @@
+00K
+01FAM_L
+02GES
+0320130401
+04
+05ABDATA PHARMA-DATEN-SERVICE
+06Fertigarzneimittel
+071045
+0817
+00F
+0101
+02Key_FAM
+031
+040
+05F
+0610
+07NU1
+00F
+0102
+02Anwendungshinweise
+030
+040
+05V
+063000
+07AN1
+00F
+0103
+02Aufbewahrung
+030
+041
+05V
+061000
+07AN1
+00F
+0104
+02Bearbeitungsstand
+030
+040
+05F
+068
+07DT8
+00F
+0105
+02Darreichungsform
+030
+040
+05V
+0650
+07AN1
+00F
+0106
+02Gegenanzeigen
+030
+040
+05V
+065000
+07AN1
+00F
+0107
+02Monopraeparat
+030
+040
+05F
+061
+07FLA
+00F
+0108
+02Nebenwirkungen
+030
+040
+05V
+065000
+07AN1
+00F
+0109
+02Pflanzliches_AM
+030
+040
+05F
+061
+07FLA
+00F
+0110
+02Produktname
+030
+040
+05V
+0660
+07AN1
+00F
+0111
+02Key_ADR_Anbieter
+030
+040
+05V
+065
+07NU1
+00F
+0112
+02Sortierbegriff
+030
+040
+05F
+0630
+07AN3
+00F
+0113
+02Suchbegriff
+030
+040
+05V
+0660
+07AN2
+00F
+0114
+02Traditionelles_AM
+030
+040
+05F
+061
+07FLA
+00F
+0115
+02Rezeptpflicht
+030
+040
+05F
+061
+07NU1
+00F
+0116
+02Wichtige_Hinweise
+030
+041
+05V
+065000
+07AN1
+00F
+0117
+02Wirkungsweise
+030
+041
+05V
+063000
+07AN1
+00I
+013000341011
+02Die Gesamtdosis sollte nicht ohne R\u25cksprache mit einem Arzt oder Apotheker \u25berschritten werden.~n~n~kArt der Anwendung?~k~nNehmen Sie das Arzneimittel unverd\u25nnt ein. Sie k\o25nnen das Arzneimittel aber auch mit Wasser oder Tee verd\u25nnen.~n~n~kDauer der Anwendung?~k~nDie Anwendungsdauer ist nicht begrenzt. Das Arzneimittel ist f\u25r eine Behandlung \u25ber einen l\a25ngeren Zeitraum geeignet und sollte mindestens \u25ber 3 Monatszyklen erfolgen.~n~n~k\U25berdosierung?~k~nEs sind keine \U25berdosierungserscheinungen bekannt. Im Zweifelsfall wenden Sie sich an Ihren Arzt.~n~n~kAnwendung vergessen?~k~nSetzen Sie die Anwendung zum n\a25chsten vorgeschriebenen Zeitpunkt ganz normal (also nicht mit der doppelten Menge) fort.~n~nGenerell gilt: Achten Sie vor allem bei S\a25uglingen, Kleinkindern und \a25lteren Menschen auf eine gewissenhafte Dosierung. Im Zweifelsfalle fragen Sie Ihren Arzt oder Apotheker nach etwaigen Auswirkungen oder Vorsichtsma\s39nahmen.~n~nEine vom Arzt verordnete Dosierung kann von den Angaben der Packungsbeilage abweichen. Da der Arzt sie individuell abstimmt, sollten Sie das Arzneimittel daher nach seinen Anweisungen anwenden.
+03~kAufbewahrung~k~n~nDas Arzneimittel darf nach Anbruch/Zubereitung h\o25chstens 2 Monate verwendet werden\324~nDas Arzneimittel muss nach Anbruch/Zubereitung bei Raumtemperatur aufbewahrt werden\324
+0420120920
+05Tropfen
+06~kWas spricht gegen eine Anwendung?~k~n~n- \U25berempfindlichkeit gegen die Inhaltsstoffe~n- Brusttumore~n- Tumore der Hirnanhangsdr\u25se (Hypophysentumore)~n~n~kWelche Altersgruppe ist zu beachten?~k~n- Kinder unter 12 Jahren: Das Arzneimittel sollte in dieser Altersgruppe in der Regel nicht angewendet werden.~n~n~kWas ist mit Schwangerschaft und Stillzeit?~k~n- Schwangerschaft: Das Arzneimittel sollte nach derzeitigen Erkenntnissen nicht angewendet werden.~n- Stillzeit: Von einer Anwendung wird nach derzeitigen Erkenntnissen abgeraten. Eventuell ist ein Abstillen in Erw\a25gung zu ziehen.~n~nIst Ihnen das Arzneimittel trotz einer Gegenanzeige verordnet worden, sprechen Sie mit Ihrem Arzt oder Apotheker. Der therapeutische Nutzen kann h\o25her sein, als das Risiko, das die Anwendung bei einer Gegenanzeige in sich birgt.
+071
+08~kWelche unerw\u25nschten Wirkungen k\o25nnen auftreten?~k~n~n- Hautausschlag~n- Juckreiz~n- Nesselausschlag~n~nBemerken Sie eine Befindlichkeitsst\o25rung oder Ver\a25nderung w\a25hrend der Behandlung, wenden Sie sich an Ihren Arzt oder Apotheker.~n~nF\u25r die Information an dieser Stelle werden vor allem Nebenwirkungen ber\u25cksichtigt, die bei mindestens einem von 1.000 behandelten Patienten auftreten.
+091
+10Agnolyt MADAUS
+115253
+12AGNOLYTMADAUS            00002
+13AGNOLYTMADAUS
+140
+150
+16~kWas sollten Sie beachten?~k~n- Vorsicht bei Allergie gegen Gew\u25rze, \a25therische \O25le und Terpentin\o25l\324~n- Das Arzneimittel enth\a25lt Alkohol und stellt somit ein Risiko f\u25r Leberkranke, Alkoholiker, Epileptiker, Hirngesch\a25digte, Schwangere, Stillende und Kinder dar.~n
+17~kWie wirkt der Inhaltsstoff des Arzneimittels?~k~n~nDie Inhaltsstoffe entstammen der Pflanze M\o25nchspfeffer und wirken als nat\u25rliches Gemisch. Zu der Pflanze selbst:~n~n~i- Aussehen: bis zu 6~gm hoher Baum oder Strauch, dessen Fiederbl\a25tter auf der Unterseite behaart sind, die kleinen duftenden violetten Bl\u25ten bilden \a25hrenartige Bl\u25tenst\a25nde, die Fr\u25chte sind klein, r\o25tlich-schwarz~n~i- Vorkommen: S\u25deuropa, Asien~n~i- Haupts\a25chliche Inhaltsstoffe: \a25therisches \O25l (Limonen, Pinen), Iridoidglykoside (Aucubin, Agnosid), Flavonoide~n~i- Verwendete Pflanzenteile und Zubereitungen: haupts\a25chlich Extrakte der Frucht~nExtrakte von M\o25nchspfeffer unterdr\u25cken die Freisetzung von Prolaktin. Die Konzentration dieser Substanz ist vor der Menstruation h\a25ufig erh\o25ht und ist eine der Ursachen f\u25r die pr\a25menstruellen Beschwerden. Zus\a25tzlich scheint M\o25nchspfeffer das Gleichgewicht zwischen \O25strogen und Progesteron wiederherzustellen.
+00I
+013000341021
+02Die Gesamtdosis sollte nicht ohne R\u25cksprache mit einem Arzt oder Apotheker \u25berschritten werden.~n~n~kArt der Anwendung?~k~nNehmen Sie das Arzneimittel mit Fl\u25ssigkeit (z.B. 1 Glas Wasser) ein.~n~n~kDauer der Anwendung?~k~nDie Anwendungsdauer ist nicht begrenzt. Das Arzneimittel ist f\u25r eine Behandlung \u25ber einen l\a25ngeren Zeitraum geeignet und sollte mindestens \u25ber 3 Monatszyklen erfolgen.~n~n~k\U25berdosierung?~k~nEs sind keine \U25berdosierungserscheinungen bekannt. Im Zweifelsfall wenden Sie sich an Ihren Arzt.~n~n~kAnwendung vergessen?~k~nSetzen Sie die Anwendung zum n\a25chsten vorgeschriebenen Zeitpunkt ganz normal (also nicht mit der doppelten Menge) fort.~n~nGenerell gilt: Achten Sie vor allem bei S\a25uglingen, Kleinkindern und \a25lteren Menschen auf eine gewissenhafte Dosierung. Im Zweifelsfalle fragen Sie Ihren Arzt oder Apotheker nach etwaigen Auswirkungen oder Vorsichtsma\s39nahmen.~n~nEine vom Arzt verordnete Dosierung kann von den Angaben der Packungsbeilage abweichen. Da der Arzt sie individuell abstimmt, sollten Sie das Arzneimittel daher nach seinen Anweisungen anwenden.
+03
+0420130130
+05Kapseln
+06~kWas spricht gegen eine Anwendung?~k~n~n- \U25berempfindlichkeit gegen die Inhaltsstoffe~n- Brusttumore~n- Tumore der Hirnanhangsdr\u25se (Hypophysentumore)~n~n~kWelche Altersgruppe ist zu beachten?~k~n- Kinder unter 12 Jahren: Das Arzneimittel sollte in dieser Altersgruppe in der Regel nicht angewendet werden.~n~n~kWas ist mit Schwangerschaft und Stillzeit?~k~n- Schwangerschaft: Das Arzneimittel sollte nach derzeitigen Erkenntnissen nicht angewendet werden.~n- Stillzeit: Von einer Anwendung wird nach derzeitigen Erkenntnissen abgeraten. Eventuell ist ein Abstillen in Erw\a25gung zu ziehen.~n~nIst Ihnen das Arzneimittel trotz einer Gegenanzeige verordnet worden, sprechen Sie mit Ihrem Arzt oder Apotheker. Der therapeutische Nutzen kann h\o25her sein, als das Risiko, das die Anwendung bei einer Gegenanzeige in sich birgt.
+071
+08~kWelche unerw\u25nschten Wirkungen k\o25nnen auftreten?~k~n~n- Hautausschlag~n- Juckreiz~n- Nesselausschlag~n~nBemerken Sie eine Befindlichkeitsst\o25rung oder Ver\a25nderung w\a25hrend der Behandlung, wenden Sie sich an Ihren Arzt oder Apotheker.~n~nF\u25r die Information an dieser Stelle werden vor allem Nebenwirkungen ber\u25cksichtigt, die bei mindestens einem von 1.000 behandelten Patienten auftreten.
+091
+10Agnolyt MADAUS
+115253
+12AGNOLYTMADAUS            00001
+13AGNOLYTMADAUS
+140
+150
+16~kWas sollten Sie beachten?~k~n- Vorsicht bei Allergie gegen Gew\u25rze, \a25therische \O25le und Terpentin\o25l\324~n- Vorsicht bei Allergie gegen Talkum\324~n
+17~kWie wirkt der Inhaltsstoff des Arzneimittels?~k~n~nDie Inhaltsstoffe entstammen der Pflanze M\o25nchspfeffer und wirken als nat\u25rliches Gemisch. Zu der Pflanze selbst:~n~n~i- Aussehen: bis zu 6~gm hoher Baum oder Strauch, dessen Fiederbl\a25tter auf der Unterseite behaart sind, die kleinen duftenden violetten Bl\u25ten bilden \a25hrenartige Bl\u25tenst\a25nde, die Fr\u25chte sind klein, r\o25tlich-schwarz~n~i- Vorkommen: S\u25deuropa, Asien~n~i- Haupts\a25chliche Inhaltsstoffe: \a25therisches \O25l (Limonen, Pinen), Iridoidglykoside (Aucubin, Agnosid), Flavonoide~n~i- Verwendete Pflanzenteile und Zubereitungen: haupts\a25chlich Extrakte der Frucht~nExtrakte von M\o25nchspfeffer unterdr\u25cken die Freisetzung von Prolaktin. Die Konzentration dieser Substanz ist vor der Menstruation h\a25ufig erh\o25ht und ist eine der Ursachen f\u25r die pr\a25menstruellen Beschwerden. Zus\a25tzlich scheint M\o25nchspfeffer das Gleichgewicht zwischen \O25strogen und Progesteron wiederherzustellen.
+00I
+013000961011
+02Die Gesamtdosis sollte nicht ohne R\u25cksprache mit einem Arzt oder Apotheker \u25berschritten werden.~n~n~kArt der Anwendung?~k~nNehmen Sie das Arzneimittel mit Fl\u25ssigkeit (z.B. 1 Glas Wasser) ein.~n~n~kDauer der Anwendung?~k~nOhne \a25rztlichen Rat sollten Sie das Arzneimittel nur einige Tage anwenden. Bei l\a25nger anhaltenden Beschwerden sollten Sie Ihren Arzt aufsuchen.~n~n~k\U25berdosierung?~k~nEs kann zu einer Vielzahl von \U25berdosierungserscheinungen kommen, unter anderem zu Durchfall. Setzen Sie sich bei dem Verdacht auf eine \U25berdosierung umgehend mit einem Arzt in Verbindung.~n~nGenerell gilt: Achten Sie vor allem bei S\a25uglingen, Kleinkindern und \a25lteren Menschen auf eine gewissenhafte Dosierung. Im Zweifelsfalle fragen Sie Ihren Arzt oder Apotheker nach etwaigen Auswirkungen oder Vorsichtsma\s39nahmen.~n~nEine vom Arzt verordnete Dosierung kann von den Angaben der Packungsbeilage abweichen. Da der Arzt sie individuell abstimmt, sollten Sie das Arzneimittel daher nach seinen Anweisungen anwenden.
+03~kAufbewahrung~k~n~nDas Arzneimittel darf nach Anbruch/Zubereitung h\o25chstens 6 Monate verwendet werden\324~nDas Arzneimittel muss nach Anbruch/Zubereitung bei Raumtemperatur aufbewahrt werden\324~nDiese Angabe gilt nur f\u25r die Tabletten in Flaschen. F\u25r die Tabletten in Durchdr\u25ckpackungen gilt das aufgedruckte Verfalldatum.
+0420120918
+05Tabletten, magensaftgesch\u25tzte
+06~kWas spricht gegen eine Anwendung?~k~n~nImmer:~n- \U25berempfindlichkeit gegen die Inhaltsstoffe~n- Darmverschluss~n~nUnter Umst\a25nden - sprechen Sie hierzu mit Ihrem Arzt oder Apotheker:~n- Entz\u25ndliche Magen-Darm-Erkrankungen, die akut sind~n- St\o25rungen des Fl\u25ssigkeit- und Salzhaushaltes~n~n~kWelche Altersgruppe ist zu beachten?~k~n- S\a25uglinge und Kleinkinder unter 2 Jahren: Das Arzneimittel darf nicht angewendet werden.~n~n~kWas ist mit Schwangerschaft und Stillzeit?~k~n- Schwangerschaft: Wenden Sie sich an Ihren Arzt. Es spielen verschiedene \U25berlegungen eine Rolle, ob und wie das Arzneimittel in der Schwangerschaft angewendet werden kann.~n- Stillzeit: Es gibt nach derzeitigen Erkenntnissen keine Hinweise darauf, dass das Arzneimittel w\a25hrend der Stillzeit nicht angewendet werden darf.~n~nIst Ihnen das Arzneimittel trotz einer Gegenanzeige verordnet worden, sprechen Sie mit Ihrem Arzt oder Apotheker. Der therapeutische Nutzen kann h\o25her sein, als das Risiko, das die Anwendung bei einer Gegenanzeige in sich birgt.
+071
+08~kWelche unerw\u25nschten Wirkungen k\o25nnen auftreten?~k~n~n- Magen-Darm-Beschwerden, wie:~n~i- Bauchschmerzen~n- Bauchkr\a25mpfe~n~i- Bl\a25hungen~n~nBemerken Sie eine Befindlichkeitsst\o25rung oder Ver\a25nderung w\a25hrend der Behandlung, wenden Sie sich an Ihren Arzt oder Apotheker.~n~nF\u25r die Information an dieser Stelle werden vor allem Nebenwirkungen ber\u25cksichtigt, die bei mindestens einem von 1.000 behandelten Patienten auftreten.
+090
+10Dulcolax 5mg
+1131310
+12DULCOLAX15MG             00002
+13DULCOLAX5MG
+140
+150
+16~kWas sollten Sie beachten?~k~n- Wenden Sie abf\u25hrende Arzneimittel ohne \a25rztliche Empfehlung nur kurzzeitig an. Eine l\a25ngerfristige Anwendung f\u25hrt unter Umst\a25nden zu einer chronischen Verstopfung und/oder weiteren Problemen. Bleibt der Erfolg nach kurzzeitiger Anwendung aus, wenden Sie sich an Ihren Arzt oder Apotheker.~n- Achtung: Abf\u25hrmittel eignen sich nicht zur Gewichtabnahme.~n- Vorsicht bei Allergie gegen arabisches Gummi (EU-Nummer E 414)\324~n- Vorsicht bei Allergie gegen Farbstoffe (z.B. Chinolingelb mit der EU-Nummer E 104)\324~n- Vorsicht bei Allergie gegen Farbstoffe (z.B. Tartrazin (E 102), Echtgelb (E 105), Gelborange S (E 110) und Ponceau 4R (E 124))\324~n- Vorsicht bei Allergie gegen das L\o25sungsmittel Polyethylenglycol (EU-Nummer E 431)\324~n- Vorsicht bei Allergie gegen Talkum\324~n- Vorsicht bei Allergie gegen Zimt, Birke, Pappelknospen, Propolis, Baldrian, Gelbwurz und Kolophonium\324~n- Vorsicht ist geboten bei einer bekannten \U25berempfindlichkeit gegen\u25ber Sorbit oder Fructose (Fruchtzucker). Es k\o25nnen Magen-Darm-Beschwerden ausgel\o25st werden.~n- Es kann Arzneimittel geben, mit denen Wechselwirkungen auftreten. Sie sollten deswegen generell vor der Behandlung mit einem neuen Arzneimittel jedes andere, das Sie bereits anwenden, dem Arzt oder Apotheker angeben. Das gilt auch f\u25r Arzneimittel, die Sie selbst kaufen, nur gelegentlich anwenden oder deren Anwendung schon einige Zeit zur\u25ckliegt.~n
+17~kWie wirkt der Inhaltsstoff des Arzneimittels?~k~n~nDer Wirkstoff verhindert, dass aus dem Darminhalt Wasser und Salze entzogen werden. Gleichzeitig f\o25rdert er das Einstr\o25men von Wasser und Salzen in den Darm. Dadurch gewinnt der Darminhalt an Volumen und wird weicher, was zu einem Stuhldrang und einer erleichterten Stuhlentleerung f\u25hrt.
+00I
+013001915011
+02Die Gesamtdosis sollte nicht ohne R\u25cksprache mit einem Arzt oder Apotheker \u25berschritten werden.~n~n~kArt der Anwendung?~k~nNehmen Sie das Arzneimittel mit Fl\u25ssigkeit (z.B. 1 Glas Wasser) ein.~n~n~kDauer der Anwendung?~k~nDie Anwendungsdauer richtet sich nach Art der Beschwerde und/oder Dauer der Erkrankung und wird deshalb nur von Ihrem Arzt bestimmt.~n~n~k\U25berdosierung?~k~nEs kann zu einer Vielzahl von \U25berdosierungserscheinungen kommen, unter anderem zu Erbrechen, Unruhe, Zittern, Schwitzen, Kopfschmerzen und Bluthochdruck. Setzen Sie sich bei dem Verdacht auf eine \U25berdosierung umgehend mit einem Arzt in Verbindung.~n~n~kEinnahme vergessen?~k~nSetzen Sie die Einnahme zum n\a25chsten vorgeschriebenen Zeitpunkt ganz normal (also nicht mit der doppelten Menge) fort.~n~nGenerell gilt: Achten Sie vor allem bei S\a25uglingen, Kleinkindern und \a25lteren Menschen auf eine gewissenhafte Dosierung. Im Zweifelsfalle fragen Sie Ihren Arzt oder Apotheker nach etwaigen Auswirkungen oder Vorsichtsma\s39nahmen.~n~nEine vom Arzt verordnete Dosierung kann von den Angaben der Packungsbeilage abweichen. Da der Arzt sie individuell abstimmt, sollten Sie das Arzneimittel daher nach seinen Anweisungen anwenden.
+03~kAufbewahrung~k~n~nDas Arzneimittel muss~n~i- vor Hitze gesch\u25tzt~n~i- vor Feuchtigkeit gesch\u25tzt (z.B. im fest verschlossenen Beh\a25ltnis)~naufbewahrt werden.
+0420110720
+05Tabletten
+06~kWas spricht gegen eine Anwendung?~k~n~nImmer:~n- \U25berempfindlichkeit gegen die Inhaltsstoffe~n- Angstzust\a25nde~n- Tourette-Syndrom~n- Arzneimittelmissbrauch, auch wenn er schon l\a25ngere Zeit zur\u25ckliegt~n- Alkoholmissbrauch, auch wenn er schon l\a25ngere Zeit zur\u25ckliegt~n- Drogenabh\a25ngigkeit, auch wenn sie schon l\a25ngere Zeit zur\u25ckliegt~n- Ph\a25ochromocytom (Adrenalin produzierender Tumor)~n- Glaukom~n~nUnter Umst\a25nden - sprechen Sie hierzu mit Ihrem Arzt oder Apotheker:~n- Bluthochdruck~n- Herzerkrankungen, wie:~n~i- Angina pectoris~n~i- Herzrhythmusst\o25rungen~n~i- Herzschw\a25che~n~i- Herzinfarkt, der erst kurze Zeit zur\u25ckliegt~n- Durchblutungsst\o25rung der Hirngef\a25\s39e, wie:~n~i- Aneurysmen (Ausbuchtung der Gef\a25\s39w\a25nde)~n~i- Durchblutungsst\o25rungen der Peripherie (z.B. Arme, Beine)~n~i- Gef\a25\s39entz\u25ndungen~n~i- Schlaganfall (akut)~n- Neigung zu Krampfanf\a25llen, wie bei:~n~i- Epilepsie~n- Magersucht~n- Psychose, auch in der Vorgeschichte~n- Selbstmordgedanken, auch in der Vorgeschichte~n- Depression, auch in der Vorgeschichte~n- Manie, auch in der Vorgeschichte~n- Schilddr\u25sen\u25berfunktion~n~n~kWelche Altersgruppe ist zu beachten?~k~n- Kinder unter 6 Jahren: Das Arzneimittel sollte in dieser Altersgruppe in der Regel nicht angewendet werden.~n- Erwachsene: In dieser Altersgruppe sollte das Arzneimittel nur bei bestimmten Anwendungsgebieten eingesetzt werden. Fragen Sie hierzu Ihren Arzt oder Apotheker.~n~n~kWas ist mit Schwangerschaft und Stillzeit?~k~n- Schwangerschaft: Das Arzneimittel sollte nach derzeitigen Erkenntnissen nicht angewendet werden.~n- Stillzeit: Von einer Anwendung wird nach derzeitigen Erkenntnissen abgeraten. Eventuell ist ein Abstillen in Erw\a25gung zu ziehen.~n~nIst Ihnen das Arzneimittel trotz einer Gegenanzeige verordnet worden, sprechen Sie mit Ihrem Arzt oder Apotheker. Der therapeutische Nutzen kann h\o25her sein, als das Risiko, das die Anwendung bei einer Gegenanzeige in sich birgt.
+071
+08~kWelche unerw\u25nschten Wirkungen k\o25nnen auftreten?~k~n~n- Magen-Darm-Beschwerden, wie:~n~i- \U25belkeit~n~i- Erbrechen~n~i- Durchf\a25lle~n~i- Verstopfung~n~i- Bauchschmerzen~n- Gewichtsverlust~n- Appetitlosigkeit~n- Mundtrockenheit~n- Kopfschmerzen~n- Schwindel~n- M\u25digkeit~n- Schlafst\o25rungen, wie:~n~i- Schlaflosigkeit~n~i- Schl\a25frigkeit~n- Benommenheit~n- Depressionen~n- Stimmungsschwankungen~n- Unruhe~n- Nervosit\a25t~n- Halluzinationen~n- Reizbarkeit~n- Zittern~n- Aggressives Verhalten~n- Angstzust\a25nde~n- Sonderbare (paradoxe) Reaktionen, wie:~n~i- Selbstmordgedanken~n~i- Hyperaktivit\a25t (psychomotorische)~n~i- gesteigerte Wachheit~n- Sehst\o25rungen, wie:~n~i- Doppeltsehen~n~i- Verschwommenes Sehen~n- Bluthochdruck~n- Pulsbeschleunigung~n- Herzklopfen~n- \U25berempfindlichkeitsreaktionen der Haut, wie:~n~i- Angioneurotisches \O25dem (Schwellung im Gesicht, an Hand und Fu\s39)~n~i- Juckreiz~n~i- Nesselausschlag~n~i- Hautausschlag, schwerer~n- Haarausfall~n- Schwitzen~n- Husten~n- Halsschmerzen~n- Rachenentz\u25ndung~n- Anf\a25lle von Atemnot~n- Anstieg der Leberwerte~n- Fieber~n- Muskelschmerzen~n- Gelenkschmerzen~n- Muskelzuckungen~n- Allgemeine Schw\a25che~n~nBemerken Sie eine Befindlichkeitsst\o25rung oder Ver\a25nderung w\a25hrend der Behandlung, wenden Sie sich an Ihren Arzt oder Apotheker.~n~nF\u25r die Information an dieser Stelle werden vor allem Nebenwirkungen ber\u25cksichtigt, die bei mindestens einem von 1.000 behandelten Patienten auftreten.
+090
+10Ritalin 10mg
+1121177
+12RITALIN210MG             00001
+13RITALIN10MG
+140
+153
+16~kWas sollten Sie beachten?~k~n- Das Reaktionsverm\o25gen kann auch bei bestimmungsgem\a25\s39em Gebrauch, vor allem in h\o25heren Dosierungen oder in Kombination mit Alkohol, beeintr\a25chtigt sein. Achten Sie vor allem darauf, wenn Sie am Stra\s39enverkehr teilnehmen oder Maschinen (auch im Haushalt) bedienen, mit denen Sie sich verletzen k\o25nnen.~n- Bei regelm\a25\s39iger Einnahme kann es zu einer psychischen Abh\a25ngigkeit kommen.~n- Bei Frauen im geb\a25rf\a25higen Alter sind w\a25hrend und unter Umst\a25nden auch eine zeitlang nach der Therapie wirksame Verh\u25tungsmethoden erforderlich. Sprechen Sie hierzu Ihren Arzt oder Apotheker an.~n- Dieses Arzneimittel enth\a25lt Stoffe, die unter Umst\a25nden als Dopingstoffe eingeordnet werden k\o25nnen. Fragen Sie dazu Ihren Arzt oder Apotheker.~n- Vorsicht bei Allergie gegen Talkum\324~n- Vorsicht bei Allergie gegen Weizen- und Roggenmehl, evtl. auch bei Vorliegen einer Pollen-Allergie (Heuschnupfen)\324~n- Es kann Arzneimittel geben, mit denen Wechselwirkungen auftreten. Sie sollten deswegen generell vor der Behandlung mit einem neuen Arzneimittel jedes andere, das Sie bereits anwenden, dem Arzt oder Apotheker angeben. Das gilt auch f\u25r Arzneimittel, die Sie selbst kaufen, nur gelegentlich anwenden oder deren Anwendung schon einige Zeit zur\u25ckliegt.~n
+17~kWie wirkt der Inhaltsstoff des Arzneimittels?~k~n~nDer Wirkstoff greift in die \U25bermittlung von Signalen im Gehirn ein, indem er die Wirkungsdauer von ganz bestimmten Botenstoffen erh\o25ht. Dadurch wird eine verst\a25rkte Aktivit\a25t und Wachheit erzeugt und beim Vorliegen einer sog. Aufmerksamkeitsdefizit-Hyperaktivit\a25ts-St\o25rung (ADHS) die Konzentration und die Ausgeglichenheit gef\o25rdert.
+00I
+013002764021
+02Die Gesamtdosis sollte nicht ohne R\u25cksprache mit einem Arzt oder Apotheker \u25berschritten werden.~n~n~kArt der Anwendung?~k~nNehmen Sie das Arzneimittel mit Fl\u25ssigkeit (z.B. 1 Glas Wasser) ein. Zur Erleichterung der Einnahme k\o25nnen Sie die Kapsel \o25ffnen und nur den Inhalt schlucken. Trinken Sie reichlich Fl\u25ssigkeit nach.~n~n~kDauer der Anwendung?~k~nDie Anwendungsdauer richtet sich nach der Art der Beschwerden und/oder dem Verlauf der Erkrankung. Sie sollte deshalb in Absprache mit Ihrem Arzt festgelegt werden.~n~n~k\U25berdosierung?~k~nEs kann zu einer Vielzahl von \U25berdosierungserscheinungen kommen, unter anderem zu \U25belkeit, blutigem Erbrechen, Magenbeschwerden, Durchfall, Schl\a25frigkeit und Kreislaufkollaps. Insbesondere Kleinkinder sind sehr gef\a25hrdet. Setzen Sie sich bei dem Verdacht auf eine \U25berdosierung umgehend mit einem Arzt in Verbindung.~n~n~kEinnahme vergessen?~k~nSetzen Sie die Einnahme zum n\a25chsten vorgeschriebenen Zeitpunkt ganz normal (also nicht mit der doppelten Menge) fort.~n~nGenerell gilt: Achten Sie vor allem bei S\a25uglingen, Kleinkindern und \a25lteren Menschen auf eine gewissenhafte Dosierung. Im Zweifelsfalle fragen Sie Ihren Arzt oder Apotheker nach etwaigen Auswirkungen oder Vorsichtsma\s39nahmen.~n~nEine vom Arzt verordnete Dosierung kann von den Angaben der Packungsbeilage abweichen. Da der Arzt sie individuell abstimmt, sollten Sie das Arzneimittel daher nach seinen Anweisungen anwenden.
+03~kAufbewahrung~k~n~nDas Arzneimittel muss vor Hitze gesch\u25tzt aufbewahrt werden.
+0420130225
+05Kapseln, magensaftgesch\u25tzte
+06~kWas spricht gegen eine Anwendung?~k~n~nImmer:~n- \U25berempfindlichkeit gegen die Inhaltsstoffe~n- Blutarmut mit Eisenverwertungsst\o25rung, wie z.B.:~n~i- Sideroachrestische An\a25mie~n~i- Thalass\a25mie~n~i- Bleian\a25mie~n- H\a25mochromatose (Eisen\u25berladung)~n- h\a25molytische An\a25mie (Blutarmut aufgrund verk\u25rzter Lebensdauer der roten Blutk\o25rperchen)~n~nUnter Umst\a25nden - sprechen Sie hierzu mit Ihrem Arzt oder Apotheker:~n- Magenschleimhautentz\u25ndung~n- Geschw\u25re im Verdauungstrakt~n- Entz\u25ndliche Darmerkrankungen, wie:~n~i- Colitis ulcerosa~n~i- Morbus Crohn~n~n~kWelche Altersgruppe ist zu beachten?~k~n- Kinder unter 6 Jahren: Das Arzneimittel darf nicht angewendet werden.~n~n~kWas ist mit Schwangerschaft und Stillzeit?~k~n- Schwangerschaft: Nach derzeitigen Erkenntnissen hat das Arzneimittel keine sch\a25digenden Auswirkungen auf die Entwicklung Ihres Kindes oder die Geburt.~n- Stillzeit: Es gibt nach derzeitigen Erkenntnissen keine Hinweise darauf, dass das Arzneimittel w\a25hrend der Stillzeit nicht angewendet werden darf.~n~nIst Ihnen das Arzneimittel trotz einer Gegenanzeige verordnet worden, sprechen Sie mit Ihrem Arzt oder Apotheker. Der therapeutische Nutzen kann h\o25her sein, als das Risiko, das die Anwendung bei einer Gegenanzeige in sich birgt.
+071
+08~kWelche unerw\u25nschten Wirkungen k\o25nnen auftreten?~k~n~n- Magen-Darm-Beschwerden, wie:~n~i- Bauchschmerzen~n~i- \U25belkeit~n~i- Erbrechen~n~i- Appetitlosigkeit~n~i- Durchf\a25lle~n~i- Verstopfung~n- Schwarzf\a25rbung des Stuhls, die unbedenklich ist~n~nBemerken Sie eine Befindlichkeitsst\o25rung oder Ver\a25nderung w\a25hrend der Behandlung, wenden Sie sich an Ihren Arzt oder Apotheker.~n~nF\u25r die Information an dieser Stelle werden vor allem Nebenwirkungen ber\u25cksichtigt, die bei mindestens einem von 1.000 behandelten Patienten auftreten.
+090
+10Ferro\365sanol\365duodenal 100mg
+1127015
+12FERROSANOLDUODENAL3100MG 00001
+13FERROSANOLDUODENAL100MG
+140
+150
+16~kWas sollten Sie beachten?~k~n- Vorsicht bei Allergie gegen Ascorbins\a25ure (Vitamin C)\324~n- Vorsicht bei Allergie gegen Talkum\324~n- Vorsicht bei Allergie gegen Zitronens\a25ure (z.B. in Zitrusfr\u25chten, Johannisbeeren, \A25pfel)\324~n- Vorsicht bei Allergie gegen das L\o25sungsmittel Propylenglycol (EU-Nummer E 477)\324~n- Vorsicht bei Allergie gegen das L\o25sungsmittel Polyethylenglycol (EU-Nummer E 431)\324~n- Es kann Arzneimittel geben, mit denen Wechselwirkungen auftreten. Sie sollten deswegen generell vor der Behandlung mit einem neuen Arzneimittel jedes andere, das Sie bereits anwenden, dem Arzt oder Apotheker angeben. Das gilt auch f\u25r Arzneimittel, die Sie selbst kaufen, nur gelegentlich anwenden oder deren Anwendung schon einige Zeit zur\u25ckliegt.~n
+17~kWie wirkt der Inhaltsstoff des Arzneimittels?~k~n~nEisen geh\o25rt zu den lebenswichtigen Spurenelementen und ist im K\o25rper an vielen Stoffwechselvorg\a25ngen beteiligt. Wichtig ist Eisen zum Beispiel f\u25r die Bildung roter Blutk\o25rperchen.
+00I
+013002765011
+02Die Gesamtdosis sollte nicht ohne R\u25cksprache mit einem Arzt oder Apotheker \u25berschritten werden.~n~n~kArt der Anwendung?~k~nNehmen Sie das Arzneimittel mit Fl\u25ssigkeit (z.B. 1 Glas Wasser) ein.~n~n~kDauer der Anwendung?~k~nDie Anwendungsdauer richtet sich nach der Art der Beschwerden und/oder dem Verlauf der Erkrankung. Sie sollte deshalb in Absprache mit Ihrem Arzt festgelegt werden.~n~n~k\U25berdosierung?~k~nEs kann zu einer Vielzahl von \U25berdosierungserscheinungen kommen, unter anderem zu \U25belkeit, blutigem Erbrechen, Magenbeschwerden, Durchfall, Schl\a25frigkeit und Kreislaufkollaps. Insbesondere Kleinkinder sind sehr gef\a25hrdet. Setzen Sie sich bei dem Verdacht auf eine \U25berdosierung umgehend mit einem Arzt in Verbindung.~n~n~kEinnahme vergessen?~k~nSetzen Sie die Einnahme zum n\a25chsten vorgeschriebenen Zeitpunkt ganz normal (also nicht mit der doppelten Menge) fort.~n~nGenerell gilt: Achten Sie vor allem bei S\a25uglingen, Kleinkindern und \a25lteren Menschen auf eine gewissenhafte Dosierung. Im Zweifelsfalle fragen Sie Ihren Arzt oder Apotheker nach etwaigen Auswirkungen oder Vorsichtsma\s39nahmen.~n~nEine vom Arzt verordnete Dosierung kann von den Angaben der Packungsbeilage abweichen. Da der Arzt sie individuell abstimmt, sollten Sie das Arzneimittel daher nach seinen Anweisungen anwenden.
+03~kAufbewahrung~k~n~nDas Arzneimittel muss vor Hitze gesch\u25tzt aufbewahrt werden.
+0420130225
+05\U25berzogene Tabletten
+06~kWas spricht gegen eine Anwendung?~k~n~nImmer:~n- \U25berempfindlichkeit gegen die Inhaltsstoffe~n- Blutarmut mit Eisenverwertungsst\o25rung, wie z.B.:~n~i- Sideroachrestische An\a25mie~n~i- Thalass\a25mie~n~i- Bleian\a25mie~n- H\a25mochromatose (Eisen\u25berladung)~n- h\a25molytische An\a25mie (Blutarmut aufgrund verk\u25rzter Lebensdauer der roten Blutk\o25rperchen)~n~nUnter Umst\a25nden - sprechen Sie hierzu mit Ihrem Arzt oder Apotheker:~n- Magenschleimhautentz\u25ndung~n- Geschw\u25re im Verdauungstrakt~n- Entz\u25ndliche Darmerkrankungen, wie:~n~i- Colitis ulcerosa~n~i- Morbus Crohn~n~n~kWelche Altersgruppe ist zu beachten?~k~n- Kinder unter 6 Jahren: Das Arzneimittel darf nicht angewendet werden.~n~n~kWas ist mit Schwangerschaft und Stillzeit?~k~n- Schwangerschaft: Nach derzeitigen Erkenntnissen hat das Arzneimittel keine sch\a25digenden Auswirkungen auf die Entwicklung Ihres Kindes oder die Geburt.~n- Stillzeit: Es gibt nach derzeitigen Erkenntnissen keine Hinweise darauf, dass das Arzneimittel w\a25hrend der Stillzeit nicht angewendet werden darf.~n~nIst Ihnen das Arzneimittel trotz einer Gegenanzeige verordnet worden, sprechen Sie mit Ihrem Arzt oder Apotheker. Der therapeutische Nutzen kann h\o25her sein, als das Risiko, das die Anwendung bei einer Gegenanzeige in sich birgt.
+071
+08~kWelche unerw\u25nschten Wirkungen k\o25nnen auftreten?~k~n~n- Magen-Darm-Beschwerden, wie:~n~i- Bauchschmerzen~n~i- \U25belkeit~n~i- Erbrechen~n~i- Appetitlosigkeit~n~i- Durchf\a25lle~n~i- Verstopfung~n- Schwarzf\a25rbung des Stuhls, die unbedenklich ist~n~nBemerken Sie eine Befindlichkeitsst\o25rung oder Ver\a25nderung w\a25hrend der Behandlung, wenden Sie sich an Ihren Arzt oder Apotheker.~n~nF\u25r die Information an dieser Stelle werden vor allem Nebenwirkungen ber\u25cksichtigt, die bei mindestens einem von 1.000 behandelten Patienten auftreten.
+090
+10Ferro\365sanol 40mg Dragees
+1127015
+12FERROSANOL240MGDRAGEES   00001
+13FERROSANOL40MGDRAGEES
+140
+150
+16~kWas sollten Sie beachten?~k~n- Vorsicht bei Allergie gegen Talkum\324~n- Vorsicht bei Allergie gegen arabisches Gummi (EU-Nummer E 414)\324~n- Vorsicht bei Allergie gegen das L\o25sungsmittel Polyethylenglycol (EU-Nummer E 431)\324~n- Vorsicht ist geboten bei einer bekannten \U25berempfindlichkeit gegen\u25ber Sorbit oder Fructose (Fruchtzucker). Es k\o25nnen Magen-Darm-Beschwerden ausgel\o25st werden.~n- Es kann Arzneimittel geben, mit denen Wechselwirkungen auftreten. Sie sollten deswegen generell vor der Behandlung mit einem neuen Arzneimittel jedes andere, das Sie bereits anwenden, dem Arzt oder Apotheker angeben. Das gilt auch f\u25r Arzneimittel, die Sie selbst kaufen, nur gelegentlich anwenden oder deren Anwendung schon einige Zeit zur\u25ckliegt.~n
+17~kWie wirkt der Inhaltsstoff des Arzneimittels?~k~n~nEisen geh\o25rt zu den lebenswichtigen Spurenelementen und ist im K\o25rper an vielen Stoffwechselvorg\a25ngen beteiligt. Wichtig ist Eisen zum Beispiel f\u25r die Bildung roter Blutk\o25rperchen.
