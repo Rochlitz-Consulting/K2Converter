@@ -26,7 +26,7 @@ public class K2Converter extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        BindyCsvDataFormat bindyAscii = new BindyCsvDataFormat(AsciiRecord.class);//TODO use unmashall()???
+        BindyCsvDataFormat bindyAscii = new BindyCsvDataFormat(AsciiRecord.class);
 
         from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=kurz_FAM_L.GES&noop=true") //TODO read folder
             .split(body().tokenize(CRLF + "00"))
@@ -51,7 +51,7 @@ public class K2Converter extends RouteBuilder {
         writeSqlToFile(sql, "abda.sql");//TODO configuration
     }
 
-    private void convertToFeldType(Exchange exchange)
+    private void convertToFeldType(Exchange exchange) throws ClassNotFoundException
     {
         GenericRecord genericRecord = exchange.getIn().getBody(GenericRecord.class);
 
@@ -71,9 +71,17 @@ public class K2Converter extends RouteBuilder {
         FeldRecord feldRecord = exchange.getIn().getBody(FeldRecord.class);
         String sql;
         if(feldRecord.getPrimaryKey()){
-            sql = String.format(ALTER_TABLE_S_ADD_CONSTRAINT_S_PRIMARY_KEY, tableName, feldRecord.getFieldName(), feldRecord.getFieldName());
+            sql = String.format(
+                ALTER_TABLE_S_ADD_CONSTRAINT_S_PRIMARY_KEY, tableName,
+                feldRecord.getFieldName(),
+                feldRecord.getFieldName()
+            );
         }else {
-            sql = String.format(ALTER_TABLE_S_ADD_IF_NOT_EXISTS_COLUMN, tableName, feldRecord.getFieldName());
+            sql = String.format(
+                ALTER_TABLE_S_ADD_IF_NOT_EXISTS_COLUMN,
+                tableName,
+                feldRecord.getFieldName()
+            );
         }
         LOG.info("Generated SQL: " + sql);
 

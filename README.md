@@ -41,3 +41,9 @@ Error handling during data conversion.
 
 # TODO
 
+K Record -> done 
+F Record -> 30%
+I Record -> 
+
+
+
