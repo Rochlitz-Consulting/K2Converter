@@ -1,7 +1,5 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.2.5'
-	id 'io.spring.dependency-management' version '1.1.4'
 }
 
 group = 'org.rochlitz'
@@ -17,9 +15,6 @@ repositories {
 }
 
 dependencies {
-//	implementation 'org.springframework.boot:spring-boot-starter'
-//	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//	implementation 'org.apache.camel:camel-bindy-starter'
 	// https://mvnrepository.com/artifact/org.apache.camel/camel-core
 	implementation 'org.projectlombok:lombok:1.18.32'
 	implementation 'org.apache.camel:camel-core:4.6.0'
@@ -38,10 +33,7 @@ dependencies {
 
 	// Logback Classic
 	implementation 'ch.qos.logback:logback-classic:1.4.8'
-//    implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.14.1'
-//	runtimeOnly 'org.apache.logging.log4j:log4j-core:2.14.1'
-//	runtimeOnly 'org.apache.logging.log4j:log4j-slf4j-impl:2.14.1'
-	
+
 }
 
 tasks.named('test') {

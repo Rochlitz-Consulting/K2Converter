@@ -1,11 +1,15 @@
 package org.rochlitz.K2Converter;
 
+import static org.rochlitz.K2Converter.K2Converter.CRLF;
+
 import java.util.HashMap;
 
 import lombok.Data;
 import lombok.Generated;
 import lombok.Setter;
-
+/*
+ * Starts with 0
+ */
 //@Data
 public class GenericRecord
 {
@@ -40,14 +44,17 @@ public class GenericRecord
         this.fields = fields;
     }
 
-    public String getField01Value( )
+    public String getFieldValue(int pos)
     {
-        return getFields().get(0).split(field01ID)[1];
+        final String fieldNumber = getFieldNumber(pos);
+        return getFields().get(pos-1).split( CRLF+fieldNumber )[1];
     }
 
-    public String getField02Value( )
+    private static String getFieldNumber(int pos)
     {
-        return getFields().get(1).split(field02ID)[1];
+        if(pos<10){
+            return "0"+pos;
+        }
+        return Integer.toString(pos);
     }
-
 }

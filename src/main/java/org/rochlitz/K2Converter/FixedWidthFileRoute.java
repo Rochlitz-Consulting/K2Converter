@@ -10,7 +10,7 @@ public class FixedWidthFileRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         DataFormat bindyK = new BindyFixedLengthDataFormat(KRecord.class);
-        DataFormat bindyF = new BindyFixedLengthDataFormat(FRecord.class);
+        DataFormat bindyF = new BindyFixedLengthDataFormat(FeldRecord.class);
 
         from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=FAM_L.GES&noop=true") //TODO read all files
             .split(body().tokenize("00"))
@@ -24,7 +24,7 @@ public class FixedWidthFileRoute extends RouteBuilder {
             .when(body().startsWith("F"))
             .unmarshal(bindyF)
             .process(exchange -> {
-                FRecord record = exchange.getIn().getBody(FRecord.class);
+                FeldRecord record = exchange.getIn().getBody(FeldRecord.class);
                 System.out.println("Processed FRecord: " + record);
             })
             .otherwise()

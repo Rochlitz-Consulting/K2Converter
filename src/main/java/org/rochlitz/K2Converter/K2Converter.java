@@ -1,5 +1,9 @@
 package org.rochlitz.K2Converter;
 
+import static org.rochlitz.K2Converter.SqlTemplates.ALTER_TABLE_S_ADD_CONSTRAINT_S_PRIMARY_KEY;
+import static org.rochlitz.K2Converter.SqlTemplates.ALTER_TABLE_S_ADD_IF_NOT_EXISTS_COLUMN;
+import static org.rochlitz.K2Converter.SqlTemplates.CREATE_TABLE_IF_NOT_EXISTS;
+
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -9,7 +13,6 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Message;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.dataformat.bindy.csv.BindyCsvDataFormat;
-import org.apache.camel.dataformat.bindy.fixed.BindyFixedLengthDataFormat;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,8 +26,7 @@ public class K2Converter extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        BindyCsvDataFormat bindyAscii = new BindyCsvDataFormat(AsciiRecord.class);
-        BindyFixedLengthDataFormat typeKBindy = new BindyFixedLengthDataFormat(TypeKRecord.class);
+        BindyCsvDataFormat bindyAscii = new BindyCsvDataFormat(AsciiRecord.class);//TODO use unmashall()???
 
         from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=kurz_FAM_L.GES&noop=true") //TODO read folder
             .split(body().tokenize(CRLF + "00"))
@@ -33,28 +35,43 @@ public class K2Converter extends RouteBuilder {
             .when(this::isTypeOfKopf)
             .process(this::convertKopfToSQL)
             .when(this::isTypeOfFeld)
+            .process(this::convertToFeldType)
             .process(this::convertFeldToSQL)
             .to("log:processed");
     }//TODO Camel RouteMetrics: add monitoring CPU, Memory
 
-    private void convertFeldToSQL(Exchange exchange)
+    private void convertKopfToSQL(Exchange exchange)
     {
-
         GenericRecord genericRecord = exchange.getIn().getBody(GenericRecord.class);
-        String sqlADDFieldTableTemplate = "ALTER TABLE %s ADD COLUMN %s;";
-        String feldName = genericRecord.getField02Value();
-        String sql = String.format(sqlADDFieldTableTemplate, tableName, feldName);
+
+        tableName = genericRecord.getFieldValue(1);
+        String sql = String.format(CREATE_TABLE_IF_NOT_EXISTS, tableName);
         LOG.info("Generated SQL: " + sql);
 
         writeSqlToFile(sql, "abda.sql");//TODO configuration
     }
 
-    private void convertKopfToSQL(Exchange exchange)
+    private void convertToFeldType(Exchange exchange)
     {
         GenericRecord genericRecord = exchange.getIn().getBody(GenericRecord.class);
-        String sqlCreateTableTemplate = "CREATE TABLE %s ;"; //TODO
-        tableName = genericRecord.getField01Value();
-        String sql = String.format(sqlCreateTableTemplate, tableName);
+
+        FeldRecord feldRecord = new FeldRecord();
+        feldRecord.setId(genericRecord.getFieldValue(1));
+        feldRecord.setFieldName(genericRecord.getFieldValue(2));
+        feldRecord.convertAndSetPrimaryKey(genericRecord.getFieldValue(3));
+
+        exchange.getIn().setBody(feldRecord);
+    }
+
+    private void convertFeldToSQL(Exchange exchange)
+    {
+        FeldRecord feldRecord = exchange.getIn().getBody(FeldRecord.class);
+        String sql;
+        if(feldRecord.getPrimaryKey()){
+            sql = String.format(ALTER_TABLE_S_ADD_CONSTRAINT_S_PRIMARY_KEY, tableName, feldRecord.getFieldName(), feldRecord.getFieldName());
+        }else {
+            sql = String.format(ALTER_TABLE_S_ADD_IF_NOT_EXISTS_COLUMN, tableName, feldRecord.getFieldName());
+        }
         LOG.info("Generated SQL: " + sql);
 
         writeSqlToFile(sql, "abda.sql");//TODO configuration
@@ -64,7 +81,7 @@ public class K2Converter extends RouteBuilder {
     {
         Message message = exchange.getIn();
         String record = message.getBody(String.class);
-        GenericRecord genericRecord = mapToType(record);
+        GenericRecord genericRecord = map(record);
         message.setBody(genericRecord);
     }
 
@@ -89,7 +106,7 @@ public class K2Converter extends RouteBuilder {
         return body.getType().startsWith("K");
     }
 
-    private GenericRecord mapToType(String record) {
+    private GenericRecord map(String record) {
         HashMap<Integer, String> fields = new HashMap();
 
         int i = 0;
@@ -117,7 +134,7 @@ public class K2Converter extends RouteBuilder {
 
         String type = "K";
 
-        //TODO case
+        //TODO use case
         if(!record.startsWith("00K")){
             type = record.substring(0, 1);
         }
