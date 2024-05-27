@@ -15,7 +15,9 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.dataformat.bindy.csv.BindyCsvDataFormat;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.rochlitz.K2Converter.objectConverter.FeldConverterProcessor;
+import org.rochlitz.K2Converter.out.SqlToFileWriter;
 import org.rochlitz.K2Converter.sqlConverter.FeldToSqlConverter;
+import org.rochlitz.K2Converter.sqlConverter.KopfToSqlConverter;
 import org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,36 +38,14 @@ public class K2Converter extends RouteBuilder {
             .process(new RecordUnmashallProcessor())
             .choice()
             .when(this::isTypeOfKopf)
-            .process(this::convertKopfToSQL)
+            .process(new KopfToSqlConverter())
             .when(this::isTypeOfFeld)
             .process(new FeldConverterProcessor())
             .process(new FeldToSqlConverter())
+            .process(new SqlToFileWriter())
             .to("log:processed");
     }//TODO Camel RouteMetrics: add monitoring CPU, Memory
 
-
-    private void convertKopfToSQL(Exchange exchange)
-    {
-        GenericRecord genericRecord = exchange.getIn().getBody(GenericRecord.class);
-
-        ThreadLocalContext.setTableName(genericRecord.getFieldValue(1));
-        String sql = String.format(CREATE_TABLE_IF_NOT_EXISTS, tableName);
-        LOG.info("Generated SQL: " + sql);
-
-        writeSqlToFile(sql, "abda.sql");//TODO configuration
-    }
-
-
-
-
-
-    private void writeSqlToFile(String sql, String fileName) {
-        try (PrintWriter out = new PrintWriter(new FileWriter(fileName, true))) {
-            out.println(sql);
-        } catch (Exception e) {
-            LOG.error("Error writing SQL to file", e);
-        }
-    }
 
 
     private boolean isTypeOfFeld(Exchange exchange)
