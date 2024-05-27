@@ -15,7 +15,6 @@ public class FeldRecord<T> {
     private Boolean primaryKey = false;
     private Boolean nullable = false;
     private Integer length;
-    private String fieldValue;
     private Class<T> dataType;
 
     private static final Map<String, Class<?>> DATA_TYPE_MAP = new HashMap<>();

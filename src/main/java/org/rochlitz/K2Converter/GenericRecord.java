@@ -1,18 +1,17 @@
 package org.rochlitz.K2Converter;
 
-import static org.rochlitz.K2Converter.K2Converter.CRLF;
+
+import static org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor.CRLF;
 
 import java.util.HashMap;
 
-import lombok.Data;
-import lombok.Generated;
-import lombok.Setter;
 /*
  * Starts with 0
  */
 //@Data
 public class GenericRecord
 {
+
     public GenericRecord(String type, HashMap<Integer, String> fields)
     {
         this.type = type;
