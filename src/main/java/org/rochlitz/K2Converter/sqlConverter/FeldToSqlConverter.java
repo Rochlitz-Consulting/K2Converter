@@ -13,8 +13,8 @@ import java.time.LocalDateTime;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
+import org.rochlitz.K2Converter.Context;
 import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
-import org.rochlitz.K2Converter.ThreadLocalContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +25,7 @@ public class FeldToSqlConverter implements Processor
 
     public void process(Exchange exchange) throws ClassNotFoundException //TODO add   catch
     {
-        String tableName = ThreadLocalContext.getTableName();
+        String tableName = Context.getTableName();
         FeldRecord feldRecord = exchange.getIn().getBody(FeldRecord.class);
         StringBuffer sql = new StringBuffer();
         if(feldRecord.getPrimaryKey()){

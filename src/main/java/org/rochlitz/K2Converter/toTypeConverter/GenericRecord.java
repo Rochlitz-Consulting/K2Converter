@@ -3,6 +3,7 @@ package org.rochlitz.K2Converter.toTypeConverter;
 import static org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor.CRLF;
 
 import java.util.HashMap;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +15,7 @@ public class GenericRecord
 
     private String type;
     //starts with 0
-    private HashMap<Integer, String> fields;
+    private List<String> fields;
 
 
 

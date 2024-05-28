@@ -1,8 +1,10 @@
 package org.rochlitz.K2Converter.toTypeConverter;
 
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.camel.Exchange;
+import org.rochlitz.K2Converter.Context;
 
 public class InsertConverterProcessor implements org.apache.camel.Processor
 {
@@ -11,14 +13,14 @@ public class InsertConverterProcessor implements org.apache.camel.Processor
     {
         GenericRecord genericRecord = exchange.getIn().getBody(GenericRecord.class);
 
-        InsertRecord feldRecord = new InsertRecord();
-        feldRecord.setId(genericRecord.getFields().get(0));
+        InsertRecord insertRecord = new InsertRecord();
+        List<String> fields = genericRecord.getFields();
+        insertRecord.setId(fields.get(0));
 
-        genericRecord.getFields().remove(0);
-        String content = genericRecord.getFields().values().stream().collect(Collectors.joining());
+        List<String> columns = new ArrayList<>(genericRecord.getFields());
+        columns.remove(0);
+        insertRecord.setColumns(columns);
 
-        feldRecord.setContent(content);
-
-        exchange.getIn().setBody(feldRecord);
+        exchange.getIn().setBody(insertRecord);
     }
 }

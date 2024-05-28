@@ -39,6 +39,7 @@ public class K2Converter extends RouteBuilder {
             .when(this::isTypeOfInsert)
             .process(new InsertConverterProcessor())
             .process(new InsertToSqlConverter())
+            .process(new SqlToFileWriter())
             .to("log:processed");
     }//TODO Camel RouteMetrics: add monitoring CPU, Memory
 

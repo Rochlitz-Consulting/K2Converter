@@ -7,7 +7,7 @@ import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.USE;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.rochlitz.K2Converter.toTypeConverter.GenericRecord;
-import org.rochlitz.K2Converter.ThreadLocalContext;
+import org.rochlitz.K2Converter.Context;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,13 +20,13 @@ public class KopfToSqlConverter implements Processor
     //TODO add   catch
     {
         GenericRecord genericRecord = exchange.getIn().getBody(GenericRecord.class);
-        ThreadLocalContext.setTableName(genericRecord.getFieldValue(1));
 
         StringBuffer sql = new StringBuffer();
         sql.append(String.format(CREATE_SCHEMA_IF_NOT_EXISTS_S, "LAIENINFO") + SEMICOLON);//TODO configure
         sql.append(String.format(USE, "LAIENINFO") + SEMICOLON);//TODO configure
 
         LOG.info("Generated SQL: " + sql);
+        Context.setTableName(genericRecord.getFieldValue(1));
         exchange.getIn().setBody(sql);
     }
 }
