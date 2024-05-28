@@ -36,7 +36,7 @@ public class InsertToSqlConverter implements org.apache.camel.Processor
 
         StringBuffer sql = new StringBuffer();
         sql.append(String.format(INSERT_INTO, tableName, columns) + SEMICOLON);//TODO configure
-        sql.append(String.format(INSERT_VALUES, tableName) + SEMICOLON);//TODO configure
+        sql.append(String.format(INSERT_VALUES, values) + SEMICOLON);//TODO configure
 
 //        sql.append(String.format(USE, "LAIENINFO") + SEMICOLON);//TODO configure
 
