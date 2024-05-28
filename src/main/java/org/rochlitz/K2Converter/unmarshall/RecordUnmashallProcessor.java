@@ -6,7 +6,7 @@ import java.util.HashMap;
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
 import org.apache.camel.Processor;
-import org.rochlitz.K2Converter.GenericRecord;
+import org.rochlitz.K2Converter.objectConverter.GenericRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

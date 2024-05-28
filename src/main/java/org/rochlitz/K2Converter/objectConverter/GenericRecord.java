@@ -1,4 +1,4 @@
-package org.rochlitz.K2Converter;
+package org.rochlitz.K2Converter.objectConverter;
 
 
 import static org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor.CRLF;

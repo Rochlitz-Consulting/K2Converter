@@ -1,10 +1,12 @@
-package org.rochlitz.K2Converter;
+package org.rochlitz.prototyping;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.dataformat.bindy.fixed.BindyFixedLengthDataFormat;
 import org.apache.camel.spi.DataFormat;
+import org.rochlitz.K2Converter.FeldRecord;
+
 public class FixedWidthFileRoute extends RouteBuilder {
 
     @Override

@@ -3,7 +3,6 @@ package org.rochlitz.K2Converter.objectConverter;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.rochlitz.K2Converter.FeldRecord;
-import org.rochlitz.K2Converter.GenericRecord;
 
 public class FeldConverterProcessor implements Processor
 {

@@ -1,14 +1,13 @@
-package org.rochlitz.K2Converter;
+package org.rochlitz.prototyping;
 
+import org.apache.camel.dataformat.bindy.annotation.CsvRecord;
 import org.apache.camel.dataformat.bindy.annotation.DataField;
-import org.apache.camel.dataformat.bindy.annotation.FixedLengthRecord;
 
-/**
- * „Kopfsatz“, steht am Beginn jeder Datei
- */
-@FixedLengthRecord(skipHeader = true)
-public class TypeKRecord extends BaseRecord {
+import lombok.Data;
 
+@Data
+@CsvRecord(separator = "','", skipFirstLine = false)
+public class AsciiRecord {
 
     @DataField(pos = 1)
     private String field1;
@@ -39,6 +38,7 @@ public class TypeKRecord extends BaseRecord {
 
     @DataField(pos = 10)
     private String field10;
+
     @DataField(pos = 11)
     private String field11;
 

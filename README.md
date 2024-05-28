@@ -1,10 +1,5 @@
 # K2Converter
 
-Gradle Projekt
-Apache Camel with Bindy
-
-
-K2Converter
 # Overview
 K2Converter is a Java-based project that uses Apache Camel for routing and processing data. It is designed to convert data from one format to another, specifically from ASCII to SQL. The project uses Gradle as a build tool and Spring Boot as a framework.  
 
@@ -40,10 +35,10 @@ Logging of processed data.
 Error handling during data conversion.
 
 # TODO
-
+SQL ~ 40%
 K Record -> done 
-F Record -> 30%
-I Record -> 
+F Record -> 60%
+I Record -> 0%
 
 
 

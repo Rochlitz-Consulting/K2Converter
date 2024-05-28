@@ -1,4 +1,4 @@
-package org.rochlitz.K2Converter;
+package org.rochlitz.prototyping;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.Message;
