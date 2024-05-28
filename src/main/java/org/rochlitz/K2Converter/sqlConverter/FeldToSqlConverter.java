@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
-import org.rochlitz.K2Converter.FeldRecord;
+import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
 import org.rochlitz.K2Converter.ThreadLocalContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,6 +35,7 @@ public class FeldToSqlConverter implements Processor
             addFieldType(feldRecord, sql);
         }
 
+//TODO add NULL
 
         sql.append(SEMICOLON);
 

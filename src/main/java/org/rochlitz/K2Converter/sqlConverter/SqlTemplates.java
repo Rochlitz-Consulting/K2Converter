@@ -14,5 +14,7 @@ public class SqlTemplates
     public final static String INT = " INT(%s)";
     public final static String DATE = " DATE";
     public final static String SEMICOLON = " ;";
+    public final static String ALTER_TABLE_S_ADD_IF_NOT_EXISTS_COLUMN = "INSERT INTO %s (column1, column2, ...)\n"
+        + "VALUES (value1, value2, ...);\n   %s ";//TODO add type
 
 }

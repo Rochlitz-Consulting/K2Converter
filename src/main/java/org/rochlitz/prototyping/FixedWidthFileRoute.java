@@ -5,7 +5,7 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.dataformat.bindy.fixed.BindyFixedLengthDataFormat;
 import org.apache.camel.spi.DataFormat;
-import org.rochlitz.K2Converter.FeldRecord;
+import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
 
 public class FixedWidthFileRoute extends RouteBuilder {
 

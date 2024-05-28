@@ -4,12 +4,12 @@ import static org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor.CRLF;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
-import org.apache.camel.Message;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.dataformat.bindy.csv.BindyCsvDataFormat;
 import org.apache.camel.impl.DefaultCamelContext;
-import org.rochlitz.K2Converter.objectConverter.FeldConverterProcessor;
-import org.rochlitz.K2Converter.objectConverter.GenericRecord;
+import org.rochlitz.K2Converter.toTypeConverter.FeldConverterProcessor;
+import org.rochlitz.K2Converter.toTypeConverter.GenericRecord;
+import org.rochlitz.K2Converter.toTypeConverter.InsertConverterProcessor;
+import org.rochlitz.K2Converter.toTypeConverter.InsertToSqlConverter;
 import org.rochlitz.K2Converter.out.SqlToFileWriter;
 import org.rochlitz.K2Converter.sqlConverter.FeldToSqlConverter;
 import org.rochlitz.K2Converter.sqlConverter.KopfToSqlConverter;
@@ -21,8 +21,6 @@ import org.slf4j.LoggerFactory;
 public class K2Converter extends RouteBuilder {
 
     private static final Logger LOG = LoggerFactory.getLogger(K2Converter.class);
-
-    ThreadLocal<String> tableName = new ThreadLocal<>();
 
     @Override
     public void configure() throws Exception {
@@ -38,6 +36,9 @@ public class K2Converter extends RouteBuilder {
             .process(new FeldConverterProcessor())
             .process(new FeldToSqlConverter())
             .process(new SqlToFileWriter())
+            .when(this::isTypeOfInsert)
+            .process(new InsertConverterProcessor())
+            .process(new InsertToSqlConverter())
             .to("log:processed");
     }//TODO Camel RouteMetrics: add monitoring CPU, Memory
 
@@ -55,9 +56,11 @@ public class K2Converter extends RouteBuilder {
         return body.getType().startsWith("K");
     }
 
-
-
-
+    private boolean isTypeOfInsert(Exchange exchange)
+    {
+        GenericRecord body = exchange.getIn().getBody(GenericRecord.class);
+        return body.getType().startsWith("I");
+    }
 
     public static void main(String[] args) throws Exception {
         CamelContext context = new DefaultCamelContext();

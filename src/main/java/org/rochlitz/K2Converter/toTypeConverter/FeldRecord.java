@@ -1,11 +1,13 @@
-package org.rochlitz.K2Converter;
+package org.rochlitz.K2Converter.toTypeConverter;
 
 import java.time.LocalDateTime;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.Data;
+import lombok.ToString;
 
+@ToString
 @Data
 public class FeldRecord<T> {
     public final static Integer MAX_FIELD_SIZE = 1000000; // 1 mil ascii chars == 600 A4
