@@ -7,6 +7,7 @@ import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.CREATE_TABLE_IF
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.DATE;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.INT;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.SEMICOLON;
+import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.TEXT;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.VARCHAR;
 
 import java.time.LocalDateTime;
@@ -57,12 +58,21 @@ public class FeldToSqlConverter implements Processor
     private static void addFieldType(FeldRecord feldRecord, StringBuffer sql)
     {
         if(String.class == feldRecord.getDataType() ){
-            sql.append(
-                String.format(
-                    VARCHAR,
-                    feldRecord.getLength()
-                )
-            );
+            if(feldRecord.getLength() >= 5000 ){
+                sql.append(
+                    String.format(
+                        TEXT
+                    )
+                );
+            }else
+            {
+                sql.append(
+                    String.format(
+                        VARCHAR,
+                        feldRecord.getLength()
+                    )
+                );
+            }
         }
 
         if(Boolean.class == feldRecord.getDataType() ){

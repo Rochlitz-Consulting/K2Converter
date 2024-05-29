@@ -38,7 +38,7 @@ public class RecordUnmashallProcessor implements Processor
         while (true) {
             boolean endReached=false;
             int beginIndex = record.indexOf(CRLF.concat( String.format("%02d", i + 1)));
-            int endIndex = i < 9 ? record.indexOf(CRLF.concat(String.format("%02d", i + 2))) : record.length();
+            int endIndex =  record.indexOf(CRLF.concat(String.format("%02d", i + 2)));
             if(beginIndex==-1){
                 break;
             }
@@ -46,9 +46,9 @@ public class RecordUnmashallProcessor implements Processor
                 endReached=true;
             }
             if (endReached) {
-                fields.put(i, record.substring(beginIndex));
+                fields.put(i, record.substring(beginIndex).replace("\r\n", "").substring(2));
             }else{
-                fields.put(i, record.substring(beginIndex, endIndex));
+                fields.put(i, record.substring(beginIndex, endIndex).replace("\r\n", "").substring(2));
             }
             i++;
         }

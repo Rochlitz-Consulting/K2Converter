@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.camel.Exchange;
-import org.rochlitz.K2Converter.Context;
 
 public class InsertConverterProcessor implements org.apache.camel.Processor
 {
@@ -15,12 +14,10 @@ public class InsertConverterProcessor implements org.apache.camel.Processor
 
         InsertRecord insertRecord = new InsertRecord();
         List<String> fields = genericRecord.getFields();
-        insertRecord.setId(fields.get(0));
 
         List<String> columns = new ArrayList<>(genericRecord.getFields());
-        columns.remove(0);
         insertRecord.setColumns(columns);
-
+//TODO remove 0 if empty field
         exchange.getIn().setBody(insertRecord);
     }
 }

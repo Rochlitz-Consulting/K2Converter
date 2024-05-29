@@ -1,8 +1,5 @@
 package org.rochlitz.K2Converter.toTypeConverter;
 
-import static org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor.CRLF;
-
-import java.util.HashMap;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -21,15 +18,7 @@ public class GenericRecord
 
     public String getFieldValue(int pos)
     {
-        final String fieldNumber = getFieldNumber(pos);
-        return getFields().get(pos-1).split( CRLF+fieldNumber )[1];
+        return fields.get(pos-1);
     }
 
-    private static String getFieldNumber(int pos)
-    {
-        if(pos<10){
-            return "0"+pos;
-        }
-        return Integer.toString(pos);
-    }
 }
