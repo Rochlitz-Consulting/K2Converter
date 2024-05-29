@@ -15,7 +15,7 @@ public class SqlTemplates
     public final static String BOOLEAN = " BOOLEAN";
     public final static String INT = " INT(%s)";
     public final static String DATE = " DATE";
-    public final static String SEMICOLON = " ;";
+    public final static String SEMICOLON = "; ";
     public final static String INSERT_INTO = "INSERT INTO %s (%s)";
     public final static String INSERT_VALUES = " VALUES (%s)";
 

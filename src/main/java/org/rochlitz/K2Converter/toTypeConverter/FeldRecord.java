@@ -1,9 +1,6 @@
 package org.rochlitz.K2Converter.toTypeConverter;
 
-import java.time.LocalDateTime;
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
+
 import lombok.Data;
 import lombok.ToString;
 
@@ -16,38 +13,10 @@ public class FeldRecord<T> {
     private String fieldName;
     private Boolean primaryKey = false;
     private Boolean nullable = false;
-    private Integer length;
+    private Integer bytes;
     private Class<T> dataType;
 
-    private static final Map<String, Class<?>> DATA_TYPE_MAP = new HashMap<>();
 
-    static {
-        DATA_TYPE_MAP.put("AL1", String.class);
-        DATA_TYPE_MAP.put("AN1", String.class);
-        DATA_TYPE_MAP.put("AN2", String.class);
-        DATA_TYPE_MAP.put("AN3", String.class);
-        DATA_TYPE_MAP.put("ATC", String.class);
-        DATA_TYPE_MAP.put("B64", Base64.class);
-        DATA_TYPE_MAP.put("DT8", LocalDateTime.class);
-        DATA_TYPE_MAP.put("FLA", Boolean.class);
-        DATA_TYPE_MAP.put("FN1", String.class);
-        DATA_TYPE_MAP.put("FN2", String.class);
-        DATA_TYPE_MAP.put("GK1", Double.class);
-        DATA_TYPE_MAP.put("GRU", String.class);
-        DATA_TYPE_MAP.put("ID1", String.class);
-        DATA_TYPE_MAP.put("IKZ", String.class);
-        DATA_TYPE_MAP.put("IND", String.class);
-        DATA_TYPE_MAP.put("MPG", Double.class);
-        DATA_TYPE_MAP.put("NU1", Integer.class);
-        DATA_TYPE_MAP.put("NU2", Integer.class);
-        DATA_TYPE_MAP.put("NU3", Integer.class);
-        DATA_TYPE_MAP.put("NU4", Integer.class);
-        DATA_TYPE_MAP.put("PNH", Integer.class);
-        DATA_TYPE_MAP.put("PRO", String.class);
-        DATA_TYPE_MAP.put("PZN", Integer.class);
-        DATA_TYPE_MAP.put("PZ8", Integer.class);
-        DATA_TYPE_MAP.put("WGS", String.class);
-    }
 
     public void convertAndSetPrimaryKey(String primaryKey) {
         this.primaryKey = "1".equals(primaryKey);
@@ -57,25 +26,39 @@ public class FeldRecord<T> {
         this.nullable = "1".equals(fieldValue);
     }
 
+    /**
+     * Typ der Feldlänge hat folgenden Wertebereich:
+     * F feste Feldlänge, in ID 06 ist die konkrete Länge angegeben
+     * V variable Feldlänge, in ID 06 ist die maximale Länge angegeben
+     * U variable, unbegrenzte Feldlänge, ID 06 ist nicht belegt
+     *
+     * @param fieldValue
+     * @param length
+     */
     public void convertAndSetLength(String fieldValue, String length) {
-        if ("F".equals(fieldValue) || "V".equals(fieldValue)) {
-            this.length = Integer.valueOf(length);
-        } else if ("U".equals(fieldValue)) {
-            this.length = MAX_FIELD_SIZE; // maximum
+        boolean fixSizeLimit = "F".equals(fieldValue);
+        boolean variableSizeLimit = "V".equals(fieldValue);
+        boolean unlimitedSize = "U".equals(fieldValue);
+
+        if (fixSizeLimit || variableSizeLimit) {
+            this.bytes = Integer.valueOf(length);
+        } else
+        {
+            if (unlimitedSize) {
+                this.bytes = MAX_FIELD_SIZE; // maximum
+            }
         }
     }
 
     /**
+     * Feldlänge in Byte, maximal 10-stellig, Datentyp NU1
      * Converts the field value to the correct data type
      * @param fieldValue
      */
-    public void convertAndSetDataType(String fieldValue) throws ClassNotFoundException {
-        String key = fieldValue.length() >= 3 ? fieldValue.substring(0, 3) : fieldValue;
-        Class<?> clazz = DATA_TYPE_MAP.get(key);
-        if (clazz != null) {
-            this.dataType = (Class<T>) clazz;
-        } else {
-            throw new ClassNotFoundException("No data type found for key: " + key);
-        }
+    public void convertAndSetDataType(String fieldValue) throws ClassNotFoundException
+    {
+        K2DataTypeToJavaConverter<Object> typeConverter = new K2DataTypeToJavaConverter<>();
+        dataType = (Class<T>) typeConverter.convertNU1ToJavaType(fieldValue);
     }
+
 }

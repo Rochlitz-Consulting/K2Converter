@@ -30,7 +30,7 @@ public class InsertToSqlConverter implements org.apache.camel.Processor
             .collect(Collectors.joining(", "));
 
         String values = insertRecord
-            .getColumns()
+            .getValues()
             .stream()
             .map(value -> "'" + value + "'")
             .collect(Collectors.joining(", "))

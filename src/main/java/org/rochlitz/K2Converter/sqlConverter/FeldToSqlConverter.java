@@ -57,8 +57,10 @@ public class FeldToSqlConverter implements Processor
 
     private static void addFieldType(FeldRecord feldRecord, StringBuffer sql)
     {
+        final int toleranceBuffer = 100;
+
         if(String.class == feldRecord.getDataType() ){
-            if(feldRecord.getLength() >= 5000 ){
+            if(feldRecord.getBytes() >= 5000 ){
                 sql.append(
                     String.format(
                         TEXT
@@ -66,10 +68,11 @@ public class FeldToSqlConverter implements Processor
                 );
             }else
             {
+
                 sql.append(
                     String.format(
                         VARCHAR,
-                        feldRecord.getLength()+100
+                        feldRecord.getBytes()+ toleranceBuffer
                     )
                 );
             }
@@ -79,7 +82,7 @@ public class FeldToSqlConverter implements Processor
             sql.append(
                 String.format(
                     BOOLEAN,
-                    feldRecord.getLength()
+                    feldRecord.getBytes()
                 )
             );
         }
@@ -87,18 +90,18 @@ public class FeldToSqlConverter implements Processor
         if(Integer.class == feldRecord.getDataType() ){
             //2,147,483,647
             String intSize = "SMALLINT";
-            if(abs(feldRecord.getLength()) > 32000){
+            if(abs(feldRecord.getBytes()) > 32000){
                 intSize = "INT";
             }
 
-            if(abs(feldRecord.getLength()) >  2147483647){
+            if(abs(feldRecord.getBytes()) >  2147483647){
                 intSize = "BIGINT";
             }
 
             sql.append(
                 String.format(
                     INT,
-                    feldRecord.getLength()
+                    feldRecord.getBytes()
                 )
             );
         }

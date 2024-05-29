@@ -4,6 +4,7 @@ import static org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor.CRLF;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.rochlitz.K2Converter.toTypeConverter.FeldConverterProcessor;
@@ -26,6 +27,7 @@ public class K2Converter extends RouteBuilder {
     public void configure() throws Exception {
 
         from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=FAM_L.GES&noop=true") //TODO read folder , configure
+//        from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=kurz_FAM_L.GES&noop=true") //TODO read folder , configure
             .split(body().tokenize(CRLF + "00"))
             .process(new RecordUnmashallProcessor())
             .choice()
@@ -40,10 +42,20 @@ public class K2Converter extends RouteBuilder {
             .process(new InsertConverterProcessor())
             .process(new InsertToSqlConverter())
             .process(new SqlToFileWriter())
-            .to("log:processed");
+            .to("log:processed")
+        ;
+        //TODO log statistic at the end
+
+//TODO add E record
+
     }//TODO Camel RouteMetrics: add monitoring CPU, Memory
 
-
+    private static Processor getStatistic()
+    {
+        return exchange -> {
+            LOG.info("Completed conversion with {} records.", Context.getCountInserts());
+        };
+    }
 
     private boolean isTypeOfFeld(Exchange exchange)
     {
@@ -69,5 +81,6 @@ public class K2Converter extends RouteBuilder {
         context.start();
         Thread.sleep(5000);
         context.stop();
+
     }
 }

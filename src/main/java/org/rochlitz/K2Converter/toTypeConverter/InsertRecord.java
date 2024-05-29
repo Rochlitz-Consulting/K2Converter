@@ -10,7 +10,6 @@ import lombok.ToString;
 public class InsertRecord<T> {
     public final static Integer MAX_FIELD_SIZE = 1000000; // 1 mil ascii chars == 600 A4
 
-    private List<String> columns;
-
+    private List<String> values;
 
 }

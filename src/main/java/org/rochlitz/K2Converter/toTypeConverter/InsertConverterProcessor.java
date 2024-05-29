@@ -21,7 +21,7 @@ public class InsertConverterProcessor implements org.apache.camel.Processor
         List<String> fields = genericRecord.getFields();
 
         List<String> columns = new ArrayList<>(genericRecord.getFields());
-        insertRecord.setColumns(columns);
+        insertRecord.setValues(columns);
 //TODO remove 0 value if empty field
 
         LOG.info("insert records: {} ", Context.incrementCountInserts());
