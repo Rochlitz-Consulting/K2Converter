@@ -40,12 +40,12 @@ public class K2DataTypeToJavaConverter<T>
 
     public Class<T> convertNU1ToJavaType(String fieldValue) throws ClassNotFoundException
     {
-        String key = fieldValue.length() >= 3 ? fieldValue.substring(0, 3) : fieldValue;
-        Class<?> clazz = DATA_TYPE_MAP.get(key);
+        String k2Type = fieldValue.length() >= 3 ? fieldValue.substring(0, 3) : fieldValue;
+        Class<?> clazz = DATA_TYPE_MAP.get(k2Type);
         if (clazz != null) {
             return (Class<T>) clazz;
         } else {
-            throw new ClassNotFoundException("No data type found for key: " + key);
+            throw new ClassNotFoundException("No data type found for k2Type: " + k2Type);
         }
 
     }

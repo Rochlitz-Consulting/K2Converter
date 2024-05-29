@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory;
 
 public class FeldToSqlConverter implements Processor
 {
-
+//TODO extract to converter class
     private static final Logger LOG = LoggerFactory.getLogger(FeldToSqlConverter.class);
 
     public void process(Exchange exchange) throws ClassNotFoundException //TODO add   catch
@@ -57,7 +57,7 @@ public class FeldToSqlConverter implements Processor
 
     private static void addFieldType(FeldRecord feldRecord, StringBuffer sql)
     {
-        final int toleranceBuffer = 100;
+        final int toleranceBuffer = 10;//TODO configure
 
         if(String.class == feldRecord.getDataType() ){
             if(feldRecord.getBytes() >= 5000 ){
@@ -101,7 +101,7 @@ public class FeldToSqlConverter implements Processor
             sql.append(
                 String.format(
                     INT,
-                    feldRecord.getBytes()
+                    feldRecord.getBytes()+toleranceBuffer
                 )
             );
         }
