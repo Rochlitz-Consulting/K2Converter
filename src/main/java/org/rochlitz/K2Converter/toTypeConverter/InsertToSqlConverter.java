@@ -29,7 +29,6 @@ public class InsertToSqlConverter implements org.apache.camel.Processor
             .map(feldRecord -> feldRecord.getFieldName())
             .collect(Collectors.joining(", "));
 
-//        StringBuffer values = new StringBuffer();
         String values = insertRecord
             .getColumns()
             .stream()
@@ -41,8 +40,6 @@ public class InsertToSqlConverter implements org.apache.camel.Processor
         StringBuffer sql = new StringBuffer();
         sql.append(String.format(INSERT_INTO, tableName, columns) );//TODO configure
         sql.append(String.format(INSERT_VALUES, values) + SEMICOLON);//TODO configure
-
-//        sql.append(String.format(USE, "LAIENINFO") + SEMICOLON);//TODO configure
 
         LOG.info("Generated SQL: " + sql);
         exchange.getIn().setBody(sql);

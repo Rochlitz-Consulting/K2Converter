@@ -15,8 +15,10 @@ public class SqlToFileWriter implements Processor
 
     public void process(Exchange exchange) throws ClassNotFoundException //TODO add   catch
     {
+
         String fileName = "abda.sql";//TODO configuration
         String sql = exchange.getIn().getBody(String.class);
+        //TODO add SQL validation
         try (PrintWriter out = new PrintWriter(new FileWriter(fileName, true))) {
             out.println(sql);
         } catch (Exception e) {

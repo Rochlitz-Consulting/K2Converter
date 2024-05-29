@@ -34,6 +34,9 @@ public class RecordUnmashallProcessor implements Processor
     private GenericRecord map(String record) {
         HashMap<Integer, String> fields = new HashMap();
 
+        record.replace('"','"');
+        record.replace("'","\'");
+
         int i = 0;
         while (true) {
             boolean endReached=false;

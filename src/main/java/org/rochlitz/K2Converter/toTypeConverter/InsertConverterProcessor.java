@@ -4,9 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.camel.Exchange;
+import org.rochlitz.K2Converter.Context;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class InsertConverterProcessor implements org.apache.camel.Processor
 {
+
+    private static final Logger LOG = LoggerFactory.getLogger(InsertConverterProcessor.class);
 
     public void process(Exchange exchange) throws ClassNotFoundException //TODO add   catch
     {
@@ -17,7 +22,9 @@ public class InsertConverterProcessor implements org.apache.camel.Processor
 
         List<String> columns = new ArrayList<>(genericRecord.getFields());
         insertRecord.setColumns(columns);
-//TODO remove 0 if empty field
+//TODO remove 0 value if empty field
+
+        LOG.info("insert records: {} ", Context.incrementCountInserts());
         exchange.getIn().setBody(insertRecord);
     }
 }

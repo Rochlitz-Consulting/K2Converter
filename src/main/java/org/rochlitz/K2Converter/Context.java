@@ -11,6 +11,8 @@ public class Context
 
     private static final ThreadLocal<List> tableInfo = new ThreadLocal<>();
 
+    private static final ThreadLocal<Integer> countInserts = new ThreadLocal<>();
+
     public static void setTableName(String value) {
         tableName.set(value);
     }
@@ -30,8 +32,19 @@ public class Context
         return tableInfo.get();
     }
 
-    public static FeldRecord getTableInfo(int pos) {
-        return (FeldRecord) tableInfo.get().get(pos);
+
+    public static Integer incrementCountInserts() {
+        Integer count = countInserts.get();
+        if(count == null){
+            count = 0;
+        }
+        count++;
+        countInserts.set(count);
+        return getCountInserts();
+    }
+
+    public static Integer getCountInserts() {
+        return countInserts.get();
     }
 
 

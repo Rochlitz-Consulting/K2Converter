@@ -69,7 +69,7 @@ public class FeldToSqlConverter implements Processor
                 sql.append(
                     String.format(
                         VARCHAR,
-                        feldRecord.getLength()
+                        feldRecord.getLength()+100
                     )
                 );
             }

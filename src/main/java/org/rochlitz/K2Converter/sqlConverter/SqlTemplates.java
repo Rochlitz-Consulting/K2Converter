@@ -4,7 +4,8 @@ public class SqlTemplates
 {
 
     //TDOO set UTF-8
-    //TDOO add if not exsit
+    //TDOO add if not exist || TRY CATCH || IFERROR
+
     public final static String CREATE_SCHEMA_IF_NOT_EXISTS_S = "CREATE SCHEMA  %s";
     public final static String USE = "USE %s";
     public final static String CREATE_TABLE_IF_NOT_EXISTS_ADD_PRIMARY_KEY = "CREATE TABLE  %s (%s BIGINT PRIMARY KEY) ";
