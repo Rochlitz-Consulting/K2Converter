@@ -25,8 +25,16 @@ dependencies {
 // https://mvnrepository.com/artifact/org.projectlombok/lombok
 	compileOnly 'org.projectlombok:lombok:1.18.32'
 
+	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	// https://mvnrepository.com/artifact/org.projectlombok/lombok
+// https://mvnrepository.com/artifact/org.mockito/mockito-all
+	testImplementation 'org.mockito:mockito-all:1.10.19'
+	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+	implementation 'mysql:mysql-connector-java:8.0.33'
+
+
 
 	// SLF4J API
 	implementation 'org.slf4j:slf4j-api:2.0.7'
