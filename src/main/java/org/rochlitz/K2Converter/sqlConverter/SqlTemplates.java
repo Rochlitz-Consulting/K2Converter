@@ -9,7 +9,7 @@ public class SqlTemplates
     public final static String CREATE_SCHEMA_IF_NOT_EXISTS_S = "CREATE SCHEMA  %s";
     public final static String USE = "USE %s";
     public final static String CREATE_TABLE_IF_NOT_EXISTS_ADD_PRIMARY_KEY = "CREATE TABLE  %s (%s BIGINT PRIMARY KEY) ";
-    public final static String ALTER_TABLE_S_ADD_IF_NOT_EXISTS_COLUMN = "ALTE R TABLE %s ADD   %s ";//TODO add type
+    public final static String ALTER_TABLE_S_ADD_IF_NOT_EXISTS_COLUMN = "ALTER TABLE %s ADD   %s ";//TODO add type
     public final static String VARCHAR = " VARCHAR(%s)";
     public final static String TEXT = " TEXT";
     public final static String BOOLEAN = " BOOLEAN";

@@ -12,6 +12,7 @@ java {
 repositories {
 	mavenCentral()
 	maven {url "https://mvnrepository.com/"}
+	maven {url "https://central.sonatype.com/"}
 }
 
 dependencies {
@@ -33,6 +34,8 @@ dependencies {
 	testImplementation 'org.mockito:mockito-all:1.10.19'
 	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
 	implementation 'mysql:mysql-connector-java:8.0.33'
+// https://mvnrepository.com/artifact/org.jooq/jooq
+	implementation 'org.jooq:jooq:3.19.8'
 
 
 
