@@ -1,12 +1,11 @@
 package org.rochlitz.K2Converter.sqlConverter;
 
 import static java.lang.Math.abs;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.ALTER_TABLE_S_ADD_IF_NOT_EXISTS_COLUMN;
+import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.ALTER_TABLE_S_ADD_S;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.BOOLEAN;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.CREATE_TABLE_IF_NOT_EXISTS_ADD_PRIMARY_KEY;
+import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.CREATE_TABLE_S_S_BIGINT_PRIMARY_KEY;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.DATE;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.INT;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.MEDIUMTEXT;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.TEXT;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.VARCHAR;
 
@@ -21,7 +20,7 @@ public class SqlConverter
     {
         sql.append(
             String.format(
-                CREATE_TABLE_IF_NOT_EXISTS_ADD_PRIMARY_KEY, tableName,
+                CREATE_TABLE_S_S_BIGINT_PRIMARY_KEY, tableName,
                 feldRecord.getFieldName()
             )
         );
@@ -87,7 +86,7 @@ public class SqlConverter
         sql.append(
 
             String.format(
-                ALTER_TABLE_S_ADD_IF_NOT_EXISTS_COLUMN,
+                ALTER_TABLE_S_ADD_S,
                 tableName,
                 feldRecord.getFieldName()
             )

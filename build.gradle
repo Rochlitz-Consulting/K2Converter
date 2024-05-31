@@ -1,22 +1,49 @@
 plugins {
 	id 'java'
+	id 'maven-publish'
+	id 'signing'
+	id "org.javacc.javacc" version "latest.release"
+	id 'jacoco'
+	id 'pmd'
+	id 'checkstyle'
 }
 
 group = 'org.rochlitz'
 version = '0.0.1-SNAPSHOT'
 
-java {
-	sourceCompatibility = '17'
+
+compileJavacc {
+	arguments = [grammar_encoding: 'UTF-8', static: 'false', java_template_type: 'modern']
 }
+
+java {
+	withSourcesJar()
+	withJavadocJar()
+
+	sourceCompatibility = '21'
+	targetCompatibility = '21'
+	toolchain {
+		languageVersion.set(JavaLanguageVersion.of(21))
+	}
+}
+
+compileJava {
+	options.release = 11
+}
+
 
 repositories {
 	mavenCentral()
 	maven {url "https://mvnrepository.com/"}
 	maven {url "https://central.sonatype.com/"}
+	gradlePluginPortal()
+	mavenLocal()
+	maven {
+		url = uri('https://oss.sonatype.org/content/groups/public/')
+	}
 }
 
 dependencies {
-
 
 	// https://mvnrepository.com/artifact/org.apache.camel/camel-core
 	implementation 'org.apache.camel:camel-core:4.6.0'
@@ -31,20 +58,21 @@ dependencies {
 
 	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
-
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 // https://mvnrepository.com/artifact/org.mockito/mockito-all
 	testImplementation 'org.mockito:mockito-all:1.10.19'
+
 	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
 	implementation 'mysql:mysql-connector-java:8.0.33'
 // https://mvnrepository.com/artifact/org.jooq/jooq
-	implementation 'org.jooq:jooq:3.19.8'
-
+//	implementation 'org.jooq:jooq:3.19.8'
+// https://mvnrepository.com/artifact/com.github.jsqlparser/jsqlparser
+//	implementation 'com.github.jsqlparser:jsqlparser:4.2'
+		implementation 'com.github.jsqlparser:jsqlparser:4.10-SNAPSHOT'
 
 
 	// SLF4J API
 	implementation 'org.slf4j:slf4j-api:2.0.7'
-
 	// Logback Classic
 	implementation 'ch.qos.logback:logback-classic:1.4.8'
 

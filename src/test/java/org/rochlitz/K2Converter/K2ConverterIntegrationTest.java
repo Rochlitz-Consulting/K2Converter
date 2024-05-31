@@ -20,8 +20,8 @@ public class K2ConverterIntegrationTest
 
     @BeforeEach
     public void setUp() {
+        System.setProperty("SQL_FILE_PATH", filePath );
         deleteSqlOutput(filePath);
-        System.setProperty("SQL_FILE_PATH", "abda_test.sql" );
     }
 
     @Test

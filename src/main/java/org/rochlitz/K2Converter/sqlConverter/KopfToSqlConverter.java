@@ -1,12 +1,11 @@
 package org.rochlitz.K2Converter.sqlConverter;
 
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.CREATE_SCHEMA_IF_NOT_EXISTS_S;
+import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.CREATE_SCHEMA_S;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.SEMICOLON;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.USE;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
-import org.apache.camel.support.PropertyBindingSupport;
 import org.rochlitz.K2Converter.toTypeConverter.GenericRecord;
 import org.rochlitz.K2Converter.Context;
 import org.slf4j.Logger;
@@ -25,7 +24,7 @@ public class KopfToSqlConverter implements Processor
         final String dbName = exchange.getContext().resolvePropertyPlaceholders("{{DB}}");
 
         StringBuffer sql = new StringBuffer();
-        sql.append(String.format(CREATE_SCHEMA_IF_NOT_EXISTS_S, dbName) + SEMICOLON);//TODO configure
+        sql.append(String.format(CREATE_SCHEMA_S, dbName) + SEMICOLON);//TODO configure
         sql.append(String.format(USE, dbName) + SEMICOLON);//TODO configure
 
         LOG.info("Generated SQL: " + sql);
