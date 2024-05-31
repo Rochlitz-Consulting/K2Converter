@@ -22,12 +22,11 @@ public class KopfToSqlConverter implements Processor
     {
         GenericRecord genericRecord = exchange.getIn().getBody(GenericRecord.class);
 
-        String test = exchange.getContext().resolvePropertyPlaceholders("{{destination.database.name}}");
-        String db = exchange.getContext().resolvePropertyPlaceholders("${env:DATABASE_NAME}");
+        final String dbName = exchange.getContext().resolvePropertyPlaceholders("{{DB}}");
 
         StringBuffer sql = new StringBuffer();
-        sql.append(String.format(CREATE_SCHEMA_IF_NOT_EXISTS_S, "LAIENINFO") + SEMICOLON);//TODO configure
-        sql.append(String.format(USE, "LAIENINFO") + SEMICOLON);//TODO configure
+        sql.append(String.format(CREATE_SCHEMA_IF_NOT_EXISTS_S, dbName) + SEMICOLON);//TODO configure
+        sql.append(String.format(USE, dbName) + SEMICOLON);//TODO configure
 
         LOG.info("Generated SQL: " + sql);
         Context.setTableName(genericRecord.getFieldValue(1));

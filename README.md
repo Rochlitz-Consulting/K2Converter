@@ -14,6 +14,17 @@ K2Converter is a Java-based project that uses Apache Camel for routing and proce
 To build the project, navigate to the project directory and run the following command:
 
 
+# Configuration
+## Environment Variables 
+
+| Environment Variable Name |        Description        |
+|---------------------------|:-------------------------:|
+| DB                        |  DB name or schema name   |
+| SQL_FILE_PATH             | filename of generated SQL |
+
+
+
+
 # Running the Project
 To build the project, navigate to the project directory and run the following command:
 ```bash
