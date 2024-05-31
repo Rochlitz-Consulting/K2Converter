@@ -6,6 +6,7 @@ import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.USE;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
+import org.apache.camel.support.PropertyBindingSupport;
 import org.rochlitz.K2Converter.toTypeConverter.GenericRecord;
 import org.rochlitz.K2Converter.Context;
 import org.slf4j.Logger;
@@ -20,6 +21,9 @@ public class KopfToSqlConverter implements Processor
     //TODO add   catch
     {
         GenericRecord genericRecord = exchange.getIn().getBody(GenericRecord.class);
+
+        String test = exchange.getContext().resolvePropertyPlaceholders("{{destination.database.name}}");
+        String db = exchange.getContext().resolvePropertyPlaceholders("${env:DATABASE_NAME}");
 
         StringBuffer sql = new StringBuffer();
         sql.append(String.format(CREATE_SCHEMA_IF_NOT_EXISTS_S, "LAIENINFO") + SEMICOLON);//TODO configure

@@ -6,7 +6,9 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.component.properties.PropertiesComponent;
 import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.camel.main.Main;
 import org.rochlitz.K2Converter.toTypeConverter.FeldConverterProcessor;
 import org.rochlitz.K2Converter.toTypeConverter.GenericRecord;
 import org.rochlitz.K2Converter.toTypeConverter.InsertConverterProcessor;
@@ -29,7 +31,8 @@ public class K2Converter extends RouteBuilder {
         //TODO read dir all files
         //TODO add DB creator on base of dir
 
-//        from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=PACFAM_L.GES&noop=true") //TODO read folder , configure
+
+        //        from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=PACFAM_L.GES&noop=true") //TODO read folder , configure
         from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=FAM_L.GES&noop=true") //TODO read folder , configure
             //        from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=kurz_FAM_L.GES&noop=true") //TODO read folder , configure
             .split(body().tokenize(CRLF + "00"))
@@ -82,6 +85,7 @@ public class K2Converter extends RouteBuilder {
     public static void main(String[] args) throws Exception {
         CamelContext context = new DefaultCamelContext();
         context.addRoutes(new K2Converter());
+        context.getPropertiesComponent().setLocation("classpath:k2.properties");
         context.start();
         Thread.sleep(5000);
         context.stop();

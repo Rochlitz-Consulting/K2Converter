@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 public class K2ConverterIntegrationTest
 {
 
-    String filePath = "abda.sql";//TODO configuration
+    String filePath = "abda_test.sql";//TODO configuration
 
     @BeforeEach
     public void setUp() {
