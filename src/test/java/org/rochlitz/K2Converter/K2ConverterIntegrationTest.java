@@ -17,9 +17,11 @@ public class K2ConverterIntegrationTest
 
     String filePath = "abda_test.sql";//TODO configuration
 
+
     @BeforeEach
     public void setUp() {
         deleteSqlOutput(filePath);
+        System.setProperty("SQL_FILE_PATH", "abda_test.sql" );
     }
 
     @Test

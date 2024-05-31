@@ -9,6 +9,7 @@ public class FeldConverterProcessor implements Processor
     public void process(Exchange exchange) throws ClassNotFoundException //TODO add   catch
     {
 
+
         GenericRecord genericRecord = exchange.getIn().getBody(GenericRecord.class);
 
         FeldRecord feldRecord = new FeldRecord();
