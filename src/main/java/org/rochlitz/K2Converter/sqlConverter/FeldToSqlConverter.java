@@ -3,6 +3,8 @@ package org.rochlitz.K2Converter.sqlConverter;
 import static org.rochlitz.K2Converter.sqlConverter.SqlConverter.addFieldName;
 import static org.rochlitz.K2Converter.sqlConverter.SqlConverter.addFieldType;
 import static org.rochlitz.K2Converter.sqlConverter.SqlConverter.addPrimaryKey;
+import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.NOT_NULL;
+import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.NULL;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.SEMICOLON;
 
 import org.apache.camel.Exchange;
@@ -27,6 +29,7 @@ public class FeldToSqlConverter implements Processor
         }else {
             addFieldName(sql, tableName, feldRecord);
             addFieldType(feldRecord, sql);
+            addNullable(feldRecord, sql);
         }
 
 //TODO add NULL
@@ -38,8 +41,13 @@ public class FeldToSqlConverter implements Processor
         exchange.getIn().setBody(sql);
     }
 
-
-
-
+    private void addNullable(FeldRecord feldRecord, StringBuffer sql)
+    {
+        if(feldRecord.getNullable()){
+            sql.append(NULL);
+        }else {
+            sql.append(NOT_NULL);
+        }
+    }
 
 }
