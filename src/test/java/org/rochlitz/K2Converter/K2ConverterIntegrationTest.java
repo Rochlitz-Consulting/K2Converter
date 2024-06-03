@@ -58,7 +58,7 @@ public class K2ConverterIntegrationTest
             Files.delete(path);
             LOG.info("File deleted successfully.");
         } catch (IOException e) {
-            e.printStackTrace();
+            LOG.error("Error deleting file", e);
         }
     }
 
