@@ -26,12 +26,12 @@ To build the project, navigate to the project directory and run the following co
 
 
 # Running the Project
-To build the project, navigate to the project directory and run the following command:
-it creates a fat jar
+To build the project, navigate to the project directory and run the following command (it creates a fat jar):
+
 ```bash
 gradle build
 ```
-Running the Project
+Running the Project (needs Java 21)
 To run the project, use the following command:
 ```bash
 java -jar build/libs/K2Converter-1.0-SNAPSHOT.jar
