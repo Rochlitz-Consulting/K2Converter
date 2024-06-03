@@ -17,10 +17,11 @@ To build the project, navigate to the project directory and run the following co
 # Configuration
 ## Environment Variables 
 
-| Environment Variable Name |        Description        |
-|---------------------------|:-------------------------:|
-| DB                        |  DB name or schema name   |
-| SQL_FILE_PATH             | filename of generated SQL |
+| Environment Variable Name |            Description             |
+|---------------------------|:----------------------------------:|
+| DB                        |  DB name or schema name (Output)   |
+| SQL_FILE_PATH             | filename of generated SQL (Output) |
+| ABDA_DIR_PATH             |       input file like *.GES        |
 
 
 
@@ -45,16 +46,18 @@ Logging of processed data.
 Error handling during data conversion.
 
 # TODO
-SQL ~ 80%
-K Record -> 100% 
-F Record -> 90%
-I Record -> 80%
-E Record -> 0%
-U Record -> 0%
-Data Typ -> 99%
-Control Sequences -> 0%
-(Unicode ?)
-
-Testing: -> 5 %
-Monitoring -> 5%
+- SQL ~ 80%
+- K Record -> 100% 
+- F Record -> 90%
+- I Record -> 80%
+- E Record -> 0%
+- U Record -> 0%
+- D Record -> 0%
+- Data Typ -> 99%
+- Control Sequences -> 0%
+- (Unicode may be not needed?)
+- Validation (Input, Output) -> 20%
+- Testing (Coverage): -> 50 %
+- Monitoring (Logging, CPU..) -> 5%
+- build 50%
 
