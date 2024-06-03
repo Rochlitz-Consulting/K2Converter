@@ -21,6 +21,7 @@ public class K2ConverterIntegrationTest
     @BeforeEach
     public void setUp() {
         System.setProperty("SQL_FILE_PATH", filePath );
+        System.setProperty("DB", "laien_info" );
         deleteSqlOutput(filePath);
     }
 

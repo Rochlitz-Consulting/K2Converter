@@ -33,8 +33,8 @@ public class K2Converter extends RouteBuilder {
 
 
         //        from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=PACFAM_L.GES&noop=true") //TODO read folder , configure
-        from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=FAM_L.GES&noop=true") //TODO read folder , configure
             //        from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=kurz_FAM_L.GES&noop=true") //TODO read folder , configure
+        from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=FAM_L.GES&noop=true") //TODO read folder , configure
             .split(body().tokenize(CRLF + "00"))
             .process(new RecordUnmashallProcessor())
             .choice()

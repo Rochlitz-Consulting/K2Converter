@@ -2,6 +2,7 @@ package org.rochlitz.K2Converter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
 
@@ -9,16 +10,23 @@ public class Context
 {
     private static final ThreadLocal<String> tableName = new ThreadLocal<>();
 
+
+    private static ConcurrentHashMap<String, String> sharedData = new ConcurrentHashMap<>();
+
+
     private static final ThreadLocal<List> tableInfo = new ThreadLocal<>();
 
     private static final ThreadLocal<Integer> countInserts = new ThreadLocal<>();
 
     public static void setTableName(String value) {
         tableName.set(value);
+        sharedData.put("table", value);
     }
 
     public static String getTableName() {
-        return tableName.get();
+
+//        return tableName.get();
+        return sharedData.get("table");
     }
 
     public static void setTableInfo(FeldRecord value) {

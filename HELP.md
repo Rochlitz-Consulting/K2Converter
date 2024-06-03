@@ -10,4 +10,17 @@ These additional references should also help you:
 
 * [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
 
-         mvn compile exec:java -Dexec.mainClass= org.rochlitz.prototyping.RecordReader
+         mvn compile exec:java -Dexec.mainClass= org.rochlitz.K2Converter.K2Converter
+
+# Testing
+
+## import sql in example with docker container
+
+docker run --name laien-db -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=LaienInfo -e MYSQL_USER=dev -e MYSQL_PASSWORD=dev -p 3306:3306 -d mysql:latest
+
+
+bash ```
+docker cp abda.sql laien-db:/
+mysql  -proot -uroot < abda.sql
+```
+

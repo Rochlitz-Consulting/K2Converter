@@ -1,7 +1,5 @@
 package org.rochlitz.tools;
 
-import org.jooq.impl.DSL;
-import static org.jooq.SQLDialect.*;
 
 import net.sf.jsqlparser.parser.CCJSqlParserUtil;
 import net.sf.jsqlparser.statement.Statement;

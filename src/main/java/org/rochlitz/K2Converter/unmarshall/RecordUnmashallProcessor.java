@@ -64,7 +64,7 @@ public class RecordUnmashallProcessor implements Processor
         if(!record.startsWith("00K")){
             type = record.substring(0, 1);
         }
-        List<String> columns = fields.values().stream().toList();//TODO check correct order
+        List<String> columns = fields.values().stream().collect(Collectors.toList());//TODO check correct order
         return new GenericRecord(type,columns);
     }
 }
