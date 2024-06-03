@@ -7,7 +7,6 @@ import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.SEMICOLON;
 
 import java.util.Arrays;
 
-import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.support.DefaultExchange;
@@ -17,21 +16,17 @@ import org.rochlitz.K2Converter.Context;
 import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
 import org.rochlitz.K2Converter.toTypeConverter.InsertRecord;
 
-public class InsertToSqlConverterTest {
+class InsertToSqlConverterTest {
 
-    private InsertToSqlConverter converter;
     private Exchange exchange;
-    private CamelContext camelContext;
 
     @BeforeEach
     public void setUp() {
-        converter = new InsertToSqlConverter();
         exchange = new DefaultExchange(new DefaultCamelContext());
     }
 
     @Test
-    public void testProcess_HappyPath() throws Exception {
-        // Prepare mock objects
+    void testProcess_HappyPath() throws Exception {
         InsertRecord insertRecord = new InsertRecord();
         insertRecord.setValues(Arrays.asList("value1"));
         Context.setTableName("my_table");

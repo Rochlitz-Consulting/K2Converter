@@ -6,8 +6,6 @@ import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.BOOLEAN;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.CREATE_TABLE_S_S_BIGINT_PRIMARY_KEY;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.DATE;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.INT;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.NOT_NULL;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.NULL;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.TEXT;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.VARCHAR;
 
