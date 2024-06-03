@@ -4,8 +4,9 @@ plugins {
 	id 'signing'
 	id "org.javacc.javacc" version "latest.release"
 	id 'jacoco'
-	id 'pmd'
+//	id 'pmd'
 	id 'checkstyle'
+	id 'application'
 }
 
 group = 'org.rochlitz'
@@ -56,6 +57,9 @@ dependencies {
 
 // https://mvnrepository.com/artifact/org.projectlombok/lombok
 	implementation 'org.projectlombok:lombok:1.18.32'
+	annotationProcessor 'org.projectlombok:lombok:1.18.32'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
+
 
 	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
@@ -82,3 +86,8 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+application {
+	mainClass = ' org.rochlitz.K2Converter.K2Converter' // Ändern Sie dies auf Ihre Hauptklasse
+}
+

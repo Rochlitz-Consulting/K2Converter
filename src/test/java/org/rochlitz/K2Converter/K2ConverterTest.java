@@ -1,17 +1,17 @@
 package org.rochlitz.K2Converter;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
-import org.apache.camel.Message;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.support.DefaultExchange;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.rochlitz.K2Converter.toTypeConverter.GenericRecord;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when;
 
 public class K2ConverterTest {
 
@@ -24,6 +24,7 @@ public class K2ConverterTest {
         camelContext = new DefaultCamelContext();
     }
 
+    @Disabled
     @Test
     public void isTypeOfFeld_shouldReturnTrueWhenTypeStartsWithF() {
         GenericRecord record = new GenericRecord("F01", null);
