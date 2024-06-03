@@ -32,7 +32,6 @@ public class FeldToSqlConverter implements Processor
             addNullable(feldRecord, sql);
         }
 
-//TODO add NULL
 
         sql.append(SEMICOLON);
 

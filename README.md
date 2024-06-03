@@ -47,10 +47,12 @@ Logging of processed data.
 Error handling during data conversion.
 
 # TODO
-SQL ~ 40%
+SQL ~ 80%
 K Record -> done 
-F Record -> 60%
-I Record -> 0%
+F Record -> 90%
+I Record -> 80%
+
+Testing: 0%
 
 
 

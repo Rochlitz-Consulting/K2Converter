@@ -1,4 +1,4 @@
-package org.rochlitz.K2Converter.toTypeConverter;
+package org.rochlitz.K2Converter.sqlConverter;
 
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.INSERT_INTO;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.INSERT_VALUES;
@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 
 import org.apache.camel.Exchange;
 import org.rochlitz.K2Converter.Context;
+import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
+import org.rochlitz.K2Converter.toTypeConverter.InsertRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -11,6 +11,7 @@ public class GenericRecord
 {
 
     private String type;
+
     //starts with 0
     private List<String> fields;
 

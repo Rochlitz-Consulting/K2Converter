@@ -13,7 +13,7 @@ import org.rochlitz.K2Converter.sqlConverter.KopfToSqlConverter;
 import org.rochlitz.K2Converter.toTypeConverter.FeldConverterProcessor;
 import org.rochlitz.K2Converter.toTypeConverter.GenericRecord;
 import org.rochlitz.K2Converter.toTypeConverter.InsertConverterProcessor;
-import org.rochlitz.K2Converter.toTypeConverter.InsertToSqlConverter;
+import org.rochlitz.K2Converter.sqlConverter.InsertToSqlConverter;
 import org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,15 +24,15 @@ public class K2Converter extends RouteBuilder {
     private static final Logger LOG = LoggerFactory.getLogger(K2Converter.class);
 
     @Override
-    public void configure() throws Exception {
+    public void configure()  {
 
         //TODO read dir all files
         //TODO add DB creator on base of dir
 
 
         //        from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=PACFAM_L.GES&noop=true") //TODO read folder , configure
-                    from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=kurz_FAM_L.GES&noop=true") //TODO read folder , configure
-//        from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=FAM_L.GES&noop=true") //TODO read folder , configure
+//                    from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=kurz_FAM_L.GES&noop=true") //TODO read folder , configure
+        from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=FAM_L.GES&noop=true") //TODO read folder , configure
             .split(body().tokenize(CRLF + "00"))
             .process(new RecordUnmashallProcessor())
             .choice()
