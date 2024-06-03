@@ -6,7 +6,12 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class CharacterAnalyzer {
+
+    private static final Logger LOG = LoggerFactory.getLogger(CharacterAnalyzer.class);
 
     public static void main(String[] args) {
         String filePath = "/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413/FAM_L.GES";
@@ -16,18 +21,18 @@ public class CharacterAnalyzer {
             int character;
             while ((character = reader.read()) != -1) {
                 char ch = (char) character;
-                System.out.println(ch);
+//                LOG.info(String.valueOf(ch));
                 charCountMap.put(ch, charCountMap.getOrDefault(ch, 0) + 1);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            LOG.error("Error reading file", e);
         }
 
         // Ergebnisse anzeigen
-        System.out.println("Character Analysis:");
+        LOG.info("Character Analysis:");
 
         for (Map.Entry<Character, Integer> entry : charCountMap.entrySet()) {
-            System.out.printf("Character: '%s' (ASCII: %d), Count: %d%n", entry.getKey(), (int) entry.getKey(), entry.getValue());
+            LOG.info("Character: '%s' (ASCII: %d), Count: %d%n", entry.getKey(), (int) entry.getKey(), entry.getValue());
         }
     }
 }

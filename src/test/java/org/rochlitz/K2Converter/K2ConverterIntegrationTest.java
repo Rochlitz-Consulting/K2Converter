@@ -2,9 +2,6 @@ package org.rochlitz.K2Converter;
 
 import static org.rochlitz.tools.SqlValidator.checkSqlSyntax;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,9 +9,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.rochlitz.K2Converter.sqlConverter.KopfToSqlConverter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class K2ConverterIntegrationTest
 {
 
+
+    private static final Logger LOG = LoggerFactory.getLogger(KopfToSqlConverter.class);
     String filePath = "abda_test.sql";//TODO configuration
 
 
@@ -51,7 +56,7 @@ public class K2ConverterIntegrationTest
             Path path = Paths.get(filePath);
 
             Files.delete(path);
-            System.out.println("File deleted successfully.");
+            LOG.info("File deleted successfully.");
         } catch (IOException e) {
             e.printStackTrace();
         }
