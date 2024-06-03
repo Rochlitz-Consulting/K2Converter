@@ -29,7 +29,7 @@ To build the project, navigate to the project directory and run the following co
 To build the project, navigate to the project directory and run the following command:
 it creates a fat jar
 ```bash
-gradle customFatJar
+gradle build
 ```
 Running the Project
 To run the project, use the following command:
