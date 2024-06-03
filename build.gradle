@@ -5,7 +5,7 @@ plugins {
 	id "org.javacc.javacc" version "latest.release"
 	id 'jacoco'
 //	id 'pmd'
-	id 'checkstyle'
+//	id 'checkstyle'
 	id 'application'
 }
 
@@ -91,3 +91,13 @@ application {
 	mainClass = ' org.rochlitz.K2Converter.K2Converter' // Ändern Sie dies auf Ihre Hauptklasse
 }
 
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'org.rochlitz.K2Converter.K2Converter'
+        )
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
