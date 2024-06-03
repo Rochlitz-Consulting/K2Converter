@@ -7,6 +7,7 @@ plugins {
 //	id 'pmd'
 //	id 'checkstyle'
 	id 'application'
+
 }
 
 group = 'org.rochlitz'
@@ -81,6 +82,8 @@ dependencies {
 	// Logback Classic
 	implementation 'ch.qos.logback:logback-classic:1.4.8'
 
+
+
 }
 
 tasks.named('test') {
@@ -97,7 +100,22 @@ jar {
             'Main-Class': 'org.rochlitz.K2Converter.K2Converter'
         )
     }
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
+	from {
+		configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+	}
+}
+
+
+tasks.build {
+	dependsOn jar
+}
+
+task customFatJar(type: Jar) {
+	manifest {
+		attributes 'Main-Class': 'org.rochlitz.K2Converter.K2Converter'
+	}
+	archiveBaseName = 'K2Converter'
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+	from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+	with jar
 }

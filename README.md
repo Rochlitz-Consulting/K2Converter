@@ -27,13 +27,14 @@ To build the project, navigate to the project directory and run the following co
 
 # Running the Project
 To build the project, navigate to the project directory and run the following command:
+it creates a fat jar
 ```bash
-gradle build
+gradle customFatJar
 ```
 Running the Project
 To run the project, use the following command:
 ```bash
-gradle run
+java -jar build/libs/K2Converter-1.0-SNAPSHOT.jar
 ```
 
 
