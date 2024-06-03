@@ -24,8 +24,6 @@ To build the project, navigate to the project directory and run the following co
 
 
 
-
-
 # Running the Project
 To build the project, navigate to the project directory and run the following command:
 ```bash
@@ -48,11 +46,15 @@ Error handling during data conversion.
 
 # TODO
 SQL ~ 80%
-K Record -> done 
+K Record -> 100% 
 F Record -> 90%
 I Record -> 80%
+E Record -> 0%
+U Record -> 0%
+Data Typ -> 99%
+Control Sequences -> 0%
+(Unicode ?)
 
-Testing: 0%
-
-
+Testing: -> 5 %
+Monitoring -> 5%
 
