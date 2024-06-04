@@ -27,12 +27,19 @@ import lombok.ToString;
 public class KopfRecord {
     public final static Integer MAX_FIELD_SIZE = 1000000; // 1 mil ascii chars == 600 A4
 
-    private String tableName;
-    private Boolean isFull;//Otherwise full update
+    private String tableName;//TODO if präfix tablename = 6 chars -> FK ???
+
+    //Otherwise full update
+    private Boolean isFull;
+
+
     @NonNull
     private LocalDateTime currentDeliveryValidityDate;//JJJJMMTT
+
+    //JJJJMMTT
+    /**is empty in GES /Gesamtdateien*/
     @NonNull
-    private LocalDateTime previousDeliveryValidityDate;//JJJJMMTT
+    private LocalDateTime previousDeliveryValidityDate;
     private String dataSource;
     private String filenameLong;
     private String adbaFileNumber;

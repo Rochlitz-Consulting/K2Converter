@@ -79,5 +79,12 @@ Error handling during data conversion.
 - Monitoring (Logging, CPU..) -> 5%
 - build 50%
 
+
+
+# To Solve
 - How to handle UPD files ???
+- How are FK flagged ??
+- PACFAM_L feld FeldRecord Komponentennr ist anderd im ER-Modell
+
+
 
