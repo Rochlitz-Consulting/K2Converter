@@ -16,11 +16,15 @@ These additional references should also help you:
 
 ## import sql in example with docker container
 
-docker run --name laien-db -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=LaienInfo -e MYSQL_USER=dev -e MYSQL_PASSWORD=dev -p 3306:3306 -d mysql:latest
 
+bash ```
+docker run --name laien-db -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=LaienInfo -e MYSQL_USER=dev -e MYSQL_PASSWORD=dev -p 3306:3306 -d mysql:latest
+```
 
 bash ```
 docker cp abda.sql laien-db:/
 mysql  -proot -uroot < abda.sql
 ```
+
+
 
