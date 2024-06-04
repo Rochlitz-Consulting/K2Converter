@@ -4,6 +4,19 @@ package org.rochlitz.K2Converter.toTypeConverter;
 import lombok.Data;
 import lombok.ToString;
 
+/**
+ * 01 Identifier, zweistellig, Datentyp AN2
+ * 02 Identifier im Klartext, maximal 20-stellig, Datentyp ID1
+ * 03 Primärschlüsselfeld: 0 = nein, 1 = ja, entspricht Datentyp FLA
+ * 04 NULL erlaubt: 0 = nein = Belegung ist Pflicht, 1 = ja = Belegung ist optional, entspricht
+ * Datentyp FLA
+ * 05 Typ der Feldlänge, siehe nachfolgende Erläuterung
+ * 06 Feldlänge in Byte, maximal 10-stellig, Datentyp NU1
+ * 07 Datentyp, dreistellig, Datentyp AN2
+ * *
+ * @param <T>
+ */
+
 @ToString
 @Data
 public class FeldRecord<T> {

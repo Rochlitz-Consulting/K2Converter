@@ -1,11 +1,7 @@
 package org.rochlitz.K2Converter.unmarshall;
 
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.apache.camel.Exchange;
@@ -60,11 +56,11 @@ public class RecordUnmashallProcessor implements Processor
 
         String type = "K";
 
-        //TODO use case
+        //TODO only the first recod starts with 00 because if .split(body().tokenize(CRLF + "00")) in K2Converter
         if(!record.startsWith("00K")){
             type = record.substring(0, 1);
         }
-        List<String> columns = fields.values().stream().collect(Collectors.toList());//TODO check correct order
+        List<String> columns = fields.values().stream().collect(Collectors.toList());//TODO test correct order
         return new GenericRecord(type,columns);
     }
 }

@@ -6,8 +6,8 @@ import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.USE;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
-import org.rochlitz.K2Converter.toTypeConverter.GenericRecord;
 import org.rochlitz.K2Converter.Context;
+import org.rochlitz.K2Converter.toTypeConverter.KopfRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,16 +19,16 @@ public class KopfToSqlConverter implements Processor
     public void process(Exchange exchange) throws ClassNotFoundException
     //TODO add   catch
     {
-        GenericRecord genericRecord = exchange.getIn().getBody(GenericRecord.class);
+        KopfRecord genericRecord = exchange.getIn().getBody(KopfRecord.class);
 
         final String dbName = exchange.getContext().resolvePropertyPlaceholders("{{DB}}");
 
         StringBuffer sql = new StringBuffer();
-        sql.append(String.format(CREATE_SCHEMA_S, dbName) + SEMICOLON);//TODO configure
-        sql.append(String.format(USE, dbName) + SEMICOLON);//TODO configure
+        sql.append(String.format(CREATE_SCHEMA_S, dbName) + SEMICOLON);
+        sql.append(String.format(USE, dbName) + SEMICOLON);
 
         LOG.info("Generated SQL: " + sql);
-        Context.setTableName(genericRecord.getFieldValue(1));
+        Context.setTableName(genericRecord.getFilename());
         exchange.getIn().setBody(sql);
     }
 }

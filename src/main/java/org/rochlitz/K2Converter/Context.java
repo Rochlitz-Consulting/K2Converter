@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
+import org.rochlitz.K2Converter.toTypeConverter.KopfRecord;
 
 public class Context
 {
@@ -12,11 +13,14 @@ public class Context
 
 
     private static ConcurrentHashMap<String, String> sharedData = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, Object> sharedObjects = new ConcurrentHashMap<>();
 
 
     private static final ThreadLocal<List> tableInfo = new ThreadLocal<>();
 
     private static final ThreadLocal<Integer> countInserts = new ThreadLocal<>();
+
+    private static final String kopfKey = "kopf";
 
     public static void setTableName(String value) {
         tableName.set(value);
@@ -25,8 +29,17 @@ public class Context
 
     public static String getTableName() {
 
-//        return tableName.get();
         return sharedData.get("table");
+    }
+
+//TODO all like this
+    public static void setKopfInfo(KopfRecord value) {
+        sharedObjects.put(kopfKey, value);
+    }
+
+    public static KopfRecord getKopfInfo() {
+
+        return (KopfRecord) sharedObjects.get(kopfKey);
     }
 
     public static void setTableInfo(FeldRecord value) {
