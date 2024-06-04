@@ -29,10 +29,16 @@ public class K2Converter extends RouteBuilder {
         //TODO read dir all files
         //TODO add DB creator on base of dir
 
+        //ABDA_DIR_PATH='/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413';DB=LAIEN;SQL_FILE_PATH=abda.sql
+
 
         //        from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=PACFAM_L.GES&noop=true") //TODO read folder , configure
 //                    from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=kurz_FAM_L.GES&noop=true") //TODO read folder , configure
-        from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=FAM_L.GES&noop=true") //TODO read folder , configure ABDA_DIR_PATH
+        String abdaDirPath = System.getenv("ABDA_DIR_PATH");
+
+//                from("file:/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413?fileName=FAM_L.GES&noop=true") //TODO read folder , configure ABDA_DIR_PATH
+        from("file:"+ abdaDirPath +"?noop=true")
+            .log("Processing file: ${header.CamelFileName}")
             .split(body().tokenize(CRLF + "00"))
             .process(new RecordUnmashallProcessor())
             .choice()
@@ -48,6 +54,7 @@ public class K2Converter extends RouteBuilder {
             .process(new InsertToSqlConverter())
             .process(new SqlToFileWriter())
             .to("log:processed")
+            .to("file:data/outbox");
         ;
         //TODO log statistic at the end
 

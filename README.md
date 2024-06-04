@@ -38,7 +38,7 @@ To build the project, navigate to the project directory and run the following co
 | SQL_FILE_PATH             |    Filename of generated SQL Output). E.g abda.sql    |
 | ABDA_DIR_PATH             |               Input file like FAM_L.GES               |
 
-
+- DB=LAIEN;SQL_FILE_PATH=abda.sql;ABDA_DIR_PATH='/home/andre/IdeaProjects/K2Converter/src/test/resources/GES010413'
 
 # Running the Project
 To build the project, navigate to the project directory and run the following command (it creates a fat jar):
@@ -63,7 +63,7 @@ Data conversion from ASCII to SQL.
 Logging of processed data.
 Error handling during data conversion.
 
-# TODO
+## TODO / Status
 - SQL ~ 80%
 - K Record -> 100% 
 - F Record -> 90%
@@ -78,4 +78,6 @@ Error handling during data conversion.
 - Testing (Coverage): -> 50 %
 - Monitoring (Logging, CPU..) -> 5%
 - build 50%
+
+- How to handle UPD files ???
 
