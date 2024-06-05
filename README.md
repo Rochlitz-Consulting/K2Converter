@@ -44,7 +44,8 @@ To build the project, navigate to the project directory and run the following co
 To build the project, navigate to the project directory and run the following command (it creates a fat jar):
 
 ```bash
-gradle build
+#gradle build
+gradle clean customFatJar
 ```
 Running the Project (needs Java 21)
 To run the project, use the following command:
@@ -89,3 +90,49 @@ Error handling during data conversion.
 
 
 
+# Version
+(business funktionality)
+
+0.1 "import FAM_L"
+----
+ - added: 
+   - FAM_L table converter: object converter, sqlconverter
+   - records types: K, F, I
+   - data types conversion:  
+                         AL1
+                         AN1
+                         AN2
+                         AN3
+                         ATC
+                         B64
+                         DT8
+                         FLA
+                         FN1
+                         FN2
+                         GK1
+                         GRU
+                         ID1
+                         IKZ
+                         IND
+                         MPG
+                         NU1
+                         NU2
+                         NU3
+                         NU4
+                         PNH
+                         PRO
+                         PZN
+                         PZ8
+                         WGS
+   - GES import
+
+0.2 "get Anwendungshinweise from Fertigarzneimittel table by Pharmazentralnummer"
+----
+ - added:
+   - PAC_FAM_L table
+   - records types: E
+   
+0.3 "update "
+----
+ - added:
+   - records types: U

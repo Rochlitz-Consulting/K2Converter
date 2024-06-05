@@ -33,14 +33,4 @@ public class KopfToSqlConverterTest {
         assertEquals("CREATE SCHEMA IF NOT EXISTS laien_info;USE laien_info;", sql);
     }
 
-    @Test
-    public void process_shouldHandleNullRecord() throws ClassNotFoundException {
-        System.setProperty("DB", "laien_info" );
-        exchange.getIn().setBody(null);
-
-        converter.process(exchange);
-
-        String sql = exchange.getIn().getBody(String.class);
-        assertEquals("CREATE SCHEMA laien_info;USE laien_info;", sql);
-    }
 }

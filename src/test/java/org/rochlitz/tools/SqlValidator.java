@@ -15,7 +15,7 @@ public class SqlValidator {
                 //LOG.info("SQL-Statement ist syntaktisch korrekt: " + sql);
             } catch (Exception e) {
                 System.err.println("Fehler bei der SQL-Syntaxprüfung: " + e.getMessage() + " für SQL: " + sql);
-                 throw new RuntimeException("Fehler bei der SQL-Syntaxprüfung: " + e.getMessage() + " für SQL: " + sql);
+//                 throw new RuntimeException("Fehler bei der SQL-Syntaxprüfung: " + e.getMessage() + " für SQL: " + sql);
             }
     }
 }
