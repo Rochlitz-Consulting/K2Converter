@@ -1,15 +1,14 @@
 package org.rochlitz.K2Converter.sqlConverter;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.support.DefaultExchange;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
 import org.rochlitz.K2Converter.Context;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
 
 public class FeldToSqlConverterTest {
 
@@ -47,7 +46,7 @@ public class FeldToSqlConverterTest {
         converter.process(exchange);
 
         String sql = exchange.getIn().getBody(String.class);
-        assertEquals("CREATE TABLE " + Context.getTableName() + " (" + record.getFieldName() +" BIGINT PRIMARY KEY"+ ") ;", sql);
+        assertEquals("CREATE TABLE IF NOT EXISTS " + Context.getTableName() + " (" + record.getFieldName() +" BIGINT PRIMARY KEY"+ ") ;", sql);
     }
 
 

@@ -1,9 +1,10 @@
 package org.rochlitz.K2Converter;
 
-import static org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor.CRLF;
+import static org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor.RECORD_DELIMITER;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
+import org.apache.camel.Expression;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -24,15 +25,15 @@ public class K2Converter extends RouteBuilder {
 
     private static final Logger LOG = LoggerFactory.getLogger(K2Converter.class);
 
+
     @Override
     public void configure()  {
-
 
         final String abdaDirPath = System.getenv("ABDA_DIR_PATH");
 
         from("file:"+ abdaDirPath +"?noop=true")
             .log("Processing file: ${header.CamelFileName}")
-            .split(body().tokenize(CRLF + "00"))
+            .split(splitRecords())
             .process(new RecordUnmashallProcessor())
             .choice()
             .when(this::isTypeOfKopf)//TODO convert to Kopf Type
@@ -55,6 +56,12 @@ public class K2Converter extends RouteBuilder {
 //TODO add E record
 
     }//TODO Camel RouteMetrics: add monitoring CPU, Memory
+
+
+    public  Expression splitRecords() {
+
+        return body().tokenize(RECORD_DELIMITER);
+    }
 
     private static Processor getStatistic()
     {

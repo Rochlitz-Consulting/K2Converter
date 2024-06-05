@@ -15,6 +15,7 @@ public class RecordUnmashallProcessor implements Processor
 {
 
     public static final String CRLF = "\r\n";
+    public static final String RECORD_DELIMITER = CRLF + "00";
 
     private static final Logger LOG = LoggerFactory.getLogger(RecordUnmashallProcessor.class);
 
