@@ -8,7 +8,6 @@ import lombok.NonNull;
 import lombok.ToString;
 
 /**
- * IDDateninhalt
  * 01 Dateiname, maximal 8-stellig, Datentyp FN1
  * 02 Erweiterung des Dateinamens: GES bei UPD bei Updatedateien
  * 03 Gültigkeitsdatum der aktuellen Lieferung, Datentyp DT8; das Datum bezeichnet den

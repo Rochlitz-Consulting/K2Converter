@@ -55,6 +55,7 @@ dependencies {
 	implementation 'org.apache.camel:camel-bindy:4.6.0'
 	implementation 'org.apache.camel:camel-support:4.6.0'
 	implementation 'org.apache.camel:camel-yaml-dsl:4.6.0'
+	implementation 'org.apache.camel:camel-file:4.6.0'
 
 // https://mvnrepository.com/artifact/org.projectlombok/lombok
 	annotationProcessor 'org.projectlombok:lombok:1.18.32'

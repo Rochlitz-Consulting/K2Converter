@@ -11,6 +11,7 @@ import org.rochlitz.K2Converter.out.SqlToFileWriter;
 import org.rochlitz.K2Converter.sqlConverter.FeldToSqlConverter;
 import org.rochlitz.K2Converter.sqlConverter.InsertToSqlConverter;
 import org.rochlitz.K2Converter.sqlConverter.KopfToSqlConverter;
+import org.rochlitz.K2Converter.toTypeConverter.EndConverterProcessor;
 import org.rochlitz.K2Converter.toTypeConverter.FeldConverterProcessor;
 import org.rochlitz.K2Converter.toTypeConverter.GenericRecord;
 import org.rochlitz.K2Converter.toTypeConverter.InsertConverterProcessor;
@@ -30,10 +31,18 @@ public class K2Converter extends RouteBuilder {
     public void configure()  {
 
         String abdaDirPath = getInpuPath();
+        RecordCountAggregationStrategy recordCountAggregationStrategy = new RecordCountAggregationStrategy();
+
 
         from("file:"+ abdaDirPath +"?noop=true")
             .log("Processing file: ${header.CamelFileName}")
             .split(splitRecords())
+            .aggregate(constant(true), recordCountAggregationStrategy)
+            .completionTimeout(1000) // Timeout for aggregation completion
+            .process(exchange -> {
+                Integer recordCount = exchange.getIn().getHeader("recordCount", Integer.class);
+                LOGGER.info("Total records processed: " + recordCount);
+            })
             .process(new RecordUnmashallProcessor())
             .choice()
             .when(this::isTypeOfKopf)//TODO convert to Kopf Type
@@ -48,6 +57,8 @@ public class K2Converter extends RouteBuilder {
             .process(new InsertConverterProcessor())
             .process(new InsertToSqlConverter())
             .process(new SqlToFileWriter())
+            .when(this::isTypeOfEnd)
+            .process(new EndConverterProcessor())
             .process(this::getStatistic)
             .to("log:processed")
             .to("file:data/outbox");
@@ -76,7 +87,6 @@ public class K2Converter extends RouteBuilder {
     }
 
 
-
     boolean isTypeOfFeld(Exchange exchange)
     {
         GenericRecord body = exchange.getIn().getBody(GenericRecord.class);
@@ -87,6 +97,12 @@ public class K2Converter extends RouteBuilder {
     {
         GenericRecord body = exchange.getIn().getBody(GenericRecord.class);
         return body.getType().startsWith("K");
+    }
+
+    boolean isTypeOfEnd(Exchange exchange)
+    {
+        GenericRecord body = exchange.getIn().getBody(GenericRecord.class);
+        return body.getType().startsWith("E");
     }
 
     boolean isTypeOfInsert(Exchange exchange)

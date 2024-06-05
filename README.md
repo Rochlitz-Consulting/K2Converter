@@ -66,18 +66,18 @@ Error handling during data conversion.
 
 ## TODO / Status
 - SQL ~ 80%
-- K Record -> 100% 
-- F Record -> 90%
-- I Record -> 80%
-- E Record -> 0%
-- U Record -> 0%
-- D Record -> 0%
-- Data Typ -> 99%
-- Control Sequences -> 0%
+- K Record ~ 100% 
+- F Record ~ 90%
+- I Record ~ 80%
+- E Record ~ 0%
+- U Record ~ 0%
+- D Record ~ 0%
+- Data Typ ~ 99%
+- Control Sequences ~ 0%
 - (Unicode may be not needed?)
-- Validation (Input, Output) -> 20%
-- Testing (Coverage): -> 50 %
-- Monitoring (Logging, CPU..) -> 5%
+- Validation (Input, Output) ~ 20%
+- Testing (Coverage): ~ 50 %
+- Monitoring (Logging, CPU..) ~ 5%
 - build 50%
 
 
@@ -93,7 +93,7 @@ Error handling during data conversion.
 # Version
 (business funktionality)
 
-0.1 "import FAM_L"
+0.1 "import LAIEN FAM_L"
 ----
  - added: 
    - FAM_L table converter: object converter, sqlconverter
@@ -126,13 +126,19 @@ Error handling during data conversion.
                          WGS
    - GES import
 
-0.2 "get Anwendungshinweise from Fertigarzneimittel table by Pharmazentralnummer"
+V0.2 "get Anwendungshinweise from Fertigarzneimittel table by Pharmazentralnummer"
 ----
  - added:
    - PAC_FAM_L table
    - records types: E
-   
-0.3 "update "
+
+V0.3 "update - import UPD files"
 ----
  - added:
    - records types: U
+   - UPD import
+
+V0.4 "Artikelstamm PAC_APO"
+----
+ - added:
+  - records types: U
