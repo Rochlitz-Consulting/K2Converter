@@ -5,7 +5,6 @@ import static org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor.RECOR
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.Expression;
-import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.rochlitz.K2Converter.out.SqlToFileWriter;
@@ -23,13 +22,14 @@ import org.slf4j.LoggerFactory;
 
 public class K2Converter extends RouteBuilder {
 
-    private static final Logger LOG = LoggerFactory.getLogger(K2Converter.class);
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(K2Converter.class);
+    public static final String ABDA_DIR_PATH = "ABDA_DIR_PATH";
+    public static final String SQL_FILE_PATH = "SQL_FILE_PATH";
 
     @Override
     public void configure()  {
 
-        final String abdaDirPath = System.getenv("ABDA_DIR_PATH");
+        String abdaDirPath = getInpuPath();
 
         from("file:"+ abdaDirPath +"?noop=true")
             .log("Processing file: ${header.CamelFileName}")
@@ -48,27 +48,34 @@ public class K2Converter extends RouteBuilder {
             .process(new InsertConverterProcessor())
             .process(new InsertToSqlConverter())
             .process(new SqlToFileWriter())
+            .process(this::getStatistic)
             .to("log:processed")
             .to("file:data/outbox");
-        ;
         //TODO log statistic at the end
 
 //TODO add E record
 
     }//TODO Camel RouteMetrics: add monitoring CPU, Memory
 
+    private void getStatistic(Exchange exchange)
+    {
+        LOGGER.info("Completed conversion with {} records.", Context.getCountInserts());
+    }
+
+    private static String getInpuPath()
+    {
+        String abdaDirPath = System.getenv(ABDA_DIR_PATH);
+        if(abdaDirPath == null)
+            abdaDirPath = (String) System.getProperties().get(ABDA_DIR_PATH);
+        return abdaDirPath;
+    }
 
     public  Expression splitRecords() {
 
         return body().tokenize(RECORD_DELIMITER);
     }
 
-    private static Processor getStatistic()
-    {
-        return exchange -> {
-            LOG.info("Completed conversion with {} records.", Context.getCountInserts());
-        };
-    }
+
 
     boolean isTypeOfFeld(Exchange exchange)
     {
