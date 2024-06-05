@@ -37,3 +37,12 @@ docker cp abda.sql laien-db:/
 mysql  -proot -uroot < abda.sql
 ```
 
+
+
+# select Anwendungshinweise from Fertigarzneimittel table by Pharmazentralnummer
+```
+select Anwendungshinweise from FAM_L
+LEFT JOIN PACFAM_L ON FAM_L.Key_FAM = PACFAM_L.Key_FAM
+WHERE PACFAM_L.PZN = 1353;
+;
+```

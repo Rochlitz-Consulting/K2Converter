@@ -85,6 +85,7 @@ Error handling during data conversion.
 - How to handle UPD files ???
 - How are FK flagged ??
 - PACFAM_L feld FeldRecord Komponentennr ist anderd im ER-Modell
+- 4.2  F-Sätze Feldlänge in Byte, maximal 10-stellig, Datentyp NU1 ? das sind Stellen nicht byte!!! 
 
 
 
