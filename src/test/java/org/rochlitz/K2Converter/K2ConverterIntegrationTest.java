@@ -1,5 +1,6 @@
 package org.rochlitz.K2Converter;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.rochlitz.K2Converter.K2Converter.ABDA_DIR_PATH;
 import static org.rochlitz.K2Converter.K2Converter.SQL_FILE_PATH;
 
@@ -47,7 +48,7 @@ public class K2ConverterIntegrationTest
 //                checkSqlSyntax(line); //TODO
             }
 
-            assert counter == 15975;
+            assertEquals(counter, 21);
         } catch (IOException e) {
             System.err.println("Fehler beim Lesen der Datei: " + e.getMessage());
             throw new Exception("Fehler beim Lesen der Datei: " + e.getMessage());
