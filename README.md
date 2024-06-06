@@ -16,10 +16,6 @@ Gradle 8.5
 ------------------------------------------------------------
 - Build time:   2023-11-29 14:08:57 UTC
 - Revision:     28aca86a7180baa17117e0e5ba01d8ea9feca598
-
-- Kotlin:       1.9.20
-- Groovy:       3.0.17
-- Ant:          Apache Ant(TM) version 1.10.13 compiled on January 4 2023
 - JVM:          21.0.2 (Private Build 21.0.2+13-Ubuntu-122.04.1)
 - OS:           Linux 6.5.0-35-generic amd64
 
@@ -142,4 +138,13 @@ V0.3 "update - import UPD files"
 V0.4 "Artikelstamm PAC_APO"
 ----
  - added:
-  - records types: U
+  - records types: D
+
+V0.5 "HTML"
+----
+ - added:
+   -  convert control sequences to html
+ 
+
+V1.0 "Full Import"
+----
