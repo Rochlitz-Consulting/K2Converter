@@ -11,7 +11,7 @@ plugins {
 }
 
 group = 'org.rochlitz'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 
 
 compileJavacc {
@@ -114,7 +114,7 @@ tasks.build {
 	dependsOn jar
 }
 
-task customFatJar(type: Jar) {
+task fatJar(type: Jar) {
 	manifest {
 		attributes 'Main-Class': 'org.rochlitz.K2Converter.K2Converter'
 	}

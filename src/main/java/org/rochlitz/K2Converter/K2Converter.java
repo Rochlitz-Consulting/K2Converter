@@ -117,13 +117,18 @@ public class K2Converter extends RouteBuilder {
         System.out.println("Starting K2Converter");
         helpConfig(args);
 
+        runk2Converter();
+        System.out.println("K2Converter finished");
+    }
+
+    private static void runk2Converter() throws Exception
+    {
         CamelContext context = new DefaultCamelContext();
         context.addRoutes(new K2Converter());
         context.getPropertiesComponent().setLocation("classpath:k2.properties");
         context.start();
         Thread.sleep(5000);
         context.stop();
-        System.out.println("K2Converter finished");
     }
 
     private static void helpConfig(String[] args)
@@ -160,6 +165,12 @@ public class K2Converter extends RouteBuilder {
 
 
     public static void printCurrentConfiguration() {
+
+        System.out.println("Usage java -jar [jar filename] [OPTION]");
+        System.out.println(" -i=foldername      path to input dir ");
+        System.out.println(" -d=schema           name of db schema");
+        System.out.println(" -o=sqlfile          name of sql output file");
+
         String inputPath = System.getProperty(ABDA_DIR_PATH, "abda");
         String db = System.getProperty(DB_SCHMEA_NAME, "laien_info");
         String outputFile = System.getProperty(SQL_FILE_PATH, "apda.sql");
