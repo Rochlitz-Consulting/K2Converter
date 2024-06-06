@@ -1,8 +1,8 @@
 package org.rochlitz.K2Converter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.rochlitz.K2Converter.K2Converter.ABDA_DIR_PATH;
-import static org.rochlitz.K2Converter.K2Converter.SQL_FILE_PATH;
+import static org.rochlitz.K2Converter.Configuration.ABDA_DIR_PATH;
+import static org.rochlitz.K2Converter.Configuration.SQL_FILE_PATH;
 import static org.rochlitz.tools.SqlValidator.checkSqlSyntax;
 
 import java.io.BufferedReader;

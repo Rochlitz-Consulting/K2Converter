@@ -50,7 +50,8 @@ gradle clean customFatJar
 Running the Project (needs Java 21)
 To run the project, use the following command:
 ```bash
-java -jar build/libs/K2Converter-1.0-SNAPSHOT.jar
+java -jar build/libs/K2Converter-1.0-SNAPSHOT.jar  -i /path/to/input -d my_database -o my_output.sql
+
 ```
 
 

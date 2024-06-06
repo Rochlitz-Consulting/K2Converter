@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.camel.Exchange;
-import org.rochlitz.K2Converter.Context;
+import org.rochlitz.K2Converter.RouteContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,7 +24,7 @@ public class InsertConverterProcessor implements org.apache.camel.Processor
         insertRecord.setValues(columns);
 //TODO remove 0 value if empty field
 
-        LOG.info("insert records: {} ", Context.incrementCountInserts());
+        LOG.info("insert records: {} ", RouteContext.incrementCountInserts());
         exchange.getIn().setBody(insertRecord);
     }
 }

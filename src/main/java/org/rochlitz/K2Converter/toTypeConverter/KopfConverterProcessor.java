@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
-import org.rochlitz.K2Converter.Context;
+import org.rochlitz.K2Converter.RouteContext;
 
 public class KopfConverterProcessor implements Processor
 {
@@ -41,7 +41,7 @@ public class KopfConverterProcessor implements Processor
         kopfRecord.setFilenameLong(genericRecord.getFields().get(5));
         kopfRecord.setCountKRecords(Integer.parseInt(genericRecord.getFields().get(6)));
 
-        Context.setKopfInfo(kopfRecord);
+        RouteContext.setKopfInfo(kopfRecord);
         exchange.getIn().setBody(kopfRecord);
     }
 

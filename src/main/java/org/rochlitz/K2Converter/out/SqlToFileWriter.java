@@ -1,6 +1,6 @@
 package org.rochlitz.K2Converter.out;
 
-import static org.rochlitz.K2Converter.K2Converter.SQL_FILE_PATH;
+import static org.rochlitz.K2Converter.Configuration.SQL_FILE_PATH;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
@@ -18,7 +18,8 @@ public class SqlToFileWriter implements Processor
     public void process(Exchange exchange) throws ClassNotFoundException //TODO add   catch
     {
 
-        String fileName = exchange.getContext().resolvePropertyPlaceholders("{{"+SQL_FILE_PATH+"}}");
+//        String fileName = exchange.getContext().resolvePropertyPlaceholders("{{"+SQL_FILE_PATH+"}}");
+        final String fileName = System.getProperty(SQL_FILE_PATH);
         String sql = exchange.getIn().getBody(String.class);
         //TODO add SQL validation
         try (PrintWriter out = new PrintWriter(new FileWriter(fileName, true))) {

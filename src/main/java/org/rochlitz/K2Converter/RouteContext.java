@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
 import org.rochlitz.K2Converter.toTypeConverter.KopfRecord;
 
-public class Context
+public class RouteContext
 {
     private static final ThreadLocal<String> tableName = new ThreadLocal<>();
 

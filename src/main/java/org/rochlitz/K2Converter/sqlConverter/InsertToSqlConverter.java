@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.camel.Exchange;
-import org.rochlitz.K2Converter.Context;
+import org.rochlitz.K2Converter.RouteContext;
 import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
 import org.rochlitz.K2Converter.toTypeConverter.InsertRecord;
 import org.slf4j.Logger;
@@ -23,8 +23,8 @@ public class InsertToSqlConverter implements org.apache.camel.Processor
     {
         InsertRecord insertRecord = exchange.getIn().getBody(InsertRecord.class);
 
-        String tableName = Context.getTableName();
-        List<FeldRecord> tableInfo = Context.getTableInfo();
+        String tableName = RouteContext.getTableName();
+        List<FeldRecord> tableInfo = RouteContext.getTableInfo();
 
         String columns = tableInfo
             .stream()

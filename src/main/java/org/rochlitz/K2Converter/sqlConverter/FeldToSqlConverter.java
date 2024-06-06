@@ -9,7 +9,7 @@ import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.SEMICOLON;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
-import org.rochlitz.K2Converter.Context;
+import org.rochlitz.K2Converter.RouteContext;
 import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +21,7 @@ public class FeldToSqlConverter implements Processor
 
     public void process(Exchange exchange) throws ClassNotFoundException //TODO add   catch
     {
-        String tableName = Context.getTableName();
+        String tableName = RouteContext.getTableName();
         FeldRecord feldRecord = exchange.getIn().getBody(FeldRecord.class);
         StringBuffer sql = new StringBuffer();
         if(feldRecord.getPrimaryKey()){

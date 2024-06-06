@@ -2,7 +2,7 @@ package org.rochlitz.K2Converter.toTypeConverter;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
-import org.rochlitz.K2Converter.Context;
+import org.rochlitz.K2Converter.RouteContext;
 
 public class FeldConverterProcessor implements Processor
 {
@@ -19,7 +19,7 @@ public class FeldConverterProcessor implements Processor
         feldRecord.convertAndSetLength(genericRecord.getFieldValue(5), genericRecord.getFieldValue(6));
         feldRecord.convertAndSetDataType(genericRecord.getFieldValue(7));
 
-        Context.setTableInfo(feldRecord);
+        RouteContext.setTableInfo(feldRecord);
         exchange.getIn().setBody(feldRecord);
     }
 }

@@ -12,7 +12,7 @@ import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.support.DefaultExchange;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.rochlitz.K2Converter.Context;
+import org.rochlitz.K2Converter.RouteContext;
 import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
 import org.rochlitz.K2Converter.toTypeConverter.InsertRecord;
 
@@ -29,7 +29,7 @@ class InsertToSqlConverterTest {
     void testProcess_HappyPath() throws Exception {
         InsertRecord insertRecord = new InsertRecord();
         insertRecord.setValues(Arrays.asList("value1"));
-        Context.setTableName("my_table");
+        RouteContext.setTableName("my_table");
 
         FeldRecord record = new FeldRecord();
         record.setPrimaryKey(false);
@@ -37,7 +37,7 @@ class InsertToSqlConverterTest {
 
 
         record.setFieldName("field1");
-        Context.setTableInfo(record);
+        RouteContext.setTableInfo(record);
 
         exchange.getIn().setBody(insertRecord);
 
