@@ -22,7 +22,7 @@ public class KopfToSqlConverter implements Processor
     {
         KopfRecord genericRecord = exchange.getIn().getBody(KopfRecord.class);
 
-//        final String dbName = exchange.getContext().resolvePropertyPlaceholders("{{"+DB_SCHMEA_NAME+"}}");
+//        String dbName = exchange.getContext().resolvePropertyPlaceholders("{{"+DB_SCHMEA_NAME+"}}");
         final String dbName = System.getProperty(DB_SCHMEA_NAME);
 
         StringBuffer sql = new StringBuffer();
