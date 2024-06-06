@@ -43,15 +43,15 @@ public class K2Converter extends RouteBuilder {
         RecordCountAggregationStrategy recordCountAggregationStrategy = new RecordCountAggregationStrategy();
 
 
-        from("file:"+ abdaDirPath +"?noop=true")
+        from("file:"+ abdaDirPath.trim() +"?noop=true")
             .log("Processing file: ${header.CamelFileName}")
             .split(splitRecords())
-            .aggregate(constant(true), recordCountAggregationStrategy)
-            .completionTimeout(1000) // Timeout for aggregation completion
-            .process(exchange -> {
-                Integer recordCount = exchange.getIn().getHeader("recordCount", Integer.class);
-                LOGGER.info("Total records processed: " + recordCount);
-            })
+//            .aggregate(constant(true), recordCountAggregationStrategy)
+//            .completionTimeout(1000) // Timeout for aggregation completion
+//            .process(exchange -> {
+//                Integer recordCount = exchange.getIn().getHeader("recordCount", Integer.class);
+//                LOGGER.info("Total records processed: " + recordCount);
+//            })
             .process(new RecordUnmashallProcessor())
             .choice()
             .when(this::isTypeOfKopf)//TODO convert to Kopf Type
@@ -70,7 +70,9 @@ public class K2Converter extends RouteBuilder {
             .process(new EndConverterProcessor())
             .process(this::getStatistic)
             .to("log:processed")
-            .to("file:data/outbox");
+//            .to("file:data/outbox")
+            .end()
+        ;
         //TODO log statistic at the end
 
 //TODO add E record
@@ -115,7 +117,7 @@ public class K2Converter extends RouteBuilder {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Starting K2Converter");
-        helpConfig(args);
+        parseConfig(args);
 
         runk2Converter();
         System.out.println("K2Converter finished");
@@ -131,7 +133,7 @@ public class K2Converter extends RouteBuilder {
         context.stop();
     }
 
-    private static void helpConfig(String[] args)
+    private static void parseConfig(String[] args)
     {
 
 
@@ -144,7 +146,7 @@ public class K2Converter extends RouteBuilder {
             cmd = parser.parse(options, args);
         } catch (ParseException e) {
             System.out.println(e.getMessage());
-            formatter.printHelp("utility-name", options);
+            formatter.printHelp("K2Converter parsing args failed.", options);
             System.exit(1);
             return;
         }
@@ -166,7 +168,7 @@ public class K2Converter extends RouteBuilder {
 
     public static void printCurrentConfiguration() {
 
-        System.out.println("Usage java -jar [jar filename] [OPTION]");
+        System.out.println("Usage java -jar [jar filename] [OPTIONS]");
         System.out.println(" -i=foldername      path to input dir ");
         System.out.println(" -d=schema           name of db schema");
         System.out.println(" -o=sqlfile          name of sql output file");

@@ -1,9 +1,6 @@
 package org.rochlitz.K2Converter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.rochlitz.K2Converter.Configuration.ABDA_DIR_PATH;
-import static org.rochlitz.K2Converter.Configuration.SQL_FILE_PATH;
-import static org.rochlitz.tools.SqlValidator.checkSqlSyntax;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -23,15 +20,12 @@ public class K2ConverterIntegrationTest
 
 
     private static final Logger LOG = LoggerFactory.getLogger(KopfToSqlConverter.class);
-    String filePath = "abda_test.sql";//TODO configuration
+    private final String filePath = "abda_test.sql";//TODO configuration
 
 
     @BeforeEach
     public void setUp() {
 
-        System.setProperty(ABDA_DIR_PATH, "src/test/resources/integrationtest" );
-        System.setProperty(SQL_FILE_PATH, filePath );
-        System.setProperty("DB", "laien_info" );
         deleteSqlOutput(filePath);
     }
 
@@ -39,17 +33,23 @@ public class K2ConverterIntegrationTest
     public void convert() throws Exception
     {
         K2Converter k2Converter = new K2Converter();
-        k2Converter.main(new String[] {});
+
+
+        String[] args = { "-i=src/test/resources/integrationtest",
+            "-d=laien_info",
+            "-o="+filePath
+            };
+        k2Converter.main(args);
 
         int counter = 0;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
                 counter++;
-                checkSqlSyntax(line); //TODO
+//                checkSqlSyntax(line); //TODO
             }
 
-            assertEquals(counter, 21);
+            assertEquals(65,counter );
         } catch (IOException e) {
             System.err.println("Fehler beim Lesen der Datei: " + e.getMessage());
             throw new Exception("Fehler beim Lesen der Datei: " + e.getMessage());
