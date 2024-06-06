@@ -26,5 +26,6 @@ public class InsertConverterProcessor implements org.apache.camel.Processor
 
         LOG.info("insert records: {} ", RouteContext.incrementCountInserts());
         exchange.getIn().setBody(insertRecord);
+
     }
 }

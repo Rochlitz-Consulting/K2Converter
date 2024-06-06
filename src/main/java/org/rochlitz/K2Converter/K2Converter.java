@@ -40,18 +40,11 @@ public class K2Converter extends RouteBuilder {
     public void configure()  {
 
         final String abdaDirPath =  System.getProperty(ABDA_DIR_PATH);
-        RecordCountAggregationStrategy recordCountAggregationStrategy = new RecordCountAggregationStrategy();
 
 
         from("file:"+ abdaDirPath.trim() +"?noop=true")
             .log("Processing file: ${header.CamelFileName}")
             .split(splitRecords())
-//            .aggregate(constant(true), recordCountAggregationStrategy)
-//            .completionTimeout(1000) // Timeout for aggregation completion
-//            .process(exchange -> {
-//                Integer recordCount = exchange.getIn().getHeader("recordCount", Integer.class);
-//                LOGGER.info("Total records processed: " + recordCount);
-//            })
             .process(new RecordUnmashallProcessor())
             .choice()
             .when(this::isTypeOfKopf)//TODO convert to Kopf Type
@@ -119,19 +112,15 @@ public class K2Converter extends RouteBuilder {
         System.out.println("Starting K2Converter");
         parseConfig(args);
 
-        runk2Converter();
-        System.out.println("K2Converter finished");
-    }
-
-    private static void runk2Converter() throws Exception
-    {
         CamelContext context = new DefaultCamelContext();
         context.addRoutes(new K2Converter());
-        context.getPropertiesComponent().setLocation("classpath:k2.properties");
+//        context.getPropertiesComponent().setLocation("classpath:k2.properties");
         context.start();
         Thread.sleep(5000);
         context.stop();
+        System.out.println("K2Converter finished");
     }
+
 
     private static void parseConfig(String[] args)
     {
