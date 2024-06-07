@@ -2,10 +2,15 @@ package org.rochlitz.K2Converter.sqlConverter;
 
 import static java.lang.Math.abs;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.ALTER_TABLE_S_ADD_S;
+import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.BIGINT;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.BOOLEAN;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.CREATE_TABLE_S_S_BIGINT_PRIMARY_KEY;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.DATE;
+import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.INT;
+import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.MEDIUMINT;
+import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.SMALLINT;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.TEXT;
+import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.TINYINT;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.VARCHAR;
 
 import java.time.LocalDateTime;
@@ -83,26 +88,26 @@ public class SqlConverter
     private static void convertToINTType(FeldRecord feldRecord, StringBuffer sql, int toleranceBuffer)
     {
         //2,147,483,647
-        String intType= "BIGINT";
+        String intType= BIGINT;
 
         if(abs(feldRecord.getBytes()) ==  1){
-            intType = "TINYINT";
+            intType = TINYINT;
         }
 
         if(abs(feldRecord.getBytes()) ==  2){
-            intType = "SMALLINT";
+            intType = SMALLINT;
         }
 
         if(abs(feldRecord.getBytes()) ==  3){
-            intType = "MEDIUMINT";
+            intType = MEDIUMINT;
         }
 
         if(abs(feldRecord.getBytes()) == 4 ){
-            intType = "INT";
+            intType = INT;
         }
 
         if(abs(feldRecord.getBytes()) >= 5 ){
-            intType = "BIGINT";
+            intType = BIGINT;
         }
 
 

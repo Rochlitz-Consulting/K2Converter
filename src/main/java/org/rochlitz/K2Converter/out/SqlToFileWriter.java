@@ -20,13 +20,8 @@ public class SqlToFileWriter implements Processor
     public void process(Exchange exchange) throws ClassNotFoundException //TODO add   catch
     {
 
-        String tableName = RouteContext.getTableName();
-        final String fileName = System.getProperty(SQL_FILE_PATH);
-
-
-        StringTokenizer tokenizer = new StringTokenizer(fileName, ".");
-
-        String tableImportfileName = tokenizer.nextToken() + "_" + tableName +"."+ tokenizer.nextToken();
+//        String tableImportfileName = buildOutPutFilename();
+        String tableImportfileName = System.getProperty(SQL_FILE_PATH);
 
         String sql = exchange.getIn().getBody(String.class);
         //TODO add SQL validation
@@ -35,6 +30,15 @@ public class SqlToFileWriter implements Processor
         } catch (Exception e) {
             LOG.error("Error writing SQL to file", e);
         }
+    }
+
+    private static String buildOutPutFilename()
+    {
+        String tableName = RouteContext.getTableName();
+        final String fileName = System.getProperty(SQL_FILE_PATH);
+        StringTokenizer tokenizer = new StringTokenizer(fileName, ".");
+        String tableImportfileName = tokenizer.nextToken() + "_" + tableName +"."+ tokenizer.nextToken();
+        return tableImportfileName;
     }
 
 }
