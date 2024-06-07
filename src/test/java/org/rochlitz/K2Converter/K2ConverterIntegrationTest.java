@@ -32,14 +32,13 @@ public class K2ConverterIntegrationTest
     @Test
     public void convert() throws Exception
     {
-        K2Converter k2Converter = new K2Converter();
 
 
         String[] args = { "-i=src/test/resources/integrationtest",
             "-d=laien_info",
             "-o="+filePath
             };
-        k2Converter.main(args);
+        Application.main(args);
 
         int counter = 0;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {

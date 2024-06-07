@@ -128,6 +128,7 @@ V0.2 "get Anwendungshinweise from Fertigarzneimittel table by Pharmazentralnumme
  - added:
    - PAC_FAM_L table
    - records types: E
+   - Validation
 
 V0.3 "update - import UPD files"
 ----
@@ -143,6 +144,7 @@ V0.4 "Artikelstamm PAC_APO"
 V0.5 "HTML"
 ----
  - added:
+   -  SQL Client 
    -  convert control sequences to html
  
 

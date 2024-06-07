@@ -5,11 +5,9 @@ import static org.rochlitz.K2Converter.Configuration.DB_SCHMEA_NAME;
 import static org.rochlitz.K2Converter.Configuration.SQL_FILE_PATH;
 import static org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor.RECORD_DELIMITER;
 
-import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.Expression;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -108,18 +106,7 @@ public class K2Converter extends RouteBuilder {
         return body.getType().startsWith("I");
     }
 
-    public static void main(String[] args) throws Exception {
-        System.out.println("Starting K2Converter");
-        parseConfig(args);
 
-        CamelContext context = new DefaultCamelContext();
-        context.addRoutes(new K2Converter());
-//        context.getPropertiesComponent().setLocation("classpath:k2.properties");
-        context.start();
-        Thread.sleep(5000);
-        context.stop();
-        System.out.println("K2Converter finished");
-    }
 
 
     private static void parseConfig(String[] args)
