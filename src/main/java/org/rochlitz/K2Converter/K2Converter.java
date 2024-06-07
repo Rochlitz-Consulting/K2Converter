@@ -33,7 +33,6 @@ public class K2Converter extends RouteBuilder {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(K2Converter.class);
 
-
     @Override
     public void configure()  {
 
@@ -61,7 +60,7 @@ public class K2Converter extends RouteBuilder {
             .when(this::isTypeOfEnd)
             .process(new EndConverterProcessor())
             .process(this::getStatistic)
-            .to("file:data/outbox")
+//            .to("file:data/output")
             .to("log:processed")
             .end()
         ;

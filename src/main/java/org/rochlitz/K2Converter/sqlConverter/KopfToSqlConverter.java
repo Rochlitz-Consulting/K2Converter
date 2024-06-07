@@ -1,7 +1,7 @@
 package org.rochlitz.K2Converter.sqlConverter;
 
 import static org.rochlitz.K2Converter.Configuration.DB_SCHMEA_NAME;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.CREATE_SCHEMA_S;
+import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.CREATE_SCHEMA;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.SEMICOLON;
 import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.USE;
 
@@ -26,7 +26,7 @@ public class KopfToSqlConverter implements Processor
         final String dbName = System.getProperty(DB_SCHMEA_NAME);
 
         StringBuffer sql = new StringBuffer();
-        sql.append(String.format(CREATE_SCHEMA_S, dbName) + SEMICOLON);
+        sql.append(String.format(CREATE_SCHEMA, dbName) + SEMICOLON);
         sql.append(String.format(USE, dbName) + SEMICOLON);
 
         LOG.debug("Generated SQL: " + sql);

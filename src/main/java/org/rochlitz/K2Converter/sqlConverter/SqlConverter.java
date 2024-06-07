@@ -83,7 +83,11 @@ public class SqlConverter
     private static void convertToINTType(FeldRecord feldRecord, StringBuffer sql, int toleranceBuffer)
     {
         //2,147,483,647
-        String intType= "TINYINT";
+        String intType= "BIGINT";
+
+        if(abs(feldRecord.getBytes()) ==  1){
+            intType = "TINYINT";
+        }
 
         if(abs(feldRecord.getBytes()) ==  2){
             intType = "SMALLINT";
@@ -97,7 +101,7 @@ public class SqlConverter
             intType = "INT";
         }
 
-        if(abs(feldRecord.getBytes()) > 5 ){
+        if(abs(feldRecord.getBytes()) >= 5 ){
             intType = "BIGINT";
         }
 

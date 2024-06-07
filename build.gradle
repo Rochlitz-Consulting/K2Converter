@@ -95,13 +95,13 @@ tasks.named('test') {
 }
 
 application {
-	mainClass = ' org.rochlitz.K2Converter.K2Converter' // Ändern Sie dies auf Ihre Hauptklasse
+	mainClass = 'org.rochlitz.K2Converter.Application' // Ändern Sie dies auf Ihre Hauptklasse
 }
 
 jar {
     manifest {
         attributes(
-            'Main-Class': 'org.rochlitz.K2Converter.K2Converter'
+            'Main-Class': 'org.rochlitz.K2Converter.Application'
         )
     }
 //	from {
@@ -116,7 +116,7 @@ tasks.build {
 
 task fatJar(type: Jar) {
 	manifest {
-		attributes 'Main-Class': 'org.rochlitz.K2Converter.K2Converter'
+		attributes 'Main-Class': 'org.rochlitz.K2Converter.Application'
 	}
 	archiveBaseName = 'K2Converter'
 	duplicatesStrategy = DuplicatesStrategy.EXCLUDE

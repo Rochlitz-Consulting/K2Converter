@@ -18,18 +18,19 @@ These additional references should also help you:
 
 ### start mysql
 ```
-docker run --name laien-db -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=LaienInfo -e MYSQL_USER=dev -e MYSQL_PASSWORD=dev -p 3306:3306 -d mysql:latest
+ docker run --name laien-db -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=laien_info -e MYSQL_USER=user -e MYSQL_PASSWORD=password -p 3306:3306 -d mysql:latest
+
 ```
 
 ### build fat jar
 ```
-./gradlew fatJar
+./gradlew clean fatJar
 ```
 
 
 ### run / convert 
 ```
-java -jar build/libs/K2Converter-0.0.2-SNAPSHOT.jar -d=laien_info -i=src/test/resources/ABDATA/ -o=laieninfo.sql
+java -jar build/libs/K2Converter-0.0.2-SNAPSHOT.jar 
  
 ```
 
@@ -38,7 +39,7 @@ java -jar build/libs/K2Converter-0.0.2-SNAPSHOT.jar -d=laien_info -i=src/test/re
 ```
  
 docker cp abda.sql laien-db:/
-mysql  -proot -uroot < abda.sql
+mysql -proot -uroot < abda.sql
 ```
 
 

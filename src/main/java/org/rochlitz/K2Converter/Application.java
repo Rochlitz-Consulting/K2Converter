@@ -32,6 +32,7 @@ public class Application   {
         context.start();
         Thread.sleep(5000);
         context.stop();
+        printCurrentConfiguration();
         System.out.println("K2Converter finished");
     }
 
@@ -57,9 +58,9 @@ public class Application   {
         //TODO defaults to props
         /*default configuration*/
 
-        String inputPath = cmd.getOptionValue("input", "data/inbox");
+        String inputPath = cmd.getOptionValue("input", "data/input");
         String db = cmd.getOptionValue("database", "laien_info");
-        String outputFile = cmd.getOptionValue("output", "apda.sql");
+        String outputFile = cmd.getOptionValue("output", "data/output/apda.sql");
 
         System.setProperty(ABDA_DIR_PATH, inputPath);
         System.setProperty(DB_SCHMEA_NAME, db);

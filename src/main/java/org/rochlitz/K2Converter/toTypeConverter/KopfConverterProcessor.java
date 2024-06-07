@@ -41,6 +41,9 @@ public class KopfConverterProcessor implements Processor
         kopfRecord.setFilenameLong(genericRecord.getFields().get(5));
         kopfRecord.setCountKRecords(Integer.parseInt(genericRecord.getFields().get(6)));
 
+        RouteContext.resetTableInfo();//reset table info
+        RouteContext.resetCountInserts();//reset table info
+
         RouteContext.setKopfInfo(kopfRecord);
         exchange.getIn().setBody(kopfRecord);
     }

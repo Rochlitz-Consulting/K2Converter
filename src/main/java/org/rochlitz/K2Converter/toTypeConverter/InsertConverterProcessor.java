@@ -24,7 +24,7 @@ public class InsertConverterProcessor implements org.apache.camel.Processor
         insertRecord.setValues(columns);
 //TODO remove 0 value if empty field
 
-        LOG.info("insert records: {} ", RouteContext.incrementCountInserts());
+        RouteContext.incrementCountInserts();
         exchange.getIn().setBody(insertRecord);
 
     }

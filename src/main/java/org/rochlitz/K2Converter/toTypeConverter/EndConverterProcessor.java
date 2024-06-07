@@ -3,9 +3,14 @@ package org.rochlitz.K2Converter.toTypeConverter;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.rochlitz.K2Converter.RouteContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class EndConverterProcessor implements Processor
 {
+    private static final Logger LOG = LoggerFactory.getLogger(InsertConverterProcessor.class);
+
+
     public void process(Exchange exchange) throws ClassNotFoundException //TODO add   catch
     {
 
@@ -20,8 +25,12 @@ public class EndConverterProcessor implements Processor
         Integer countInserts = RouteContext.getCountInserts();
         Integer expectedIRecords = endRecord.getIRecordCount();
 
-        if( countInserts.compareTo(expectedIRecords)!=0)
-            throw new RuntimeException("iRecordCount does not match");
+        LOG.info("{} count insert records: {} ",RouteContext.getTableName(), countInserts);
+        LOG.info("{} expected count insert records: {} ",RouteContext.getTableName(), expectedIRecords);
+
+        if( countInserts.compareTo(expectedIRecords)!=0){
+            throw new RuntimeException("iRecordCount does not match for "+ RouteContext.getTableName());
+        }
 
     }
 

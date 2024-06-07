@@ -49,6 +49,10 @@ public class RouteContext
         tableInfo.get().add(value);
     }
 
+    public static void resetTableInfo() {
+        tableInfo.set(new ArrayList());
+    }
+
     public static List getTableInfo() {
         return tableInfo.get();
     }
@@ -66,6 +70,10 @@ public class RouteContext
 
     public static Integer getCountInserts() {
         return countInserts.get();
+    }
+
+    public static void resetCountInserts() {
+        countInserts.set(0);
     }
 
 
