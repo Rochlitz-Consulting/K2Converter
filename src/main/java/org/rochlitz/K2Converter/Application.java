@@ -54,36 +54,37 @@ public class Application   {
             return;
         }
 
-        String inputPath = cmd.getOptionValue("input", "abda");
+        //TODO defaults to props
+        /*default configuration*/
+
+        String inputPath = cmd.getOptionValue("input", "data/inbox");
         String db = cmd.getOptionValue("database", "laien_info");
         String outputFile = cmd.getOptionValue("output", "apda.sql");
 
-        // Setzen Sie die Systemeigenschaften
         System.setProperty(ABDA_DIR_PATH, inputPath);
         System.setProperty(DB_SCHMEA_NAME, db);
         System.setProperty(SQL_FILE_PATH, outputFile);
 
+        printUsage();
         printCurrentConfiguration();
-
-
     }
 
 
-    public static void printCurrentConfiguration() {
+    public static void printUsage() {
 
         System.out.println("Usage java -jar [jar filename] [OPTIONS]");
         System.out.println(" -i=foldername      path to input dir ");
         System.out.println(" -d=schema           name of db schema");
         System.out.println(" -o=sqlfile          name of sql output file");
 
-        String inputPath = System.getProperty(ABDA_DIR_PATH, "abda");
-        String db = System.getProperty(DB_SCHMEA_NAME, "laien_info");
-        String outputFile = System.getProperty(SQL_FILE_PATH, "apda.sql");
+    }
+
+    public static void printCurrentConfiguration() {
 
         System.out.println("Current Configuration:");
-        System.out.println("Input Path: " + inputPath);
-        System.out.println("Database: " + db);
-        System.out.println("Output File: " + outputFile);
+        System.out.println("Input Path: " + System.getProperty(ABDA_DIR_PATH ));
+        System.out.println("Database: " + System.getProperty(DB_SCHMEA_NAME) );
+        System.out.println("Output File: " + System.getProperty(SQL_FILE_PATH ));
     }
 
 

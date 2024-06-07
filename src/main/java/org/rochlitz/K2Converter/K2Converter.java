@@ -57,6 +57,7 @@ public class K2Converter extends RouteBuilder {
             .process(new InsertConverterProcessor())
             .process(new InsertToSqlConverter())
             .process(new SqlToFileWriter())
+//            .to("file:data/output?fileName=output.sql") //TODO
             .when(this::isTypeOfEnd)
             .process(new EndConverterProcessor())
             .process(this::getStatistic)

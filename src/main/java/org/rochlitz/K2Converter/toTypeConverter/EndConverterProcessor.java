@@ -20,7 +20,6 @@ public class EndConverterProcessor implements Processor
         Integer countInserts = RouteContext.getCountInserts();
         Integer expectedIRecords = endRecord.getIRecordCount();
 
-
         if( countInserts.compareTo(expectedIRecords)!=0)
             throw new RuntimeException("iRecordCount does not match");
 
