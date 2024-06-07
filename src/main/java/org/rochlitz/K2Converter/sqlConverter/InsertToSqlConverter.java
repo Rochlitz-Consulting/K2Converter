@@ -43,7 +43,7 @@ public class InsertToSqlConverter implements org.apache.camel.Processor
         sql.append(String.format(INSERT_INTO, tableName, columns) );//TODO configure
         sql.append(String.format(INSERT_VALUES, values) + SEMICOLON);//TODO configure
 
-        LOG.info("Generated SQL: " + sql);
+        LOG.debug("Generated SQL: " + sql);
         exchange.getIn().setBody(sql);
     }
 

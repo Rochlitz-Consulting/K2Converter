@@ -51,7 +51,7 @@ public class RecordUnmashallProcessor implements Processor
             i++;
         }
         LOG.info("/-------------------------");
-        LOG.info("fields: " +fields);
+        LOG.debug("fields: " +fields);
         LOG.info("-------------------------/");
 
 

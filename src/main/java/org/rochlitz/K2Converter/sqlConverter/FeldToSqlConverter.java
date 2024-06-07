@@ -35,7 +35,7 @@ public class FeldToSqlConverter implements Processor
 
         sql.append(SEMICOLON);
 
-        LOG.info("Generated SQL: " + sql);
+        LOG.debug("Generated SQL: " + sql);
 
         exchange.getIn().setBody(sql);
     }

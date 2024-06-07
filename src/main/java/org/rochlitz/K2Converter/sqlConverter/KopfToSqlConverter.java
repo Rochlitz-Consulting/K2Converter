@@ -29,7 +29,7 @@ public class KopfToSqlConverter implements Processor
         sql.append(String.format(CREATE_SCHEMA_S, dbName) + SEMICOLON);
         sql.append(String.format(USE, dbName) + SEMICOLON);
 
-        LOG.info("Generated SQL: " + sql);
+        LOG.debug("Generated SQL: " + sql);
         RouteContext.setTableName(genericRecord.getTableName());
         exchange.getIn().setBody(sql);
     }
