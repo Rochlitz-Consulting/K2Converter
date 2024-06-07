@@ -123,30 +123,38 @@ Error handling during data conversion.
                          WGS
    - GES import
 
+
+# Planning
+
 V0.2 "get Anwendungshinweise from Fertigarzneimittel table by Pharmazentralnummer"
 ----
- - added:
    - PAC_FAM_L table
    - records types: E
    - Validation
 
 V0.3 "update - import UPD files"
 ----
- - added:
    - records types: U
    - UPD import
 
-V0.4 "Artikelstamm PAC_APO"
+V0.4 "Artikelstamm PAC_APO / Full Import"
 ----
- - added:
   - records types: D
 
-V0.5 "HTML"
+V0.5 "HTML & DB "
 ----
- - added:
    -  SQL Client 
    -  convert control sequences to html
- 
 
-V1.0 "Full Import"
+V0.6 "Deamon"
 ----
+  - continuously monitor a folder 
+  - automatic import to database 
+  - delete imported  
+
+V1.0 "Full Automatic"
+----
+   - Download new import .GES, .UPD files or extract from email or ..
+   - import to db
+   - send report to chat or email
+
