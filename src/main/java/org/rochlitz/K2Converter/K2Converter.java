@@ -61,8 +61,8 @@ public class K2Converter extends RouteBuilder {
             .when(this::isTypeOfEnd)
             .process(new EndConverterProcessor())
             .process(this::getStatistic)
+            .to("file:data/outbox")
             .to("log:processed")
-//            .to("file:data/outbox")
             .end()
         ;
         //TODO log statistic at the end
@@ -108,11 +108,8 @@ public class K2Converter extends RouteBuilder {
     }
 
 
-
-
     private static void parseConfig(String[] args)
     {
-
 
         Options options = defineOptions();
         CommandLineParser parser = new DefaultParser();
@@ -128,9 +125,9 @@ public class K2Converter extends RouteBuilder {
             return;
         }
 
-        String inputPath = cmd.getOptionValue("input", "abda");
+        String inputPath = cmd.getOptionValue("input", "data/input");
         String db = cmd.getOptionValue("database", "laien_info");
-        String outputFile = cmd.getOptionValue("output", "apda.sql");
+        String outputFile = cmd.getOptionValue("output", "data/outbox/apda.sql");
 
         // Setzen Sie die Systemeigenschaften
         System.setProperty(ABDA_DIR_PATH, inputPath);
@@ -138,8 +135,6 @@ public class K2Converter extends RouteBuilder {
         System.setProperty(SQL_FILE_PATH, outputFile);
 
         printCurrentConfiguration();
-
-
     }
 
 
