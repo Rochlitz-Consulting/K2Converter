@@ -129,16 +129,17 @@ V0.2 "Get Anwendungshinweise from Fertigarzneimittel table by Pharmazentralnumme
    - records types: E
    - converter validation 
 
-V0.3 "Update - import UPD files"
+V0.3 "Update - import UPD files, Date format handling (K2_FORMAT Version 20.12.2016)"
 ----
    - records types: U
-   - UPD import
+   - UPD import 
 
-V0.4 "Artikelstamm PAC_APO Import"
+V0.4 "Artikelstamm PAC_APO Import, Artikelstamm (K2_FORMAT Version 07.04.2017)" 
 ----
-  - records types: D
+  - records types: D   
+  - data type conversion: DTV
 
-V0.5 "HTML & DB, full Import  "
+V0.5 "HTML & DB"
 ----
    -  SQL Client 
    -  convert control sequences to html

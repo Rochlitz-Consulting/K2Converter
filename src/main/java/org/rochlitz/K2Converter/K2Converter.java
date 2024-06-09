@@ -3,7 +3,7 @@ package org.rochlitz.K2Converter;
 import static org.rochlitz.K2Converter.Configuration.ABDA_DIR_PATH;
 import static org.rochlitz.K2Converter.Configuration.DB_SCHMEA_NAME;
 import static org.rochlitz.K2Converter.Configuration.SQL_FILE_PATH;
-import static org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor.RECORD_DELIMITER;
+import static org.rochlitz.K2Converter.toTypeConverter.unmarshall.RecordUnmashallProcessor.RECORD_DELIMITER;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Expression;
@@ -24,7 +24,7 @@ import org.rochlitz.K2Converter.toTypeConverter.FeldConverterProcessor;
 import org.rochlitz.K2Converter.toTypeConverter.GenericRecord;
 import org.rochlitz.K2Converter.toTypeConverter.InsertConverterProcessor;
 import org.rochlitz.K2Converter.toTypeConverter.KopfConverterProcessor;
-import org.rochlitz.K2Converter.unmarshall.RecordUnmashallProcessor;
+import org.rochlitz.K2Converter.toTypeConverter.unmarshall.RecordUnmashallProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

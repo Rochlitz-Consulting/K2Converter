@@ -17,6 +17,7 @@ public class K2DataTypeToJavaConverter<T>
         DATA_TYPE_MAP.put("ATC", String.class);
         DATA_TYPE_MAP.put("B64", Base64.class);
         DATA_TYPE_MAP.put("DT8", LocalDateTime.class);
+//        DATA_TYPE_MAP.put("DTV", LocalDateTime.class); //TODO Angabe von Monats- und Jahreszahl (z. B.: Verfalldatum): Zeichenkette aus den //Ziffern 0-9, Ausprägung: MMJJJJ
         DATA_TYPE_MAP.put("FLA", Boolean.class);
         DATA_TYPE_MAP.put("FN1", String.class);
         DATA_TYPE_MAP.put("FN2", String.class);
@@ -47,7 +48,6 @@ public class K2DataTypeToJavaConverter<T>
         } else {
             throw new ClassNotFoundException("No data type found for k2Type: " + k2Type);
         }
-
     }
 
 }
