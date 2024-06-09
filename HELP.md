@@ -50,4 +50,12 @@ select Anwendungshinweise from FAM_L
 LEFT JOIN PACFAM_L ON FAM_L.Key_FAM = PACFAM_L.Key_FAM
 WHERE PACFAM_L.PZN = 1353;
 ;
+
+
+select * from `FAM_L`
+ LEFT JOIN `PACFAM_L` 
+ ON  `FAM_L`.`Key_FAM` = `PACFAM_L`.`Key_FAM`
+WHERE `PACFAM_L`.`PZN` = 1353;
+;
+
 ```

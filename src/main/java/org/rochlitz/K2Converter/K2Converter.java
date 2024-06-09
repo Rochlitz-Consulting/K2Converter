@@ -33,6 +33,7 @@ public class K2Converter extends RouteBuilder {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(K2Converter.class);
 
+
     @Override
     public void configure()  {
 
@@ -56,11 +57,11 @@ public class K2Converter extends RouteBuilder {
             .process(new InsertConverterProcessor())
             .process(new InsertToSqlConverter())
             .process(new SqlToFileWriter())
-//            .to("file:data/output?fileName=output.sql") //TODO
+//TODO            .to("file:data/output?fileName=output.sql") //TODO
             .when(this::isTypeOfEnd)
             .process(new EndConverterProcessor())
             .process(this::getStatistic)
-//            .to("file:data/output")
+//            .to("file:data/outox")
             .to("log:processed")
             .end()
         ;

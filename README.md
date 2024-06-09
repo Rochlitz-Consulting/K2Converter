@@ -50,10 +50,8 @@ java -jar build/libs/K2Converter-1.0-SNAPSHOT.jar  -i /path/to/input -d my_datab
 
 ```
 
-
 # Project Structure
 The main class of the project is K2Converter.java which contains the main logic for data conversion. It uses Apache Camel routes to read data from a file, process it, and write the output to another file.  
-
 
 # Features
 
@@ -78,13 +76,11 @@ Error handling during data conversion.
 - build 50%
 
 
-
 # To Solve
 - How to handle UPD files ???
 - How are FK flagged ??
 - PACFAM_L feld FeldRecord Komponentennr ist anderd im ER-Modell
 - 4.2  F-Sätze Feldlänge in Byte, maximal 10-stellig, Datentyp NU1 ? das sind Stellen nicht byte!!! 
-
 
 
 # Version
@@ -124,24 +120,25 @@ Error handling during data conversion.
    - GES import
 
 
-# Planning
+# Planning 
+(each version ~ 5 days)
 
-V0.2 "get Anwendungshinweise from Fertigarzneimittel table by Pharmazentralnummer"
+V0.2 "Get Anwendungshinweise from Fertigarzneimittel table by Pharmazentralnummer"
 ----
    - PAC_FAM_L table
    - records types: E
-   - Validation
+   - converter validation 
 
-V0.3 "update - import UPD files"
+V0.3 "Update - import UPD files"
 ----
    - records types: U
    - UPD import
 
-V0.4 "Artikelstamm PAC_APO / Full Import"
+V0.4 "Artikelstamm PAC_APO Import"
 ----
   - records types: D
 
-V0.5 "HTML & DB "
+V0.5 "HTML & DB, full Import  "
 ----
    -  SQL Client 
    -  convert control sequences to html
@@ -150,11 +147,14 @@ V0.6 "Deamon"
 ----
   - continuously monitor a folder 
   - automatic import to database 
-  - delete imported  
+  - delete imported files to clean input folder after import  
 
-V1.0 "Full Automatic"
+V1.0 "Automatic import from provider"
 ----
    - Download new import .GES, .UPD files or extract from email or ..
-   - import to db
+
+V1.1 "Publish report "
+----
+   - import to 2 db separatly
    - send report to chat or email
 
