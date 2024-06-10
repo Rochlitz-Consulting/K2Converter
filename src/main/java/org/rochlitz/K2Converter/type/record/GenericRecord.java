@@ -10,7 +10,7 @@ import lombok.Getter;
 public class GenericRecord
 {
 
-    private String type;
+    private String type;//TODO enum
 
     //starts with 0
     private List<String> fields;

@@ -77,11 +77,18 @@ Error handling during data conversion.
 
 
 # To Solve / Problems
-- I-Sätze are different counted
-- How to handle UPD files ???
-- How are FK flagged ??
-- PACFAM_L feld FeldRecord Komponentennr ist anderd im ER-Modell
-- 4.2  F-Sätze Feldlänge in Byte, maximal 10-stellig, Datentyp NU1 ? das sind Stellen nicht byte!!!
+- I-Sätze ID :
+  - datatype is not defined
+  - 10 is missing 
+  - index is not pure numeric
+- type ID1 is not precise
+  - Zeichenkette aus den Ziffern 0-9, den Buchstaben A-Z sowie a-z und dem Unter-
+      strich (ASCII 95dez. )
+- UPD files have F records ?? - why?? - how to solve
+- there are no FK flagged !!!! 
+- PACFAM_L feld FeldRecord Komponentennr ist anders im ER-Modell
+- 4.2  F-Sätze field length in Byte, are not always correct 
+  - solution: tolerance buffer  
 
 
 # Version
@@ -141,9 +148,9 @@ V0.4 "Update - import UPD files, Date format handling (K2_FORMAT Version 20.12.2
 - UPD import
 
 
-V0.6 ???
-
-
+V0.6 ??? ...
+----
+next table????
 
 
 

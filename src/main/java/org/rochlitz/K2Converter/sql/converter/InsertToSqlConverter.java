@@ -5,8 +5,8 @@ import java.util.stream.Collectors;
 
 import org.apache.camel.Exchange;
 import org.rochlitz.K2Converter.RouteContext;
-import org.rochlitz.K2Converter.type.record.InsertRecord;
 import org.rochlitz.K2Converter.type.record.types.FeldRecord;
+import org.rochlitz.K2Converter.type.record.types.InsertRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

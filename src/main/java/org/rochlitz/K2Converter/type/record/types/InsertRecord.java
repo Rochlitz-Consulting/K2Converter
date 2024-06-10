@@ -1,4 +1,4 @@
-package org.rochlitz.K2Converter.type.record;
+package org.rochlitz.K2Converter.type.record.types;
 
 import java.util.List;
 

@@ -10,8 +10,8 @@ import org.apache.camel.support.DefaultExchange;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.rochlitz.K2Converter.RouteContext;
-import org.rochlitz.K2Converter.type.record.InsertRecord;
 import org.rochlitz.K2Converter.type.record.types.FeldRecord;
+import org.rochlitz.K2Converter.type.record.types.InsertRecord;
 
 class InsertToSqlConverterTest {
 

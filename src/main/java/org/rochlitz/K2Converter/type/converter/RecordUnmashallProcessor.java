@@ -2,11 +2,13 @@ package org.rochlitz.K2Converter.type.converter;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
 import org.apache.camel.Processor;
+import org.rochlitz.K2Converter.RouteContext;
 import org.rochlitz.K2Converter.type.record.GenericRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +18,7 @@ public class RecordUnmashallProcessor implements Processor
 
     public static final String CRLF = "\r\n";
     public static final String RECORD_DELIMITER = CRLF + "00";
+    public static final int INDEX_END = 2;
 
     private static final Logger LOG = LoggerFactory.getLogger(RecordUnmashallProcessor.class);
 
@@ -31,43 +34,72 @@ public class RecordUnmashallProcessor implements Processor
     public GenericRecord map(String record) {
         try
         {
-            HashMap<Integer, String> fields = new HashMap();//TODO use list
+            if (!record.startsWith("00")){
+                record = "00"+record;
+            }
 
-            record = record.replace("'","\\'");
+            Scanner scanner = new Scanner(record);
             int i = 0;
-            while (true) {
-                boolean endReached=false;
-                int beginIndex = record.indexOf(CRLF.concat( String.format("%02d", i + 1)));
-                int endIndex =  record.indexOf(CRLF.concat(String.format("%02d", i + 2)));
-                if(beginIndex==-1){
-                    break;
-                }
-                if(endIndex==-1){
-                    endReached=true;
-                }
-                if (endReached) {
-                    fields.put(i, record.substring(beginIndex).replace("\r\n", "").substring(2));
-                }else{
-                    fields.put(i, record.substring(beginIndex, endIndex).replace("\r\n", "").substring(2));
-                }
+
+            HashMap<Integer, String> fieldMap = new HashMap<>();
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String id = line.substring(0, INDEX_END);
+                String value = line.substring(INDEX_END, line.length());
+
+                fieldMap.put(i, value);
                 i++;
+                LOG.debug(value);
             }
-            LOG.debug("fields: " +fields);
 
-            String type = "K";
 
-            //TODO only the first recod starts with 00 because if .split(body().tokenize(CRLF + "00")) in K2Converter
-            if(!record.startsWith("00K")){
-                type = record.substring(0, 1);
+
+            if(record.startsWith("00I")){//TODO enum
+//TODO                validateFieldCount(fieldMap);
             }
-            List<String> columns = fields.values().stream().collect(Collectors.toList());//TODO test correct order
+
+            String type = fieldMap.get(0);
+            fieldMap.remove(0);
+            List<String> columns = fieldMap.values().stream().collect(Collectors.toList());
             return new GenericRecord(type,columns);
         }
         catch (Exception e)
         {
+            LOG.error("Error while mapping record: " + record);
             throw new RuntimeException(e);
         }
     }
+
+    private void fillMapWithMissingFields(HashMap<Integer, String> fieldMap, int id)
+    {
+
+        int previousId = id - 1;
+        if(!fieldMap.containsKey(previousId)){
+            fieldMap.put(previousId, "");
+            fillMapWithMissingFields(fieldMap, previousId);
+        }
+
+    }
+
+    private String removeIDFromLine(String line)
+    {
+        return line.substring(2);
+
+    }
+
+    private void validateFieldCount(HashMap<Integer, String> fieldValues)
+    {
+        int expectedSize = RouteContext.getTableInfo().size();
+        int actualSize = fieldValues.size();
+        if (expectedSize != actualSize)
+        {
+            LOG.error("Expected " + expectedSize + " fields but got " + actualSize);
+            throw new RuntimeException("Expected " + expectedSize + " fields but got " + actualSize);
+        }
+
+    }
+
+
 }
 
 

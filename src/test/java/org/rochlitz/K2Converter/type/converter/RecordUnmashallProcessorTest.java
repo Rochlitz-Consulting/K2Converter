@@ -1,5 +1,7 @@
 package org.rochlitz.K2Converter.type.converter;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.apache.camel.Exchange;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.support.DefaultExchange;
@@ -29,7 +31,12 @@ class RecordUnmashallProcessorTest
 
         GenericRecord result = exchange.getIn().getBody(GenericRecord.class);
 
+        int size = result.getFields().size();
+        assertTrue(size ==135);
+
     }
+
+
 
     private static String getRecordValues()
     {

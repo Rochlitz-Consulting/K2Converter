@@ -11,7 +11,7 @@ import org.apache.camel.support.DefaultExchange;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.rochlitz.K2Converter.type.record.GenericRecord;
-import org.rochlitz.K2Converter.type.record.InsertRecord;
+import org.rochlitz.K2Converter.type.record.types.InsertRecord;
 
 public class InsertConverterProcessorTest {
 
