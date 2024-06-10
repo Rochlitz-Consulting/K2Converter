@@ -1,4 +1,4 @@
-package org.rochlitz.K2Converter.toTypeConverter;
+package org.rochlitz.K2Converter.type.record.types;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

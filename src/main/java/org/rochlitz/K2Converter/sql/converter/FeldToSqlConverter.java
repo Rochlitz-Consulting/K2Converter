@@ -1,16 +1,16 @@
-package org.rochlitz.K2Converter.sqlConverter;
+package org.rochlitz.K2Converter.sql.converter;
 
-import static org.rochlitz.K2Converter.sqlConverter.SqlConverter.addFieldName;
-import static org.rochlitz.K2Converter.sqlConverter.SqlConverter.addFieldType;
-import static org.rochlitz.K2Converter.sqlConverter.SqlConverter.addPrimaryKey;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.NOT_NULL;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.NULL;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.SEMICOLON;
+import static org.rochlitz.K2Converter.sql.converter.SqlConverter.addFieldName;
+import static org.rochlitz.K2Converter.sql.converter.SqlConverter.addFieldType;
+import static org.rochlitz.K2Converter.sql.converter.SqlConverter.addPrimaryKey;
+import static org.rochlitz.K2Converter.sql.converter.SqlTemplates.NOT_NULL;
+import static org.rochlitz.K2Converter.sql.converter.SqlTemplates.NULL;
+import static org.rochlitz.K2Converter.sql.converter.SqlTemplates.SEMICOLON;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.rochlitz.K2Converter.RouteContext;
-import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
+import org.rochlitz.K2Converter.type.record.types.FeldRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,4 +1,4 @@
-package org.rochlitz.K2Converter.sqlConverter;
+package org.rochlitz.K2Converter.sql.converter;
 
 public class SqlTemplates
 {

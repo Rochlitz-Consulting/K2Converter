@@ -1,5 +1,7 @@
-package org.rochlitz.K2Converter.toTypeConverter;
+package org.rochlitz.K2Converter.type.record.types;
 
+
+import org.rochlitz.K2Converter.type.converter.K2DataTypeToJavaConverter;
 
 import lombok.Data;
 import lombok.ToString;

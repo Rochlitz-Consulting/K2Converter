@@ -1,4 +1,4 @@
-package org.rochlitz.K2Converter.sqlConverter;
+package org.rochlitz.K2Converter.sql.converter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -8,7 +8,7 @@ import org.apache.camel.support.DefaultExchange;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.rochlitz.K2Converter.RouteContext;
-import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
+import org.rochlitz.K2Converter.type.record.types.FeldRecord;
 
 public class FeldToSqlConverterTest {
 

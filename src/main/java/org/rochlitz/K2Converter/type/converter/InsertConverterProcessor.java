@@ -1,10 +1,12 @@
-package org.rochlitz.K2Converter.toTypeConverter;
+package org.rochlitz.K2Converter.type.converter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.camel.Exchange;
 import org.rochlitz.K2Converter.RouteContext;
+import org.rochlitz.K2Converter.type.record.GenericRecord;
+import org.rochlitz.K2Converter.type.record.InsertRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

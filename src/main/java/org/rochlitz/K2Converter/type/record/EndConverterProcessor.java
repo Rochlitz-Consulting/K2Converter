@@ -1,8 +1,10 @@
-package org.rochlitz.K2Converter.toTypeConverter;
+package org.rochlitz.K2Converter.type.record;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.rochlitz.K2Converter.RouteContext;
+import org.rochlitz.K2Converter.type.converter.InsertConverterProcessor;
+import org.rochlitz.K2Converter.type.record.types.EndRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

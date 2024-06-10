@@ -1,4 +1,4 @@
-package org.rochlitz.K2Converter.toTypeConverter.unmarshall;
+package org.rochlitz.K2Converter.type.converter;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
 import org.apache.camel.Processor;
-import org.rochlitz.K2Converter.toTypeConverter.GenericRecord;
+import org.rochlitz.K2Converter.type.record.GenericRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

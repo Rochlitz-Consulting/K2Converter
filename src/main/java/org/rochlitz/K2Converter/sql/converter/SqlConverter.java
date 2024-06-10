@@ -1,21 +1,10 @@
-package org.rochlitz.K2Converter.sqlConverter;
+package org.rochlitz.K2Converter.sql.converter;
 
 import static java.lang.Math.abs;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.ALTER_TABLE_S_ADD_S;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.BIGINT;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.BOOLEAN;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.CREATE_TABLE_S_S_BIGINT_PRIMARY_KEY;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.DATE;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.INT;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.MEDIUMINT;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.SMALLINT;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.TEXT;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.TINYINT;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.VARCHAR;
 
 import java.time.LocalDateTime;
 
-import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
+import org.rochlitz.K2Converter.type.record.types.FeldRecord;
 
 public class SqlConverter
 {
@@ -24,7 +13,7 @@ public class SqlConverter
     {
         sql.append(
             String.format(
-                CREATE_TABLE_S_S_BIGINT_PRIMARY_KEY, tableName,
+                SqlTemplates.CREATE_TABLE_S_S_BIGINT_PRIMARY_KEY, tableName,
                 feldRecord.getFieldName()
             )
         );
@@ -37,7 +26,7 @@ public class SqlConverter
             if(feldRecord.getBytes() >= 5000 ){
                 sql.append(
                     String.format(
-                        TEXT
+                        SqlTemplates.TEXT
                     )
                 );
             }else
@@ -45,7 +34,7 @@ public class SqlConverter
 
                 sql.append(
                     String.format(
-                        VARCHAR,
+                        SqlTemplates.VARCHAR,
                         feldRecord.getBytes()+ toleranceBuffer
                     )
                 );
@@ -55,7 +44,7 @@ public class SqlConverter
         if(Boolean.class == feldRecord.getDataType() ){
             sql.append(
                 String.format(
-                    BOOLEAN,
+                    SqlTemplates.BOOLEAN,
                     feldRecord.getBytes()
                 )
             );
@@ -66,7 +55,7 @@ public class SqlConverter
         }
 
         if(LocalDateTime.class == feldRecord.getDataType() ){  //TODO add type
-            sql.append(DATE);
+            sql.append(SqlTemplates.DATE);
         }
     }
 
@@ -88,26 +77,26 @@ public class SqlConverter
     private static void convertToINTType(FeldRecord feldRecord, StringBuffer sql, int toleranceBuffer)
     {
         //2,147,483,647
-        String intType= BIGINT;
+        String intType= SqlTemplates.BIGINT;
 
         if(abs(feldRecord.getBytes()) ==  1){
-            intType = TINYINT;
+            intType = SqlTemplates.TINYINT;
         }
 
         if(abs(feldRecord.getBytes()) ==  2){
-            intType = SMALLINT;
+            intType = SqlTemplates.SMALLINT;
         }
 
         if(abs(feldRecord.getBytes()) ==  3){
-            intType = MEDIUMINT;
+            intType = SqlTemplates.MEDIUMINT;
         }
 
         if(abs(feldRecord.getBytes()) == 4 ){
-            intType = INT;
+            intType = SqlTemplates.INT;
         }
 
         if(abs(feldRecord.getBytes()) >= 5 ){
-            intType = BIGINT;
+            intType = SqlTemplates.BIGINT;
         }
 
 
@@ -125,7 +114,7 @@ public class SqlConverter
         sql.append(
 
             String.format(
-                ALTER_TABLE_S_ADD_S,
+                SqlTemplates.ALTER_TABLE_S_ADD_S,
                 tableName,
                 feldRecord.getFieldName()
             )

@@ -1,4 +1,4 @@
-package org.rochlitz.K2Converter.toTypeConverter;
+package org.rochlitz.K2Converter.type.converter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -11,6 +11,8 @@ import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.support.DefaultExchange;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.rochlitz.K2Converter.type.record.GenericRecord;
+import org.rochlitz.K2Converter.type.record.types.KopfRecord;
 
 public class KopfConverterProcessorTest {
 

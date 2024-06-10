@@ -1,9 +1,6 @@
-package org.rochlitz.K2Converter.sqlConverter;
+package org.rochlitz.K2Converter.sql.converter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.INSERT_INTO;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.INSERT_VALUES;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.SEMICOLON;
 
 import java.util.Arrays;
 
@@ -13,8 +10,8 @@ import org.apache.camel.support.DefaultExchange;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.rochlitz.K2Converter.RouteContext;
-import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
-import org.rochlitz.K2Converter.toTypeConverter.InsertRecord;
+import org.rochlitz.K2Converter.type.record.InsertRecord;
+import org.rochlitz.K2Converter.type.record.types.FeldRecord;
 
 class InsertToSqlConverterTest {
 
@@ -45,8 +42,8 @@ class InsertToSqlConverterTest {
         new InsertToSqlConverter().process(exchange);
 
         // Verify the generated SQL statement
-        String expectedSql = String.format(INSERT_INTO, "my_table", "field1") +
-            String.format(INSERT_VALUES, "'value1'") + SEMICOLON;
+        String expectedSql = String.format(SqlTemplates.INSERT_INTO, "my_table", "field1") +
+            String.format(SqlTemplates.INSERT_VALUES, "'value1'") + SqlTemplates.SEMICOLON;
         assertEquals(expectedSql, exchange.getIn().getBody(String.class));
     }
 

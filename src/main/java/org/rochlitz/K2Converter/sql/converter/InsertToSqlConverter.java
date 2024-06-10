@@ -1,16 +1,12 @@
-package org.rochlitz.K2Converter.sqlConverter;
-
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.INSERT_INTO;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.INSERT_VALUES;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.SEMICOLON;
+package org.rochlitz.K2Converter.sql.converter;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.camel.Exchange;
 import org.rochlitz.K2Converter.RouteContext;
-import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
-import org.rochlitz.K2Converter.toTypeConverter.InsertRecord;
+import org.rochlitz.K2Converter.type.record.InsertRecord;
+import org.rochlitz.K2Converter.type.record.types.FeldRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,8 +36,8 @@ public class InsertToSqlConverter implements org.apache.camel.Processor
 
 
         StringBuffer sql = new StringBuffer();
-        sql.append(String.format(INSERT_INTO, tableName, columns) );//TODO configure
-        sql.append(String.format(INSERT_VALUES, values) + SEMICOLON);//TODO configure
+        sql.append(String.format(SqlTemplates.INSERT_INTO, tableName, columns) );//TODO configure
+        sql.append(String.format(SqlTemplates.INSERT_VALUES, values) + SqlTemplates.SEMICOLON);//TODO configure
 
         LOG.debug("Generated SQL: " + sql);
         exchange.getIn().setBody(sql);

@@ -1,14 +1,14 @@
 package org.rochlitz.K2Converter.unmarshall;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.rochlitz.K2Converter.toTypeConverter.unmarshall.RecordUnmashallProcessor.RECORD_DELIMITER;
+import static org.rochlitz.K2Converter.type.converter.RecordUnmashallProcessor.RECORD_DELIMITER;
 
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.support.DefaultExchange;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.rochlitz.K2Converter.toTypeConverter.GenericRecord;
-import org.rochlitz.K2Converter.toTypeConverter.unmarshall.RecordUnmashallProcessor;
+import org.rochlitz.K2Converter.type.converter.RecordUnmashallProcessor;
+import org.rochlitz.K2Converter.type.record.GenericRecord;
 
 public class RecordUnmashallProcessorTest {
 

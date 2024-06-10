@@ -1,8 +1,10 @@
-package org.rochlitz.K2Converter.toTypeConverter;
+package org.rochlitz.K2Converter.type.converter;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.rochlitz.K2Converter.RouteContext;
+import org.rochlitz.K2Converter.type.record.GenericRecord;
+import org.rochlitz.K2Converter.type.record.types.FeldRecord;
 
 public class FeldConverterProcessor implements Processor
 {

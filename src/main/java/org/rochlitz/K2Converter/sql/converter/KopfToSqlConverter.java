@@ -1,14 +1,11 @@
-package org.rochlitz.K2Converter.sqlConverter;
+package org.rochlitz.K2Converter.sql.converter;
 
 import static org.rochlitz.K2Converter.Configuration.DB_SCHMEA_NAME;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.CREATE_SCHEMA;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.SEMICOLON;
-import static org.rochlitz.K2Converter.sqlConverter.SqlTemplates.USE;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.rochlitz.K2Converter.RouteContext;
-import org.rochlitz.K2Converter.toTypeConverter.KopfRecord;
+import org.rochlitz.K2Converter.type.record.types.KopfRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,8 +23,8 @@ public class KopfToSqlConverter implements Processor
         final String dbName = System.getProperty(DB_SCHMEA_NAME);
 
         StringBuffer sql = new StringBuffer();
-        sql.append(String.format(CREATE_SCHEMA, dbName) + SEMICOLON);
-        sql.append(String.format(USE, dbName) + SEMICOLON);
+        sql.append(String.format(SqlTemplates.CREATE_SCHEMA, dbName) + SqlTemplates.SEMICOLON);
+        sql.append(String.format(SqlTemplates.USE, dbName) + SqlTemplates.SEMICOLON);
 
         LOG.debug("Generated SQL: " + sql);
         RouteContext.setTableName(genericRecord.getTableName());

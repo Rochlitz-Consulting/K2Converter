@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.rochlitz.K2Converter.toTypeConverter.FeldRecord;
-import org.rochlitz.K2Converter.toTypeConverter.KopfRecord;
+import org.rochlitz.K2Converter.type.record.types.FeldRecord;
+import org.rochlitz.K2Converter.type.record.types.KopfRecord;
 
 public class RouteContext
 {

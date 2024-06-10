@@ -86,7 +86,7 @@ Error handling during data conversion.
 # Version
 (business funktionality)
 
-0.1 "import LAIEN FAM_L"
+0.1 "import LAIEN FAM_L" [03.06.2024]
 ----
  - added: 
    - FAM_L table converter: object converter, sqlconverter

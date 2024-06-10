@@ -1,4 +1,4 @@
-package org.rochlitz.K2Converter.toTypeConverter;
+package org.rochlitz.K2Converter.type.converter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,6 +8,8 @@ import java.time.format.DateTimeFormatter;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.rochlitz.K2Converter.RouteContext;
+import org.rochlitz.K2Converter.type.record.GenericRecord;
+import org.rochlitz.K2Converter.type.record.types.KopfRecord;
 
 public class KopfConverterProcessor implements Processor
 {
