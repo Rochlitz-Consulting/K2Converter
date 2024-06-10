@@ -123,38 +123,38 @@ Error handling during data conversion.
 # Planning 
 (each version ~ 5 days)
 
-V0.2 "Get Anwendungshinweise from Fertigarzneimittel table by Pharmazentralnummer"
+V0.2 "Get Anwendungshinweise from Fertigarzneimittel table by Pharmazentralnummer" [10.06.2024]
 ----
    - PAC_FAM_L table
    - records types: E
    - converter validation 
 
-V0.3 "Update - import UPD files, Date format handling (K2_FORMAT Version 20.12.2016)"
-----
-   - records types: U
-   - UPD import 
-
-V0.4 "Artikelstamm PAC_APO Import, Artikelstamm (K2_FORMAT Version 07.04.2017)" 
+V0.3 "Artikelstamm PAC_APO Import, Artikelstamm (K2_FORMAT Version 07.04.2017)" [17.06.2024]
 ----
   - records types: D   
   - data type conversion: DTV
 
-V0.5 "HTML & DB"
+V0.4 "Update - import UPD files, Date format handling (K2_FORMAT Version 20.12.2016)" [24.06.2024]
+----
+- records types: U
+- UPD import
+
+V1.0 "HTML & DB" [01.07.2024]
 ----
    -  SQL Client 
    -  convert control sequences to html
 
-V0.6 "Deamon"
+V1.1 "Deamon"  [08.07.2024] 
 ----
   - continuously monitor a folder 
   - automatic import to database 
   - delete imported files to clean input folder after import  
 
-V1.0 "Automatic import from provider"
+V1.2 "Automatic import from provider"  [15.07.2024]
 ----
    - Download new import .GES, .UPD files or extract from email or ..
 
-V1.1 "Publish report "
+V1.3 "Publish report"   [22.07.2024]
 ----
    - import to 2 db separatly
    - send report to chat or email
