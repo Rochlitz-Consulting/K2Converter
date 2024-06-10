@@ -76,11 +76,12 @@ Error handling during data conversion.
 - build 50%
 
 
-# To Solve
+# To Solve / Problems
+- I-Sätze are different counted
 - How to handle UPD files ???
 - How are FK flagged ??
 - PACFAM_L feld FeldRecord Komponentennr ist anderd im ER-Modell
-- 4.2  F-Sätze Feldlänge in Byte, maximal 10-stellig, Datentyp NU1 ? das sind Stellen nicht byte!!! 
+- 4.2  F-Sätze Feldlänge in Byte, maximal 10-stellig, Datentyp NU1 ? das sind Stellen nicht byte!!!
 
 
 # Version
@@ -138,6 +139,14 @@ V0.4 "Update - import UPD files, Date format handling (K2_FORMAT Version 20.12.2
 ----
 - records types: U
 - UPD import
+
+
+V0.6 ???
+
+
+
+
+
 
 V1.0 "HTML & DB" [01.07.2024]
 ----

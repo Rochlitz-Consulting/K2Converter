@@ -2,6 +2,7 @@ package org.rochlitz.K2Converter.sql.converter;
 
 import static java.lang.Math.abs;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.rochlitz.K2Converter.type.record.types.FeldRecord;
@@ -54,7 +55,10 @@ public class SqlConverter
             convertToINTType(feldRecord, sql, toleranceBuffer);
         }
 
-        if(LocalDateTime.class == feldRecord.getDataType() ){  //TODO add type
+        if(LocalDateTime.class == feldRecord.getDataType() ){
+            sql.append(SqlTemplates.DATE);
+        }
+        if(LocalDate.class == feldRecord.getDataType() ){  //TODO INSERT INTO example_table (date_field) VALUES (STR_TO_DATE(CONCAT('01', '062024'), '%d%m%Y'));
             sql.append(SqlTemplates.DATE);
         }
     }
